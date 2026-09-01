@@ -1,0 +1,23 @@
+{
+  "@@locale": "fi",
+  "title": "Tervetuloa",
+  "@title": {
+    "description": "Otsikko"
+  },
+  "wpWorld": "Mun Maailma",
+  "@wpWorld": {
+    "description": "Otsikko WP:n maailmalle"
+  },
+  "description": "Tämä on portfolioni.",
+  "@description": {
+    "description": "Kuvaus"
+  },
+  "themeToggle": "Vaihda teema",
+  "@themeToggle": {
+    "description": "Teemanvaihdon otsikko"
+  },
+  "languageToggle": "Vaihda kieli",
+  "@languageToggle": {
+    "description": "Kielenvaihdon otsikko"
+  }
+}

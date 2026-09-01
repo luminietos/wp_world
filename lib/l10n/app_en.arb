@@ -1,0 +1,23 @@
+{
+  "@@locale": "en",
+  "title": "Welcome",
+  "@title": {
+    "description": "The title"
+  },
+  "wpWorld": "Wil's World",
+  "@wpWorld": {
+    "description": "WP's world title"
+  },
+  "description": "This is my portfolio.",
+  "@description": {
+    "description": "The description"
+  },
+  "themeToggle": "Toggle theme",
+  "@themeToggle": {
+    "description": "Toggle theme title"
+  },
+  "languageToggle": "Change language",
+  "@languageToggle": {
+    "description": "Change language title"
+  }
+}
