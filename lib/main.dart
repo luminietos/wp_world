@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -18,28 +19,41 @@ class MyApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final themeMode = ref.watch(themeProvider);
-    final lang = ref.watch(languageProvider); // "en" or "fi"
+    return ScreenUtilInit(
+      designSize: const Size(1440, 1024), // desktop-first
+      minTextAdapt: true,
+      builder: (_, __) {
+        final themeMode = ref.watch(themeProvider);
+        final lang = ref.watch(languageProvider); // "en" or "fi"
 
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      themeMode: themeMode,
-      theme: ThemeData.light(),
-      darkTheme: ThemeData.dark(),
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          themeMode: themeMode,
 
-      // Convert your string to a Locale
-      locale: Locale(lang),
+          theme: ThemeData(
+            brightness: Brightness.light,
+            fontFamily: 'NotoSans',
+          ),
+          darkTheme: ThemeData(
+            brightness: Brightness.dark,
+            fontFamily: 'NotoSans',
+          ),
 
-      supportedLocales: const [Locale('en'), Locale('fi')],
+          // Convert your string to a Locale
+          locale: Locale(lang),
 
-      localizationsDelegates: const [
-        AppLocalizations.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
+          supportedLocales: const [Locale('en'), Locale('fi')],
 
-      home: const HomePage(),
+          localizationsDelegates: const [
+            AppLocalizations.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+
+          home: const HomePage(),
+        );
+      },
     );
   }
 }
