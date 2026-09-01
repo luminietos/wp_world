@@ -8,6 +8,8 @@ if ($LASTEXITCODE -ne 0) { # IF the build failed...
 
 # The rest of the steps only run if the build succeeded:
 
+Write-Host "Build succeeded. Deploying..."
+
 Remove-Item -Recurse -Force docs/*
 Copy-Item -Recurse build/web/* docs/
 
@@ -15,4 +17,4 @@ git add docs
 git commit -m "Deploy"
 git push
 
-Write-Host "Deployment complete ✔"
+Write-Host "Deployment complete!"
