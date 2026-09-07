@@ -15,6 +15,7 @@ class LanguageToggle extends ConsumerWidget {
     final isMobile = Responsive.isMobile;
     final isTablet = Responsive.isTablet;
     final notMobileOrTablet = !isMobile && !isTablet;
+    final modSpace = notMobileOrTablet ? 8.w : 16.w;
 
     return DropdownButton<String>(
       value: lang,
@@ -26,11 +27,11 @@ class LanguageToggle extends ConsumerWidget {
             children: [
               FlutterCountryFlags(
                 country: Country.unitedStates, // Type-safe enum
-                width: 24.w,
-                height: 16.h,
+                width: 24.0,
+                height: 16.0,
               ),
-              SizedBox(width: 8.w),
-              if (notMobileOrTablet) const Text("English"),
+              SizedBox(width: modSpace),
+              notMobileOrTablet ? const Text("English") : const Text("EN"),
             ],
           ),
         ),
@@ -40,11 +41,11 @@ class LanguageToggle extends ConsumerWidget {
             children: [
               FlutterCountryFlags(
                 country: Country.finland,
-                width: 24.w,
-                height: 16.h,
+                width: 24.0,
+                height: 16.0,
               ),
-              SizedBox(width: 8.w),
-              if (notMobileOrTablet) const Text("Suomi"),
+              SizedBox(width: modSpace),
+              notMobileOrTablet ? const Text("Suomi") : const Text("FI"),
             ],
           ),
         ),

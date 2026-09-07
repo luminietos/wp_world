@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:wp_world/utils/icon_sizes.dart';
 import '../state/theme_provider.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:wp_world/utils/responsive.dart';
 
 class ThemeToggle extends ConsumerWidget {
   const ThemeToggle({super.key});
@@ -12,6 +11,7 @@ class ThemeToggle extends ConsumerWidget {
     final mode = ref.watch(themeProvider);
 
     return IconButton(
+      iconSize: IconSizes.standard,
       icon: Icon(mode == ThemeMode.dark ? Icons.dark_mode : Icons.light_mode),
       onPressed: () => ref.read(themeProvider.notifier).toggle(),
     );

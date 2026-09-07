@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wp_world/utils/responsive.dart';
+import 'package:wp_world/utils/icon_sizes.dart';
 
 import 'language_toggle.dart';
 import 'theme_toggle.dart';
@@ -13,6 +14,10 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
     final isMobile = Responsive.isMobile;
     final isTablet = Responsive.isTablet;
     final isDesktop = Responsive.isDesktop;
+
+    final notMobileOrTablet = !isMobile && !isTablet;
+    final modSpace = notMobileOrTablet ? 0.w : 12.w;
+    final toggleToHambSpace = notMobileOrTablet ? 24.w : 0.w;
 
     return Semantics(
       container: true,
@@ -61,21 +66,21 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
             Row(
               children: [
                 const LanguageToggle(),
-                SizedBox(width: 12.w),
+                SizedBox(width: modSpace),
                 const ThemeToggle(),
 
-                if (isMobile || isTablet)
-                  Semantics(
-                    button: true,
-                    label: 'Open navigation menu',
-                    child: IconButton(
-                      iconSize: 28.sp,
-                      icon: const Icon(Icons.menu),
-                      onPressed: () {
-                        // Later: open drawer or bottom sheet
-                      },
-                    ),
+                if (isMobile || isTablet) SizedBox(width: toggleToHambSpace),
+                Semantics(
+                  button: true,
+                  label: 'Open navigation menu',
+                  child: IconButton(
+                    iconSize: IconSizes.standard,
+                    icon: const Icon(Icons.menu),
+                    onPressed: () {
+                      // Later: open drawer or bottom sheet
+                    },
                   ),
+                ),
               ],
             ),
           ],
