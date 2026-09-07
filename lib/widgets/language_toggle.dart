@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_country_flags/flutter_country_flags.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:wp_world/utils/responsive.dart';
 
 import '../state/language_provider.dart';
 
@@ -11,6 +12,9 @@ class LanguageToggle extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final lang = ref.watch(languageProvider);
+    final isMobile = Responsive.isMobile;
+    final isTablet = Responsive.isTablet;
+    final notMobileOrTablet = !isMobile && !isTablet;
 
     return DropdownButton<String>(
       value: lang,
@@ -21,12 +25,12 @@ class LanguageToggle extends ConsumerWidget {
           child: Row(
             children: [
               FlutterCountryFlags(
-                country: Country.unitedStates,
-                width: 24,
-                height: 16,
+                country: Country.unitedStates, // Type-safe enum
+                width: 24.w,
+                height: 16.h,
               ),
-              SizedBox(width: 8),
-              const Text("English"),
+              SizedBox(width: 8.w),
+              if (notMobileOrTablet) const Text("English"),
             ],
           ),
         ),
@@ -36,11 +40,11 @@ class LanguageToggle extends ConsumerWidget {
             children: [
               FlutterCountryFlags(
                 country: Country.finland,
-                width: 24,
-                height: 16,
+                width: 24.w,
+                height: 16.h,
               ),
-              const SizedBox(width: 8),
-              const Text("Suomi"),
+              SizedBox(width: 8.w),
+              if (notMobileOrTablet) const Text("Suomi"),
             ],
           ),
         ),
