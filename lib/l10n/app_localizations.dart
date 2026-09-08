@@ -116,6 +116,30 @@ abstract class AppLocalizations {
   /// **'This is my portfolio.'**
   String get description;
 
+  /// Home page title
+  ///
+  /// In en, this message translates to:
+  /// **'Home'**
+  String get pagesHome;
+
+  /// About page title
+  ///
+  /// In en, this message translates to:
+  /// **'About'**
+  String get pagesAbout;
+
+  /// Projects page title
+  ///
+  /// In en, this message translates to:
+  /// **'Projects'**
+  String get pagesProjects;
+
+  /// Contact page title
+  ///
+  /// In en, this message translates to:
+  /// **'Contact'**
+  String get pagesContact;
+
   /// Toggle theme title
   ///
   /// In en, this message translates to:
@@ -127,6 +151,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Change language'**
   String get languageToggle;
+
+  /// Change language title to English
+  ///
+  /// In en, this message translates to:
+  /// **'Change language to English'**
+  String get languageToggleEN;
+
+  /// Change language title to Finnish
+  ///
+  /// In en, this message translates to:
+  /// **'Change language to Finnish'**
+  String get languageToggleFI;
+
+  /// Short title for Finnish language in Finnish
+  ///
+  /// In en, this message translates to:
+  /// **'FI'**
+  String get languageFI;
+
+  /// Full title for Finnish language in Finnish
+  ///
+  /// In en, this message translates to:
+  /// **'Finnish'**
+  String get languageFinnish;
+
+  /// Short title for English language in English
+  ///
+  /// In en, this message translates to:
+  /// **'EN'**
+  String get languageEN;
+
+  /// Full title for English language in English
+  ///
+  /// In en, this message translates to:
+  /// **'English'**
+  String get languageEnglish;
+
+  /// Open menu button
+  ///
+  /// In en, this message translates to:
+  /// **'Open the menu'**
+  String get openMenu;
 }
 
 class _AppLocalizationsDelegate

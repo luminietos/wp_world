@@ -12,6 +12,22 @@
   "@description": {
     "description": "The description"
   },
+  "pagesHome": "Home",
+  "@pagesHome": {
+    "description": "Home page title"
+  },
+  "pagesAbout": "About",
+  "@pagesAbout": {
+    "description": "About page title"
+  },
+  "pagesProjects": "Projects",
+  "@pagesProjects": {
+    "description": "Projects page title"
+  },
+  "pagesContact": "Contact",
+  "@pagesContact": {
+    "description": "Contact page title"
+  },
   "themeToggle": "Toggle theme",
   "@themeToggle": {
     "description": "Toggle theme title"
@@ -19,5 +35,33 @@
   "languageToggle": "Change language",
   "@languageToggle": {
     "description": "Change language title"
+  },
+  "languageToggleEN": "Change language to English",
+  "@languageToggleEN": {
+    "description": "Change language title to English"
+  },
+  "languageToggleFI": "Change language to Finnish",
+  "@languageToggleFI": {
+    "description": "Change language title to Finnish"
+  },
+  "languageFI": "FI",
+  "@languageFI": {
+    "description": "Short title for Finnish language in Finnish"
+  },
+  "languageFinnish": "Finnish",
+  "@languageFinnish": {
+    "description": "Full title for Finnish language in Finnish"
+  },
+  "languageEN": "EN",
+  "@languageEN": {
+    "description": "Short title for English language in English"
+  },
+  "languageEnglish": "English",
+  "@languageEnglish": {
+    "description": "Full title for English language in English"
+  },
+  "openMenu": "Open the menu",
+  "@openMenu": {
+    "description": "Open menu button"
   }
 }

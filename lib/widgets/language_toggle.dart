@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wp_world/utils/responsive.dart';
 
 import '../state/language_provider.dart';
+import 'package:wp_world/l10n/app_localizations.dart';
 
 class LanguageToggle extends ConsumerWidget {
   const LanguageToggle({super.key});
@@ -12,6 +13,8 @@ class LanguageToggle extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final lang = ref.watch(languageProvider);
+    final localizations = AppLocalizations.of(context)!;
+
     final isMobile = Responsive.isMobile;
     final isTablet = Responsive.isTablet;
     final notMobileOrTablet = !isMobile && !isTablet;
@@ -31,7 +34,9 @@ class LanguageToggle extends ConsumerWidget {
                 height: 16.0,
               ),
               SizedBox(width: modSpace),
-              notMobileOrTablet ? const Text("English") : const Text("EN"),
+              notMobileOrTablet
+                  ? Text(localizations.languageEnglish)
+                  : Text(localizations.languageEN),
             ],
           ),
         ),
@@ -45,7 +50,9 @@ class LanguageToggle extends ConsumerWidget {
                 height: 16.0,
               ),
               SizedBox(width: modSpace),
-              notMobileOrTablet ? const Text("Suomi") : const Text("FI"),
+              notMobileOrTablet
+                  ? Text(localizations.languageFinnish)
+                  : Text(localizations.languageFI),
             ],
           ),
         ),

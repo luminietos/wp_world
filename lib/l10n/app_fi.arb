@@ -12,6 +12,22 @@
   "@description": {
     "description": "Kuvaus"
   },
+  "pagesHome": "Koti",
+  "@pagesHome": {
+    "description": "Koti-sivun otsikko"
+  },
+  "pagesAbout": "Minusta",
+  "@pagesAbout": {
+    "description": "Minusta-sivun otsikko"
+  },
+  "pagesProjects": "Projektit",
+  "@pagesProjects": {
+    "description": "Projektit-sivun otsikko"
+  },
+  "pagesContact": "Ota yhteyttä",
+  "@pagesContact": {
+    "description": "Ota yhteyttä-sivun otsikko"
+  },
   "themeToggle": "Vaihda teema",
   "@themeToggle": {
     "description": "Teemanvaihdon otsikko"
@@ -19,5 +35,33 @@
   "languageToggle": "Vaihda kieli",
   "@languageToggle": {
     "description": "Kielenvaihdon otsikko"
+  },
+  "languageToggleEN": "Vaihda kieli englanniksi",
+  "@languageToggleEN": {
+    "description": "Kielenvaihdon otsikko englanniksi"
+  },
+  "languageToggleFI": "Vaihda kieli suomeksi",
+  "@languageToggleFI": {
+    "description": "Kielenvaihdon otsikko suomeksi"
+  },
+  "languageFI": "FI",
+  "@languageFI": {
+    "description": "Suomenkielen lyhyt otsikko suomeksi"
+  },
+  "languageFinnish": "Suomi",
+  "@languageFinnish": {
+    "description": "Suomenkielen koko otsikko suomeksi"
+  },
+  "languageEN": "EN",
+  "@languageEN": {
+    "description": "Englanninkielen lyhyt otsikko englanniksi"
+  },
+  "languageEnglish": "Englanti",
+  "@languageEnglish": {
+    "description": "Englanninkielen koko otsikko englanniksi"
+  },
+  "openMenu": "Avaa valikko",
+  "@openMenu": {
+    "description": "Avaa valikko -nappi"
   }
 }

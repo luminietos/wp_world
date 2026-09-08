@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:wp_world/l10n/app_localizations.dart';
 import 'package:wp_world/utils/responsive.dart';
 import 'package:wp_world/utils/icon_sizes.dart';
 
@@ -11,13 +12,14 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    final localizations = AppLocalizations.of(context)!;
+
     final isMobile = Responsive.isMobile;
     final isTablet = Responsive.isTablet;
     final isDesktop = Responsive.isDesktop;
 
     final notMobileOrTablet = !isMobile && !isTablet;
     final modSpace = notMobileOrTablet ? 0.w : 12.w;
-    final toggleToHambSpace = notMobileOrTablet ? 24.w : 0.w;
 
     return Semantics(
       container: true,
@@ -54,33 +56,33 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
             if (isDesktop)
               Row(
                 children: [
-                  _NavItem(label: "Home"),
+                  _NavItem(label: localizations.pagesHome),
                   SizedBox(width: 32.w),
-                  _NavItem(label: "Projects"),
+                  _NavItem(label: localizations.pagesProjects),
                   SizedBox(width: 32.w),
-                  _NavItem(label: "Contact"),
+                  _NavItem(label: localizations.pagesContact),
                 ],
               ),
 
             // Toggles + hamburger
             Row(
               children: [
-                const LanguageToggle(),
-                SizedBox(width: modSpace),
                 const ThemeToggle(),
+                SizedBox(width: modSpace),
+                const LanguageToggle(),
 
-                if (isMobile || isTablet) SizedBox(width: toggleToHambSpace),
-                Semantics(
-                  button: true,
-                  label: 'Open navigation menu',
-                  child: IconButton(
-                    iconSize: IconSizes.standard,
-                    icon: const Icon(Icons.menu),
-                    onPressed: () {
-                      // Later: open drawer or bottom sheet
-                    },
+                if (isMobile || isTablet)
+                  Semantics(
+                    button: true,
+                    label: localizations.openMenu,
+                    child: IconButton(
+                      iconSize: IconSizes.standard,
+                      icon: const Icon(Icons.menu),
+                      onPressed: () {
+                        // Later: open drawer or bottom sheet
+                      },
+                    ),
                   ),
-                ),
               ],
             ),
           ],
