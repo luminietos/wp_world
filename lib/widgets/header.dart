@@ -13,6 +13,7 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     final localizations = AppLocalizations.of(context)!;
+    final colors = Theme.of(context).colorScheme;
 
     final isMobile = Responsive.isMobile;
     final isTablet = Responsive.isTablet;
@@ -20,6 +21,7 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
 
     final notMobileOrTablet = !isMobile && !isTablet;
     final modSpace = notMobileOrTablet ? 0.w : 12.w;
+    final modSpace2 = notMobileOrTablet ? 24.w : 12.w;
 
     return Semantics(
       container: true,
@@ -28,7 +30,7 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
         height: preferredSize.height,
         padding: EdgeInsets.symmetric(horizontal: 24.w),
         decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.surface,
+          color: colors.surface,
           boxShadow: [
             BoxShadow(
               color: Colors.black.withValues(alpha: 0.05),
@@ -48,6 +50,7 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
                 style: TextStyle(
                   fontSize: isMobile ? 20.sp : 28.sp,
                   fontWeight: FontWeight.bold,
+                  color: colors.onSurface,
                 ),
               ),
             ),
@@ -64,13 +67,16 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
                 ],
               ),
 
-            // Toggles + hamburger
             Row(
               children: [
+                // TOGGLES
                 const ThemeToggle(),
-                SizedBox(width: modSpace),
+                SizedBox(width: modSpace2),
                 const LanguageToggle(),
 
+                SizedBox(width: modSpace),
+
+                // HAMBURGER MENU (mobile/tablet)
                 if (isMobile || isTablet)
                   Semantics(
                     button: true,
@@ -78,6 +84,7 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
                     child: IconButton(
                       iconSize: IconSizes.standard,
                       icon: const Icon(Icons.menu),
+                      color: colors.onSurface,
                       onPressed: () {
                         // Later: open drawer or bottom sheet
                       },

@@ -9,11 +9,13 @@ class ThemeToggle extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final mode = ref.watch(themeProvider);
+    final colors = Theme.of(context).colorScheme;
 
     return IconButton(
       iconSize: IconSizes.standard,
       icon: Icon(mode == ThemeMode.dark ? Icons.dark_mode : Icons.light_mode),
       onPressed: () => ref.read(themeProvider.notifier).toggle(),
+      color: colors.onSurface,
     );
   }
 }

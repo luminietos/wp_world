@@ -14,6 +14,7 @@ class LanguageToggle extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final lang = ref.watch(languageProvider);
     final localizations = AppLocalizations.of(context)!;
+    final textTheme = Theme.of(context).textTheme;
 
     final mode = Theme.of(context).brightness;
     final isDarkMode = mode == Brightness.dark;
@@ -39,8 +40,14 @@ class LanguageToggle extends ConsumerWidget {
               ),
               SizedBox(width: modSpace),
               notMobileOrTablet
-                  ? Text(localizations.languageEnglish)
-                  : Text(localizations.languageEN),
+                  ? Text(
+                      localizations.languageEnglish,
+                      style: textTheme.labelSmall,
+                    )
+                  : Text(
+                      localizations.languageEN,
+                      style: textTheme.headlineSmall,
+                    ),
             ],
           ),
         ),
@@ -48,16 +55,29 @@ class LanguageToggle extends ConsumerWidget {
           value: "fi",
           child: Row(
             children: [
-              FlutterCountryFlags(
-                country: Country.finland,
-                width: 24.0,
-                height: 16.0,
-                fallbackText: localizations.languageToggleFlagError,
+              Container(
+                decoration: BoxDecoration(
+                  boxShadow: !isDarkMode
+                      ? [BoxShadow(color: Colors.black.withValues(alpha: 0.08))]
+                      : null,
+                ),
+                child: FlutterCountryFlags(
+                  country: Country.finland,
+                  width: 24.0,
+                  height: 16.0,
+                  fallbackText: localizations.languageToggleFlagError,
+                ),
               ),
               SizedBox(width: modSpace),
               notMobileOrTablet
-                  ? Text(localizations.languageFinnish)
-                  : Text(localizations.languageFI),
+                  ? Text(
+                      localizations.languageFinnish,
+                      style: textTheme.labelSmall,
+                    )
+                  : Text(
+                      localizations.languageFI,
+                      style: textTheme.headlineSmall,
+                    ),
             ],
           ),
         ),
