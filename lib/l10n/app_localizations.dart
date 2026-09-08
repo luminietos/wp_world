@@ -152,6 +152,18 @@ abstract class AppLocalizations {
   /// **'Change language'**
   String get languageToggle;
 
+  /// Language change error message
+  ///
+  /// In en, this message translates to:
+  /// **'Language change failed'**
+  String get languageToggleError;
+
+  /// Language change error message when flag is not found
+  ///
+  /// In en, this message translates to:
+  /// **'No flag'**
+  String get languageToggleFlagError;
+
   /// Change language title to English
   ///
   /// In en, this message translates to:

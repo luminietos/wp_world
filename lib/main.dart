@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:wp_world/theme/app_color_scheme.dart';
 import 'package:wp_world/theme/app_text_theme.dart';
 import 'l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -34,12 +35,17 @@ class MyApp extends ConsumerWidget {
           theme: ThemeData(
             brightness: Brightness.light,
             fontFamily: 'NotoSans',
+            colorScheme: AppColorScheme.light,
             textTheme: AppTextTheme.textTheme,
+            useMaterial3: true,
           ),
+
           darkTheme: ThemeData(
             brightness: Brightness.dark,
             fontFamily: 'NotoSans',
+            colorScheme: AppColorScheme.dark,
             textTheme: AppTextTheme.textTheme,
+            useMaterial3: true,
           ),
 
           // Convert your string to a Locale

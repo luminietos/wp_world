@@ -36,6 +36,14 @@
   "@languageToggle": {
     "description": "Kielenvaihdon otsikko"
   },
+  "languageToggleError": "Kielenvaihto epäonnistui",
+  "@languageToggleError": {
+    "description": "Kielenvaihdon virheilmoitus"
+  },
+  "languageToggleFlagError": "Ei lippua",
+  "@languageToggleFlagError": {
+    "description": "Kielenvaihdon virheilmoitus, kun lippua ei löydy"
+  },
   "languageToggleEN": "Vaihda kieli englanniksi",
   "@languageToggleEN": {
     "description": "Kielenvaihdon otsikko englanniksi"

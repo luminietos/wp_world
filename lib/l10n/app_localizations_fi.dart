@@ -36,6 +36,12 @@ class AppLocalizationsFi extends AppLocalizations {
   String get languageToggle => 'Vaihda kieli';
 
   @override
+  String get languageToggleError => 'Kielenvaihto epäonnistui';
+
+  @override
+  String get languageToggleFlagError => 'Ei lippua';
+
+  @override
   String get languageToggleEN => 'Vaihda kieli englanniksi';
 
   @override

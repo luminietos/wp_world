@@ -36,6 +36,14 @@
   "@languageToggle": {
     "description": "Change language title"
   },
+  "languageToggleError": "Language change failed",
+  "@languageToggleError": {
+    "description": "Language change error message"
+  },
+  "languageToggleFlagError": "No flag",
+  "@languageToggleFlagError": {
+    "description": "Language change error message when flag is not found"
+  },
   "languageToggleEN": "Change language to English",
   "@languageToggleEN": {
     "description": "Change language title to English"

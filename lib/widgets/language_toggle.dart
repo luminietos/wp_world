@@ -15,6 +15,9 @@ class LanguageToggle extends ConsumerWidget {
     final lang = ref.watch(languageProvider);
     final localizations = AppLocalizations.of(context)!;
 
+    final mode = Theme.of(context).brightness;
+    final isDarkMode = mode == Brightness.dark;
+
     final isMobile = Responsive.isMobile;
     final isTablet = Responsive.isTablet;
     final notMobileOrTablet = !isMobile && !isTablet;
@@ -32,6 +35,7 @@ class LanguageToggle extends ConsumerWidget {
                 country: Country.unitedStates, // Type-safe enum
                 width: 24.0,
                 height: 16.0,
+                fallbackText: localizations.languageToggleFlagError,
               ),
               SizedBox(width: modSpace),
               notMobileOrTablet
@@ -48,6 +52,7 @@ class LanguageToggle extends ConsumerWidget {
                 country: Country.finland,
                 width: 24.0,
                 height: 16.0,
+                fallbackText: localizations.languageToggleFlagError,
               ),
               SizedBox(width: modSpace),
               notMobileOrTablet

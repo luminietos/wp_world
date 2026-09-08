@@ -36,6 +36,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get languageToggle => 'Change language';
 
   @override
+  String get languageToggleError => 'Language change failed';
+
+  @override
+  String get languageToggleFlagError => 'No flag';
+
+  @override
   String get languageToggleEN => 'Change language to English';
 
   @override
