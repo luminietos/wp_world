@@ -61,4 +61,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get openMenu => 'Open the menu';
+
+  @override
+  String get responsiveGridLayout => 'Responsive grid layout';
+
+  @override
+  String get pageContentWrapper => 'Page content wrapper';
 }

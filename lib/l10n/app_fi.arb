@@ -71,5 +71,13 @@
   "openMenu": "Avaa valikko",
   "@openMenu": {
     "description": "Avaa valikko -nappi"
+  },
+  "responsiveGridLayout": "Responsiivinen ruudukkoasettelu",
+  "@responsiveGridLayout": {
+    "description": "Label for the responsive grid layout"
+  },
+  "pageContentWrapper": "Sivun sisältökehys",
+  "@pageContentWrapper": {
+    "description": "Sivun kehys"
   }
 }

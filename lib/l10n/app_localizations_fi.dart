@@ -61,4 +61,10 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get openMenu => 'Avaa valikko';
+
+  @override
+  String get responsiveGridLayout => 'Responsiivinen ruudukkoasettelu';
+
+  @override
+  String get pageContentWrapper => 'Sivun sisältökehys';
 }

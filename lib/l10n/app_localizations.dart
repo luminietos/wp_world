@@ -205,6 +205,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Open the menu'**
   String get openMenu;
+
+  /// Label for the responsive grid layout
+  ///
+  /// In en, this message translates to:
+  /// **'Responsive grid layout'**
+  String get responsiveGridLayout;
+
+  /// Label for the page wrapper
+  ///
+  /// In en, this message translates to:
+  /// **'Page content wrapper'**
+  String get pageContentWrapper;
 }
 
 class _AppLocalizationsDelegate
