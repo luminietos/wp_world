@@ -5,8 +5,8 @@ import 'package:wp_world/widgets/page_wrapper.dart';
 import 'package:wp_world/widgets/section.dart';
 
 @RoutePage()
-class AboutPage extends StatelessWidget {
-  const AboutPage({super.key});
+class ContactPage extends StatelessWidget {
+  const ContactPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class AboutPage extends StatelessWidget {
       body: PageWrapper(
         child: Section(
           child: Text(
-            'About',
+            'Contact',
             style: Theme.of(context).textTheme.headlineLarge,
           ),
         ),

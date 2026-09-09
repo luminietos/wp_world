@@ -1,8 +1,11 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wp_world/l10n/app_localizations.dart';
+import 'package:wp_world/router/app_router.dart';
 import 'package:wp_world/utils/responsive.dart';
 import 'package:wp_world/utils/icon_sizes.dart';
+import 'package:wp_world/utils/nav_item.dart';
 
 import 'language_toggle.dart';
 import 'theme_toggle.dart';
@@ -59,11 +62,25 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
             if (isDesktop)
               Row(
                 children: [
-                  _NavItem(label: localizations.pagesHome),
+                  _NavItem(
+                    type: NavItemType.home,
+                    label: localizations.pagesHome,
+                  ),
                   SizedBox(width: 32.w),
-                  _NavItem(label: localizations.pagesProjects),
+                  _NavItem(
+                    type: NavItemType.projects,
+                    label: localizations.pagesProjects,
+                  ),
                   SizedBox(width: 32.w),
-                  _NavItem(label: localizations.pagesContact),
+                  _NavItem(
+                    type: NavItemType.about,
+                    label: localizations.pagesAbout,
+                  ),
+                  SizedBox(width: 32.w),
+                  _NavItem(
+                    type: NavItemType.contact,
+                    label: localizations.pagesContact,
+                  ),
                 ],
               ),
 
@@ -103,9 +120,10 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
 }
 
 class _NavItem extends StatelessWidget {
+  final NavItemType type;
   final String label;
 
-  const _NavItem({required this.label});
+  const _NavItem({required this.type, required this.label});
 
   @override
   Widget build(BuildContext context) {
@@ -114,13 +132,30 @@ class _NavItem extends StatelessWidget {
       label: label,
       child: InkWell(
         onTap: () {
-          // Later: navigation
+          switch (type) {
+            case NavItemType.home:
+              context.router.push(const HomeRoute());
+              break;
+            case NavItemType.projects:
+              context.router.push(const ProjectsRoute());
+              break;
+            case NavItemType.about:
+              context.router.push(const AboutRoute());
+              break;
+            case NavItemType.contact:
+              context.router.push(const ContactRoute());
+              break;
+          }
         },
         child: Padding(
           padding: EdgeInsets.symmetric(vertical: 8.h),
           child: Text(
             label,
-            style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w500),
+            style: TextStyle(
+              fontSize: 18.sp,
+              fontWeight: FontWeight.w500,
+              color: Theme.of(context).colorScheme.onSurface,
+            ),
           ),
         ),
       ),

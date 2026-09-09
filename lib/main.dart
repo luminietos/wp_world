@@ -20,47 +20,54 @@ class MyApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final appRouter = AppRouter();
+
     return ScreenUtilInit(
       designSize: const Size(1440, 1024), // desktop-first
       minTextAdapt: true,
-      builder: (_, __) {
-        final themeMode = ref.watch(themeProvider);
-        final lang = ref.watch(languageProvider); // "en" or "fi"
+      splitScreenMode: true,
 
-        return MaterialApp.router(
-          debugShowCheckedModeBanner: false,
-          themeMode: themeMode,
+      // IMPORTANT FIX: Use child instead of builder
+      builder: (_, child) => child!,
+      child: Builder(
+        builder: (context) {
+          final themeMode = ref.watch(themeProvider);
+          final lang = ref.watch(languageProvider); // "en" or "fi"
 
-          theme: ThemeData(
-            brightness: Brightness.light,
-            fontFamily: 'NotoSans',
-            colorScheme: AppColorScheme.light,
-            textTheme: AppTextTheme.textTheme,
-            useMaterial3: true,
-          ),
+          return MaterialApp.router(
+            debugShowCheckedModeBanner: false,
+            themeMode: themeMode,
 
-          darkTheme: ThemeData(
-            brightness: Brightness.dark,
-            fontFamily: 'NotoSans',
-            colorScheme: AppColorScheme.dark,
-            textTheme: AppTextTheme.textTheme,
-            useMaterial3: true,
-          ),
+            theme: ThemeData(
+              brightness: Brightness.light,
+              fontFamily: 'NotoSans',
+              colorScheme: AppColorScheme.light,
+              textTheme: AppTextTheme.textTheme,
+              useMaterial3: true,
+            ),
 
-          locale: Locale(lang),
-          supportedLocales: const [Locale('en'), Locale('fi')],
+            darkTheme: ThemeData(
+              brightness: Brightness.dark,
+              fontFamily: 'NotoSans',
+              colorScheme: AppColorScheme.dark,
+              textTheme: AppTextTheme.textTheme,
+              useMaterial3: true,
+            ),
 
-          localizationsDelegates: const [
-            AppLocalizations.delegate,
-            GlobalMaterialLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
-          ],
+            locale: Locale(lang),
+            supportedLocales: const [Locale('en'), Locale('fi')],
+            localizationsDelegates: const [
+              AppLocalizations.delegate,
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+            ],
 
-          routerDelegate: AppRouter().delegate(),
-          routeInformationParser: AppRouter().defaultRouteParser(),
-        );
-      },
+            routerDelegate: appRouter.delegate(),
+            routeInformationParser: appRouter.defaultRouteParser(),
+          );
+        },
+      ),
     );
   }
 }
