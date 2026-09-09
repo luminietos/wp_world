@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:wp_world/router/app_router.dart';
 import 'package:wp_world/theme/app_color_scheme.dart';
 import 'package:wp_world/theme/app_text_theme.dart';
 import 'l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-
-import 'package:wp_world/pages/home_page.dart';
 
 import 'state/language_provider.dart';
 import 'state/theme_provider.dart';
@@ -28,7 +27,7 @@ class MyApp extends ConsumerWidget {
         final themeMode = ref.watch(themeProvider);
         final lang = ref.watch(languageProvider); // "en" or "fi"
 
-        return MaterialApp(
+        return MaterialApp.router(
           debugShowCheckedModeBanner: false,
           themeMode: themeMode,
 
@@ -48,9 +47,7 @@ class MyApp extends ConsumerWidget {
             useMaterial3: true,
           ),
 
-          // Convert your string to a Locale
           locale: Locale(lang),
-
           supportedLocales: const [Locale('en'), Locale('fi')],
 
           localizationsDelegates: const [
@@ -60,7 +57,8 @@ class MyApp extends ConsumerWidget {
             GlobalCupertinoLocalizations.delegate,
           ],
 
-          home: const HomePage(),
+          routerDelegate: AppRouter().delegate(),
+          routeInformationParser: AppRouter().defaultRouteParser(),
         );
       },
     );
