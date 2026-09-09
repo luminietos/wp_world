@@ -5,6 +5,8 @@ import 'package:wp_world/pages/home_page.dart';
 import 'package:wp_world/pages/about_page.dart';
 import 'package:wp_world/pages/projects_page.dart';
 import 'package:wp_world/pages/contact_page.dart';
+import 'package:wp_world/widgets/app_shell.dart';
+import 'package:wp_world/router/transitions.dart'; // custom transition
 
 part 'app_router.gr.dart';
 
@@ -14,11 +16,46 @@ class AppRouter extends _$AppRouter {
 
   @override
   List<AutoRoute> get routes => [
-    AutoRoute(page: HomeRoute.page, initial: true),
-    AutoRoute(page: ProjectsRoute.page),
-    AutoRoute(page: AboutRoute.page),
-    AutoRoute(page: ContactRoute.page),
+    // Shell route: persistent Scaffold + Header + PageWrapper
+    AutoRoute(
+      page: AppShellRoute.page,
+      path: '/',
+      maintainState: true,
+      children: [
+        CustomRoute(
+          page: HomeRoute.page,
+          path: '',
+          initial: true,
+          maintainState: true,
+          transitionsBuilder: noOverlayFadeTransition,
+          durationInMilliseconds: 100,
+          // reverseDurationInMilliseconds: 100,
+        ),
+        CustomRoute(
+          page: ProjectsRoute.page,
+          path: 'projects',
+          maintainState: true,
+          transitionsBuilder: noOverlayFadeTransition,
+          durationInMilliseconds: 100,
+          // reverseDurationInMilliseconds: 100,
+        ),
+        CustomRoute(
+          page: AboutRoute.page,
+          path: 'about',
+          maintainState: true,
+          transitionsBuilder: noOverlayFadeTransition,
+          durationInMilliseconds: 100,
+          // reverseDurationInMilliseconds: 100,
+        ),
+        CustomRoute(
+          page: ContactRoute.page,
+          path: 'contact',
+          maintainState: true,
+          transitionsBuilder: noOverlayFadeTransition,
+          durationInMilliseconds: 100,
+          // reverseDurationInMilliseconds: 100,
+        ),
+      ],
+    ),
   ];
 }
-
-// NOTE: Make sure you use the right syntax for AutoRoute v7.8.0 !!

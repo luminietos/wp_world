@@ -20,8 +20,6 @@ class MyApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final appRouter = AppRouter();
-
     return ScreenUtilInit(
       designSize: const Size(1440, 1024), // desktop-first
       minTextAdapt: true,
@@ -29,45 +27,56 @@ class MyApp extends ConsumerWidget {
 
       // IMPORTANT FIX: Use child instead of builder
       builder: (_, child) => child!,
-      child: Builder(
-        builder: (context) {
-          final themeMode = ref.watch(themeProvider);
-          final lang = ref.watch(languageProvider); // "en" or "fi"
+      child: _AppRoot(ref), // ⭐ persistent router lives here
+    );
+  }
+}
 
-          return MaterialApp.router(
-            debugShowCheckedModeBanner: false,
-            themeMode: themeMode,
+class _AppRoot extends StatelessWidget {
+  final WidgetRef ref;
 
-            theme: ThemeData(
-              brightness: Brightness.light,
-              fontFamily: 'NotoSans',
-              colorScheme: AppColorScheme.light,
-              textTheme: AppTextTheme.textTheme,
-              useMaterial3: true,
-            ),
+  // ⭐ FIX: persistent router (created once)
+  final AppRouter appRouter = AppRouter();
 
-            darkTheme: ThemeData(
-              brightness: Brightness.dark,
-              fontFamily: 'NotoSans',
-              colorScheme: AppColorScheme.dark,
-              textTheme: AppTextTheme.textTheme,
-              useMaterial3: true,
-            ),
+  _AppRoot(this.ref);
 
-            locale: Locale(lang),
-            supportedLocales: const [Locale('en'), Locale('fi')],
-            localizationsDelegates: const [
-              AppLocalizations.delegate,
-              GlobalMaterialLocalizations.delegate,
-              GlobalWidgetsLocalizations.delegate,
-              GlobalCupertinoLocalizations.delegate,
-            ],
+  @override
+  Widget build(BuildContext context) {
+    final themeMode = ref.watch(themeProvider);
+    final lang = ref.watch(languageProvider);
 
-            routerDelegate: appRouter.delegate(),
-            routeInformationParser: appRouter.defaultRouteParser(),
-          );
-        },
+    return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
+      themeMode: themeMode,
+
+      theme: ThemeData(
+        brightness: Brightness.light,
+        fontFamily: 'NotoSans',
+        colorScheme: AppColorScheme.light,
+        textTheme: AppTextTheme.textTheme,
+        useMaterial3: true,
       ),
+
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+        fontFamily: 'NotoSans',
+        colorScheme: AppColorScheme.dark,
+        textTheme: AppTextTheme.textTheme,
+        useMaterial3: true,
+      ),
+
+      locale: Locale(lang),
+      supportedLocales: const [Locale('en'), Locale('fi')],
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+
+      // ⭐ FIX: router is stable, no rebuild → no zoom effect
+      routerDelegate: appRouter.delegate(),
+      routeInformationParser: appRouter.defaultRouteParser(),
     );
   }
 }

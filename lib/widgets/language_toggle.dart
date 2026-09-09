@@ -42,11 +42,11 @@ class LanguageToggle extends ConsumerWidget {
               notMobileOrTablet
                   ? Text(
                       localizations.languageEnglish,
-                      style: textTheme.labelSmall,
+                      style: textTheme.titleMedium,
                     )
                   : Text(
                       localizations.languageEN,
-                      style: textTheme.headlineSmall,
+                      style: textTheme.titleMedium,
                     ),
             ],
           ),
@@ -72,11 +72,11 @@ class LanguageToggle extends ConsumerWidget {
               notMobileOrTablet
                   ? Text(
                       localizations.languageFinnish,
-                      style: textTheme.labelSmall,
+                      style: textTheme.titleMedium,
                     )
                   : Text(
                       localizations.languageFI,
-                      style: textTheme.headlineSmall,
+                      style: textTheme.titleMedium,
                     ),
             ],
           ),

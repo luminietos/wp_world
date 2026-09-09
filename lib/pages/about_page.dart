@@ -1,7 +1,5 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:wp_world/widgets/header.dart';
-import 'package:wp_world/widgets/page_wrapper.dart';
 import 'package:wp_world/widgets/section.dart';
 
 @RoutePage()
@@ -10,16 +8,8 @@ class AboutPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const Header(),
-      body: PageWrapper(
-        child: Section(
-          child: Text(
-            'About',
-            style: Theme.of(context).textTheme.headlineLarge,
-          ),
-        ),
-      ),
+    return Section(
+      child: Text('About', style: Theme.of(context).textTheme.headlineLarge),
     );
   }
 }
