@@ -200,11 +200,29 @@ abstract class AppLocalizations {
   /// **'English'**
   String get languageEnglish;
 
-  /// Open menu button
+  /// Open menu label
   ///
   /// In en, this message translates to:
   /// **'Open the menu'**
   String get openMenu;
+
+  /// Close menu label
+  ///
+  /// In en, this message translates to:
+  /// **'Close the menu'**
+  String get closeMenu;
+
+  /// Menu title
+  ///
+  /// In en, this message translates to:
+  /// **'Menu'**
+  String get menuTitle;
+
+  /// Menu description
+  ///
+  /// In en, this message translates to:
+  /// **'Where to next?'**
+  String get menuDescription;
 
   /// Label for the responsive grid layout
   ///

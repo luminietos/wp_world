@@ -70,7 +70,19 @@
   },
   "openMenu": "Open the menu",
   "@openMenu": {
-    "description": "Open menu button"
+    "description": "Open menu label"
+  },
+  "closeMenu": "Close the menu",
+  "@closeMenu": {
+    "description": "Close menu label"
+  },
+  "menuTitle": "Menu",
+  "@menuTitle": {
+    "description": "Menu title"
+  },
+  "menuDescription": "Where to next?",
+  "@menuDescription": {
+    "description": "Menu description"
   },
   "responsiveGridLayout": "Responsive grid layout",
   "@responsiveGridLayout": {

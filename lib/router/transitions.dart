@@ -1,3 +1,5 @@
+// CUSTOM PAGE TRANSITION/S FOR AUTOROUTE
+
 import 'package:flutter/material.dart';
 
 /// A custom transition that NEVER overlays the old page.

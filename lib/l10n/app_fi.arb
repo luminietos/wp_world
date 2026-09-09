@@ -72,6 +72,18 @@
   "@openMenu": {
     "description": "Avaa valikko -nappi"
   },
+  "closeMenu": "Sulje valikko",
+  "@closeMenu": {
+    "description": "Sulje valikko -nappi"
+  },
+  "menuTitle": "Valikko",
+  "@menuTitle": {
+    "description": "Valikon otsikko"
+  },
+  "menuDescription": "Minne seuraavaksi?",
+  "@menuDescription": {
+    "description": "Valikon kuvaus"
+  },
   "responsiveGridLayout": "Responsiivinen ruudukkoasettelu",
   "@responsiveGridLayout": {
     "description": "Label for the responsive grid layout"

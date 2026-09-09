@@ -98,12 +98,16 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
                   Semantics(
                     button: true,
                     label: localizations.openMenu,
-                    child: IconButton(
-                      iconSize: IconSizes.standard,
-                      icon: const Icon(Icons.menu),
-                      color: colors.onSurface,
-                      onPressed: () {
-                        // Later: open drawer or bottom sheet
+                    child: Builder(
+                      builder: (context) {
+                        return IconButton(
+                          iconSize: IconSizes.standard,
+                          icon: const Icon(Icons.menu),
+                          color: colors.onSurface,
+                          onPressed: () {
+                            Scaffold.of(context).openEndDrawer(); // now works
+                          },
+                        );
                       },
                     ),
                   ),
