@@ -32,22 +32,35 @@ class MyApp extends ConsumerWidget {
   }
 }
 
-class _AppRoot extends StatelessWidget {
+class _AppRoot extends StatefulWidget {
   final WidgetRef ref;
+  const _AppRoot(this.ref);
 
-  // ⭐ FIX: persistent router (created once)
-  final AppRouter appRouter = AppRouter();
+  @override
+  State<_AppRoot> createState() => _AppRootState();
+}
 
-  _AppRoot(this.ref);
+class _AppRootState extends State<_AppRoot> {
+  late final AppRouter appRouter;
+
+  @override
+  void initState() {
+    super.initState();
+    appRouter = AppRouter(); // created once
+  }
 
   @override
   Widget build(BuildContext context) {
-    final themeMode = ref.watch(themeProvider);
-    final lang = ref.watch(languageProvider);
+    final themeMode = widget.ref.watch(themeProvider);
+    final lang = widget.ref.watch(languageProvider);
 
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       themeMode: themeMode,
+
+      // ⭐ FIX: router is stable, no rebuild → no zoom effect
+      routerDelegate: appRouter.delegate(),
+      routeInformationParser: appRouter.defaultRouteParser(),
 
       theme: ThemeData(
         brightness: Brightness.light,
@@ -73,10 +86,6 @@ class _AppRoot extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-
-      // ⭐ FIX: router is stable, no rebuild → no zoom effect
-      routerDelegate: appRouter.delegate(),
-      routeInformationParser: appRouter.defaultRouteParser(),
     );
   }
 }

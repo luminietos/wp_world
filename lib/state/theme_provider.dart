@@ -2,7 +2,6 @@
 // This file does not have an opinion on typography, spacing, colors, etc.; it just defines the theme mode state & persistence.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod/legacy.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
