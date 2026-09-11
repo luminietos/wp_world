@@ -5,6 +5,8 @@ import 'package:wp_world/l10n/app_localizations.dart';
 import 'package:wp_world/router/app_router.dart';
 import 'package:wp_world/theme/app_interactions.dart';
 import 'package:wp_world/utils/spacing.dart';
+import 'package:wp_world/widgets/components/app_button.dart';
+import 'package:wp_world/widgets/components/app_icon_button.dart';
 
 class MobileDrawer extends StatelessWidget {
   const MobileDrawer({super.key});
@@ -26,7 +28,7 @@ class MobileDrawer extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // ⭐ Accessible Drawer Header
+                // DRAWER HEADER
                 Padding(
                   padding: EdgeInsets.symmetric(
                     vertical: Spacing.lg,
@@ -43,15 +45,12 @@ class MobileDrawer extends StatelessWidget {
                         ),
                       ),
 
-                      Semantics(
-                        button: true,
-                        label: localizations.closeMenu,
-                        child: IconButton(
-                          icon: const Icon(Icons.close),
-                          color: colors.onSurface,
-                          tooltip: localizations.closeMenu,
-                          onPressed: () => Navigator.of(context).pop(),
-                        ),
+                      // CLOSE ICON BTN
+                      AppIconButton(
+                        icon: Icons.menu,
+                        semanticsLabel: localizations.openMenu,
+                        variant: AppIconButtonVariant.subtle,
+                        onPressed: () => Scaffold.of(context).openEndDrawer(),
                       ),
                     ],
                   ),
@@ -101,22 +100,15 @@ class MobileDrawer extends StatelessWidget {
 
                 const Spacer(),
 
-                // ⭐ Close button (Abra rule: must be closable via keyboard)
+                // CLOSE BTN (must be closable via keyboard)
                 Padding(
                   padding: EdgeInsets.all(Spacing.lg),
                   child: Center(
-                    child: Semantics(
-                      button: true,
+                    child: AppButton(
                       label: localizations.closeMenu,
-                      child: OutlinedButton.icon(
-                        icon: const Icon(Icons.close),
-                        label: Text(localizations.closeMenu),
-                        style: OutlinedButton.styleFrom(
-                          side: BorderSide(color: colors.outline),
-                          foregroundColor: colors.onSurface,
-                        ),
-                        onPressed: () => Navigator.of(context).pop(),
-                      ),
+                      icon: Icons.close,
+                      variant: AppButtonVariant.subtle,
+                      onPressed: () => Navigator.of(context).pop(),
                     ),
                   ),
                 ),

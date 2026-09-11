@@ -22,9 +22,15 @@ class PageWrapper extends StatelessWidget {
           vertical: 32,
         ),
         alignment: Alignment.topCenter,
-        child: ConstrainedBox(
-          constraints: BoxConstraints(maxWidth: Layout.maxWidth()),
-          child: child,
+        child: LayoutBuilder(
+          builder: (context, constraints) => SizedBox(
+            width: double.infinity,
+            height: constraints.maxHeight,
+            child: ConstrainedBox(
+              constraints: BoxConstraints(maxWidth: Layout.maxWidth()),
+              child: child,
+            ),
+          ),
         ),
       ),
     );
