@@ -1,0 +1,49 @@
+[
+  {
+    "id": "project_01",
+    "slug": "my-portfolio",
+
+    "name_key": "project01_name",
+    "summary_key": "project01_summary",
+    "purpose_key": "project01_purpose",
+    "actions_key": "project01_actions",
+    "result_key": "project01_result",
+    "date_key": "project01_date",
+    "accessibility_notes_key": "project01_accessibility_notes",
+    "collaboration_key": "project01_collaboration",
+
+    "projectType": "cross_platform",
+    "isOngoing": false,
+
+    "projectLink": "https://luminietos.github.io/wp_world/",
+    "clientOrCompany": "Personal Project",
+    "duration": "August–October 2025",
+
+    "logoPath": "assets/images/logo_myportfolio_black.png",
+
+    "techStack": [
+      { "name": "Flutter", "color": "#2196F3" },
+      { "name": "Dart", "color": "#3F51B5" },
+      { "name": "Lottie", "color": "#FF9800" },
+      { "name": "Figma", "color": "#E91E63" },
+      { "name": "GitHub Pages", "color": "#9E9E9E" }
+    ],
+
+    "rolesStack": ["designer", "developer", "illustrator"],
+    "categories": ["solo", "portfolio", "accessible"],
+
+    "imagePaths": [
+      {
+        "path": "assets/images/wireframe_lowfidelity_myportfolio.jpg",
+        "caption_key": "project01_image1_caption"
+      }
+    ],
+
+    "accessibilityImages": [
+      {
+        "path": "assets/images/accessibility_legislation.jpg",
+        "caption_key": "project01_accessibility_image1_caption"
+      }
+    ]
+  }
+]
