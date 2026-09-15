@@ -1,9 +1,11 @@
 // DEFINE ALL ROUTES HERE
 
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter/material.dart';
 import 'package:wp_world/pages/home_page.dart';
 import 'package:wp_world/pages/about_page.dart';
 import 'package:wp_world/pages/projects_page.dart';
+import 'package:wp_world/pages/case_study_page.dart';
 import 'package:wp_world/pages/contact_page.dart';
 import 'package:wp_world/widgets/app_shell.dart';
 import 'package:wp_world/router/transitions.dart'; // custom transition
@@ -39,6 +41,14 @@ class AppRouter extends _$AppRouter {
           durationInMilliseconds: 100,
           // reverseDurationInMilliseconds: 100,
         ),
+        CustomRoute(
+          page: CaseStudyRoute.page,
+          path: 'projects/:slug',
+          maintainState: true,
+          transitionsBuilder: noOverlayFadeTransition,
+          durationInMilliseconds: 100,
+        ),
+
         CustomRoute(
           page: AboutRoute.page,
           path: 'about',
