@@ -91,5 +91,15 @@
   "pageContentWrapper": "Sivun sisältökehys",
   "@pageContentWrapper": {
     "description": "Sivun kehys"
-  }
+  },
+  "project01_name": "Portfolio",
+  "project01_summary": "Moderni, responsiivinen ja saavutettava Flutterilla rakennettu portfolio.",
+  "project01_purpose": "Tämä portfolio esittelee suunnittelufilosofiani ja tekniset taitoni.",
+  "project01_actions": "Suunnittelin ja kehitin Flutteriin perustuvan yksilöllisen verkkoportfolion...",
+  "project01_result": "Yhtenäinen henkilöbrändi ja kiinnostava portfolio.",
+  "project01_date": "Lokakuu 2025",
+  "project01_accessibility_notes": "WCAG AA -vaatimusten mukainen typografia ja täysi näppäimistönavigointi.",
+  "project01_collaboration": "Itsenäinen projekti, jossa suunnittelua ja kehitystä tehtiin iteratiivisesti.",
+  "project01_image1_caption": "Projektisivun rakenteen matalan tarkkuuden rautalankamalli.",
+  "project01_accessibility_image1_caption": "Saavutettavuutta koskeva lainsäädäntö ja standardit."
 }

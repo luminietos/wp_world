@@ -1,3 +1,5 @@
+// GENERIC UI COMPONENT FOR A CARD, part of my design system
+
 import 'package:flutter/material.dart';
 import 'package:wp_world/theme/app_interactions.dart';
 import 'package:wp_world/utils/spacing.dart';

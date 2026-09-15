@@ -76,4 +76,42 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get pageContentWrapper => 'Sivun sisältökehys';
+
+  @override
+  String get project01_name => 'Portfolio';
+
+  @override
+  String get project01_summary =>
+      'Moderni, responsiivinen ja saavutettava Flutterilla rakennettu portfolio.';
+
+  @override
+  String get project01_purpose =>
+      'Tämä portfolio esittelee suunnittelufilosofiani ja tekniset taitoni.';
+
+  @override
+  String get project01_actions =>
+      'Suunnittelin ja kehitin Flutteriin perustuvan yksilöllisen verkkoportfolion...';
+
+  @override
+  String get project01_result =>
+      'Yhtenäinen henkilöbrändi ja kiinnostava portfolio.';
+
+  @override
+  String get project01_date => 'Lokakuu 2025';
+
+  @override
+  String get project01_accessibility_notes =>
+      'WCAG AA -vaatimusten mukainen typografia ja täysi näppäimistönavigointi.';
+
+  @override
+  String get project01_collaboration =>
+      'Itsenäinen projekti, jossa suunnittelua ja kehitystä tehtiin iteratiivisesti.';
+
+  @override
+  String get project01_image1_caption =>
+      'Projektisivun rakenteen matalan tarkkuuden rautalankamalli.';
+
+  @override
+  String get project01_accessibility_image1_caption =>
+      'Saavutettavuutta koskeva lainsäädäntö ja standardit.';
 }

@@ -76,4 +76,42 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get pageContentWrapper => 'Page content wrapper';
+
+  @override
+  String get project01_name => 'My Portfolio';
+
+  @override
+  String get project01_summary =>
+      'A modern, responsive and accessible portfolio built with Flutter.';
+
+  @override
+  String get project01_purpose =>
+      'This portfolio showcases my design philosophy and technical skills.';
+
+  @override
+  String get project01_actions =>
+      'Designed and developed a custom Flutter-based web portfolio...';
+
+  @override
+  String get project01_result =>
+      'A cohesive personal brand identity and an engaging portfolio.';
+
+  @override
+  String get project01_date => 'October 2025';
+
+  @override
+  String get project01_accessibility_notes =>
+      'WCAG AA-compliant typography and full keyboard navigation.';
+
+  @override
+  String get project01_collaboration =>
+      'Solo project with iterative design and development.';
+
+  @override
+  String get project01_image1_caption =>
+      'Low-fidelity wireframe of the project page layout.';
+
+  @override
+  String get project01_accessibility_image1_caption =>
+      'Accessibility legislation and standards.';
 }

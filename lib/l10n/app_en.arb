@@ -91,5 +91,15 @@
   "pageContentWrapper": "Page content wrapper",
   "@pageContentWrapper": {
     "description": "Label for the page wrapper"
-  }
+  },
+  "project01_name": "My Portfolio",
+  "project01_summary": "A modern, responsive and accessible portfolio built with Flutter.",
+  "project01_purpose": "This portfolio showcases my design philosophy and technical skills.",
+  "project01_actions": "Designed and developed a custom Flutter-based web portfolio...",
+  "project01_result": "A cohesive personal brand identity and an engaging portfolio.",
+  "project01_date": "October 2025",
+  "project01_accessibility_notes": "WCAG AA-compliant typography and full keyboard navigation.",
+  "project01_collaboration": "Solo project with iterative design and development.",
+  "project01_image1_caption": "Low-fidelity wireframe of the project page layout.",
+  "project01_accessibility_image1_caption": "Accessibility legislation and standards."
 }

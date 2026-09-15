@@ -235,6 +235,66 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Page content wrapper'**
   String get pageContentWrapper;
+
+  /// No description provided for @project01_name.
+  ///
+  /// In en, this message translates to:
+  /// **'My Portfolio'**
+  String get project01_name;
+
+  /// No description provided for @project01_summary.
+  ///
+  /// In en, this message translates to:
+  /// **'A modern, responsive and accessible portfolio built with Flutter.'**
+  String get project01_summary;
+
+  /// No description provided for @project01_purpose.
+  ///
+  /// In en, this message translates to:
+  /// **'This portfolio showcases my design philosophy and technical skills.'**
+  String get project01_purpose;
+
+  /// No description provided for @project01_actions.
+  ///
+  /// In en, this message translates to:
+  /// **'Designed and developed a custom Flutter-based web portfolio...'**
+  String get project01_actions;
+
+  /// No description provided for @project01_result.
+  ///
+  /// In en, this message translates to:
+  /// **'A cohesive personal brand identity and an engaging portfolio.'**
+  String get project01_result;
+
+  /// No description provided for @project01_date.
+  ///
+  /// In en, this message translates to:
+  /// **'October 2025'**
+  String get project01_date;
+
+  /// No description provided for @project01_accessibility_notes.
+  ///
+  /// In en, this message translates to:
+  /// **'WCAG AA-compliant typography and full keyboard navigation.'**
+  String get project01_accessibility_notes;
+
+  /// No description provided for @project01_collaboration.
+  ///
+  /// In en, this message translates to:
+  /// **'Solo project with iterative design and development.'**
+  String get project01_collaboration;
+
+  /// No description provided for @project01_image1_caption.
+  ///
+  /// In en, this message translates to:
+  /// **'Low-fidelity wireframe of the project page layout.'**
+  String get project01_image1_caption;
+
+  /// No description provided for @project01_accessibility_image1_caption.
+  ///
+  /// In en, this message translates to:
+  /// **'Accessibility legislation and standards.'**
+  String get project01_accessibility_image1_caption;
 }
 
 class _AppLocalizationsDelegate
