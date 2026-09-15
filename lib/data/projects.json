@@ -10,6 +10,7 @@
     "result_key": "project01_result",
     "date_key": "project01_date",
     "accessibility_notes_key": "project01_accessibility_notes",
+    "collaboration_key": "project01_collaboration",
 
     "projectType": "cross_platform",
     "isOngoing": false,
