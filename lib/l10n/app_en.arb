@@ -96,6 +96,22 @@
   "@menuDescription": {
     "description": "Menu description"
   },
+  "filter": "Filter",
+  "@filter": {
+    "description": "Filter modal title"
+  },
+  "filterProjects": "Filter projects",
+  "@filterProjects": {
+    "description": "Filter projects button text"
+  },
+  "filterReset": "Reset filter/s",
+  "@filterReset": {
+    "description": "Reset btn for filter component"
+  },
+  "errorNoProjects": "No projects match these filters.",
+  "@errorNoProjects": {
+    "description": "Filter error message for if no projects match specifications"
+  },
   "responsiveGridLayout": "Responsive grid layout",
   "@responsiveGridLayout": {
     "description": "Label for the responsive grid layout"

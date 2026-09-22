@@ -242,6 +242,30 @@ abstract class AppLocalizations {
   /// **'Where to next?'**
   String get menuDescription;
 
+  /// Filter modal title
+  ///
+  /// In en, this message translates to:
+  /// **'Filter'**
+  String get filter;
+
+  /// Filter projects button text
+  ///
+  /// In en, this message translates to:
+  /// **'Filter projects'**
+  String get filterProjects;
+
+  /// Reset btn for filter component
+  ///
+  /// In en, this message translates to:
+  /// **'Reset filter/s'**
+  String get filterReset;
+
+  /// Filter error message for if no projects match specifications
+  ///
+  /// In en, this message translates to:
+  /// **'No projects match these filters.'**
+  String get errorNoProjects;
+
   /// Label for the responsive grid layout
   ///
   /// In en, this message translates to:

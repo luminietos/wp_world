@@ -96,6 +96,22 @@
   "@menuDescription": {
     "description": "Valikon kuvaus"
   },
+  "filter": "Filtteri",
+  "@filter": {
+    "description": "Filtteri modaalin otsikko"
+  },
+  "filterProjects": "Suodata projekteja",
+  "@filterProjects": {
+    "description": "Projektien filtterointi-napin teksti"
+  },
+  "filterReset": "Tyhjennä filtteri/t",
+  "@filterReset": {
+    "description": "Resetointi napin otsikko"
+  },
+  "errorNoProjects": "Mikään projekti ei sopeudu näihin filttereihin.",
+  "@errorNoProjects": {
+    "description": "Virheviesti jos filtterit lyö tyhjää"
+  },
   "responsiveGridLayout": "Responsiivinen ruudukkoasettelu",
   "@responsiveGridLayout": {
     "description": "Label for the responsive grid layout"

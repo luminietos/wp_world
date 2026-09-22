@@ -81,6 +81,19 @@ class AppLocalizationsFi extends AppLocalizations {
   String get menuDescription => 'Minne seuraavaksi?';
 
   @override
+  String get filter => 'Filtteri';
+
+  @override
+  String get filterProjects => 'Suodata projekteja';
+
+  @override
+  String get filterReset => 'Tyhjennä filtteri/t';
+
+  @override
+  String get errorNoProjects =>
+      'Mikään projekti ei sopeudu näihin filttereihin.';
+
+  @override
   String get responsiveGridLayout => 'Responsiivinen ruudukkoasettelu';
 
   @override

@@ -81,6 +81,18 @@ class AppLocalizationsEn extends AppLocalizations {
   String get menuDescription => 'Where to next?';
 
   @override
+  String get filter => 'Filter';
+
+  @override
+  String get filterProjects => 'Filter projects';
+
+  @override
+  String get filterReset => 'Reset filter/s';
+
+  @override
+  String get errorNoProjects => 'No projects match these filters.';
+
+  @override
   String get responsiveGridLayout => 'Responsive grid layout';
 
   @override
