@@ -13,37 +13,58 @@
     "collaboration_key": "project01_collaboration",
 
     "projectType": "cross_platform",
-    "isOngoing": false,
+    "isOngoing": true,
 
-    "projectLink": "https://luminietos.github.io/wp_world/",
+    "projectLink": "",
     "clientOrCompany": "Personal Project",
-    "duration": "August–October 2025",
+    "duration": "August–October 2026",
 
-    "logoPath": "assets/images/logo_myportfolio_black.png",
+    "thumbnailPath": "",
+    "heroImagePath": "",
 
-    "techStack": [
-      { "name": "Flutter", "color": "#2196F3" },
-      { "name": "Dart", "color": "#3F51B5" },
-      { "name": "Lottie", "color": "#FF9800" },
-      { "name": "Figma", "color": "#E91E63" },
-      { "name": "GitHub Pages", "color": "#9E9E9E" }
-    ],
-
+    "techStack": ["Flutter", "Dart", "Lottie", "Figma", "GitHub Pages"],
     "rolesStack": ["designer", "developer", "illustrator"],
     "categories": ["solo", "portfolio", "accessible"],
 
     "imagePaths": [
       {
-        "path": "assets/images/wireframe_lowfidelity_myportfolio.jpg",
+        "path": "",
         "caption_key": "project01_image1_caption"
-      }
-    ],
-
-    "accessibilityImages": [
+      },
       {
-        "path": "assets/images/accessibility_legislation.jpg",
+        "path": "",
         "caption_key": "project01_accessibility_image1_caption"
       }
     ]
+  },
+
+  {
+    "id": "project_02",
+    "slug": "meaningful",
+
+    "name_key": "project02_name",
+    "summary_key": "project02_summary",
+    "purpose_key": "project02_purpose",
+    "actions_key": "project02_actions",
+    "result_key": "project02_result",
+    "date_key": "project02_date",
+    "accessibility_notes_key": "project02_accessibility_notes",
+    "collaboration_key": "project02_collaboration",
+
+    "projectType": "mobile_app",
+    "isOngoing": false,
+
+    "projectLink": "",
+    "clientOrCompany": "Taigoa Oy",
+    "duration": "2024 – 2025",
+
+    "thumbnailPath": "assets/images/project_meaningful.jpg",
+    "heroImagePath": "assets/images/project_meaningful_hero.png",
+
+    "techStack": ["Flutter", "AWS", "GitHub"],
+    "rolesStack": ["team_lead", "developer", "designer"],
+    "categories": ["mobile", "wellbeing"],
+
+    "imagePaths": []
   }
 ]
