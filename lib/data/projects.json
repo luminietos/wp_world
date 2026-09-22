@@ -26,16 +26,7 @@
     "rolesStack": ["designer", "developer", "illustrator"],
     "categories": ["solo", "portfolio", "accessible"],
 
-    "imagePaths": [
-      {
-        "path": "",
-        "caption_key": "project01_image1_caption"
-      },
-      {
-        "path": "",
-        "caption_key": "project01_accessibility_image1_caption"
-      }
-    ]
+    "imagePaths": []
   },
 
   {

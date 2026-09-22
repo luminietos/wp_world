@@ -33,7 +33,9 @@ class _ProjectsPageState extends State<ProjectsPage> {
       future: _projectsFuture,
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return const Center(child: CircularProgressIndicator());
+          return const Center(
+            child: CircularProgressIndicator(),
+          ); // TODO: make into its own widget
         }
 
         if (snapshot.hasError) {
