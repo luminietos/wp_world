@@ -1,7 +1,11 @@
+// PROJECT CARD
+
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:wp_world/models/project.dart';
-import 'package:wp_world/widgets/components/app_card.dart'; // the base
 import 'package:wp_world/utils/spacing.dart';
+import 'package:wp_world/utils/tech_colors.dart';
+import 'package:wp_world/widgets/components/app_card.dart';
 
 class ProjectCard extends StatelessWidget {
   final Project project;
@@ -11,8 +15,10 @@ class ProjectCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colors = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
+    final colors = Theme.of(context).colorScheme;
+
+    final statusLabel = project.isOngoing ? 'Ongoing' : 'Completed';
 
     return AppCard(
       onTap: onTap,
@@ -21,84 +27,94 @@ class ProjectCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // THUMBNAIL
-          ClipRRect(
-            borderRadius: BorderRadius.circular(8),
-            child: Image.asset(
-              project.logoPath,
-              fit: BoxFit.contain,
-              height: 64,
+          if (project.thumbnailPath != null &&
+              project.thumbnailPath!.isNotEmpty)
+            ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: Image.asset(
+                project.thumbnailPath!,
+                fit: BoxFit.cover,
+                height: 120,
+                width: double.infinity,
+              ),
+            )
+          else
+            Container(
+              height: 120,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: colors.secondary,
+                borderRadius: BorderRadius.circular(8),
+              ),
             ),
-          ),
 
           SizedBox(height: Spacing.lg),
 
           // TITLE
+          Text(project.name(context), style: textTheme.headlineSmall),
+
+          SizedBox(height: Spacing.sm),
+
+          // CLIENT + TYPE
           Text(
-            project.name(context),
-            style: textTheme.titleLarge?.copyWith(
-              fontWeight: FontWeight.w700,
-              color: colors.onSurface,
+            '${project.clientOrCompany} • ${project.projectType}',
+            style: textTheme.bodySmall?.copyWith(
+              color: colors.onSurfaceVariant,
             ),
           ),
 
           SizedBox(height: Spacing.sm),
 
           // SUMMARY
-          Text(
-            project.summary(context),
-            style: textTheme.bodyMedium?.copyWith(
-              color: colors.onSurfaceVariant,
-            ),
+          Text(project.summary(context), style: textTheme.bodyMedium),
+
+          SizedBox(height: Spacing.md),
+
+          // META ROW (DURATION + STATUS)
+          Row(
+            children: [
+              if (project.duration.isNotEmpty)
+                Text(
+                  project.duration,
+                  style: textTheme.bodySmall?.copyWith(
+                    color: colors.onSurfaceVariant,
+                  ),
+                ),
+              if (project.duration.isNotEmpty) SizedBox(width: Spacing.md),
+              Text(
+                statusLabel,
+                style: textTheme.bodySmall?.copyWith(
+                  color: colors.onSurfaceVariant,
+                ),
+              ),
+            ],
           ),
 
           SizedBox(height: Spacing.md),
 
-          // CATEGORIES/TAGS
+          // TECH STACK TAGS
           Wrap(
             spacing: Spacing.sm,
             runSpacing: Spacing.sm,
-            children: project.categories.map((cat) {
+            children: project.techStack.map((techName) {
               return Container(
                 padding: EdgeInsets.symmetric(
                   horizontal: Spacing.md,
                   vertical: Spacing.xs,
                 ),
                 decoration: BoxDecoration(
-                  color: colors.surfaceVariant,
-                  borderRadius: BorderRadius.circular(6),
+                  color: techColor(context, techName),
+                  borderRadius: BorderRadius.circular(999),
                 ),
                 child: Text(
-                  cat.toUpperCase(),
+                  techName,
                   style: textTheme.labelSmall?.copyWith(
-                    color: colors.onSurfaceVariant,
-                    fontWeight: FontWeight.w600,
+                    color: colors.onPrimary,
                   ),
                 ),
               );
             }).toList(),
           ),
-
-          SizedBox(height: Spacing.md),
-
-          // 'ONGOING' BADGE
-          if (project.isOngoing)
-            Container(
-              padding: EdgeInsets.symmetric(
-                horizontal: Spacing.md,
-                vertical: Spacing.xs,
-              ),
-              decoration: BoxDecoration(
-                color: colors.primary.withOpacity(0.12),
-                borderRadius: BorderRadius.circular(6),
-              ),
-              child: Text(
-                'ONGOING',
-                style: textTheme.labelSmall?.copyWith(
-                  color: colors.primary,
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
-            ),
         ],
       ),
     );

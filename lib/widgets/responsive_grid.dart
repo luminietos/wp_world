@@ -1,9 +1,9 @@
-// RESPONSIVE GRID SYSTEM 
+// RESPONSIVE GRID SYSTEM
 
 import 'package:flutter/material.dart';
 import 'package:wp_world/l10n/app_localizations.dart';
-import '../utils/responsive.dart';
-import '../utils/spacing.dart';
+import 'package:wp_world/utils/responsive.dart';
+import 'package:wp_world/utils/spacing.dart';
 
 class ResponsiveGrid extends StatelessWidget {
   final List<Widget> children;
@@ -12,27 +12,26 @@ class ResponsiveGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final localizations = AppLocalizations.of(context)!;
-    int columns = 1;
+    // final isMobile = Responsive.isMobile;
+    final isTablet = Responsive.isTablet;
 
-    if (Responsive.isTablet) columns = 2;
+    int columns = 1;
+    if (isTablet) columns = 2;
     if (Responsive.isDesktop) columns = 3;
 
-    return Semantics(
-      container: true,
-      label: localizations.responsiveGridLayout,
-      child: LayoutBuilder(
-        builder: (_, constraints) {
-          return GridView.count(
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            crossAxisCount: columns,
-            crossAxisSpacing: Spacing.md,
-            mainAxisSpacing: Spacing.md,
-            children: children,
-          );
-        },
-      ),
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final itemWidth =
+            (constraints.maxWidth - (Spacing.md * (columns - 1))) / columns;
+
+        return Wrap(
+          spacing: Spacing.md,
+          runSpacing: Spacing.md,
+          children: children.map((child) {
+            return SizedBox(width: itemWidth, child: child);
+          }).toList(),
+        );
+      },
     );
   }
 }

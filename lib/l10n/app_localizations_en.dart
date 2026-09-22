@@ -60,6 +60,15 @@ class AppLocalizationsEn extends AppLocalizations {
   String get languageEnglish => 'English';
 
   @override
+  String get statusLabel => 'Status';
+
+  @override
+  String get statusOngoing => 'Ongoing';
+
+  @override
+  String get statusCompleted => 'Completed';
+
+  @override
   String get openMenu => 'Open the menu';
 
   @override
@@ -114,4 +123,42 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get project01_accessibility_image1_caption =>
       'Accessibility legislation and standards.';
+
+  @override
+  String get projectPurpose => 'Purpose';
+
+  @override
+  String get projectClient => 'Client';
+
+  @override
+  String get projectResult => 'Result';
+
+  @override
+  String get projectActionsProcess => 'Actions & Process';
+
+  @override
+  String get projectMetadata => 'Project Metadata';
+
+  @override
+  String get typeLabel => 'Type';
+
+  @override
+  String get collaborationLabel => 'Collaboration';
+
+  @override
+  String get accessibilityNotes => 'Accessibility Notes';
+
+  @override
+  String get durationLabel => 'Duration';
+
+  @override
+  String get imagesLabel => 'Images';
+
+  @override
+  String projectImageLabel(Object projectName) {
+    return 'Image for $projectName';
+  }
+
+  @override
+  String get projectView => 'View project';
 }

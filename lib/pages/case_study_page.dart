@@ -1,15 +1,20 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:wp_world/data/project_loader.dart';
+import 'package:wp_world/helpers/localization_helpers.dart';
+import 'package:wp_world/l10n/app_localizations.dart';
 import 'package:wp_world/models/project.dart';
-import 'package:wp_world/widgets/section.dart';
+import 'package:wp_world/models/project_section.dart';
+import 'package:wp_world/utils/layout.dart';
 import 'package:wp_world/utils/spacing.dart';
+import 'package:wp_world/utils/responsive.dart';
+import 'package:wp_world/widgets/section.dart';
 
 @RoutePage()
 class CaseStudyPage extends StatefulWidget {
   final String slug;
 
-  const CaseStudyPage({super.key, @PathParam('slug') required this.slug});
+  const CaseStudyPage({@PathParam('slug') required this.slug});
 
   @override
   State<CaseStudyPage> createState() => _CaseStudyPageState();
@@ -26,7 +31,9 @@ class _CaseStudyPageState extends State<CaseStudyPage> {
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(
+    final localizations = AppLocalizations.of(context)!;
+
+    return FutureBuilder<List<Project>>(
       future: _projectsFuture,
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
@@ -34,8 +41,11 @@ class _CaseStudyPageState extends State<CaseStudyPage> {
         }
 
         if (snapshot.hasError) {
-          return Center(
-            child: Text('Unable to load project: ${snapshot.error}'),
+          return Section(
+            child: Text(
+              'Unable to load project: ${snapshot.error}',
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
           );
         }
 
@@ -46,97 +56,214 @@ class _CaseStudyPageState extends State<CaseStudyPage> {
         );
 
         return Section(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // ⭐ Title
-              Text(
-                project.name(context),
-                style: Theme.of(context).textTheme.headlineLarge,
-              ),
+          child: ConstrainedBox(
+            constraints: Layout.maxContentWidth,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                _HeroHeader(project: project),
+                SizedBox(height: Spacing.xl),
+                _MetaRow(project: project),
+                SizedBox(height: Spacing.xxl),
 
-              SizedBox(height: Spacing.lg),
-
-              // ⭐ Summary
-              Text(
-                project.summary(context),
-                style: Theme.of(context).textTheme.bodyLarge,
-              ),
-
-              SizedBox(height: Spacing.xl),
-
-              // ⭐ Purpose
-              _CaseStudyBlock(title: 'Purpose', body: project.purpose(context)),
-
-              SizedBox(height: Spacing.xl),
-
-              // ⭐ Actions & Process
-              _CaseStudyBlock(
-                title: 'Actions & Process',
-                body: project.actions(context),
-              ),
-
-              SizedBox(height: Spacing.xl),
-
-              // ⭐ Result
-              _CaseStudyBlock(title: 'Result', body: project.result(context)),
-
-              SizedBox(height: Spacing.xl),
-
-              // ⭐ Images
-              if (project.imagePaths.isNotEmpty)
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Images',
-                      style: Theme.of(context).textTheme.headlineSmall,
-                    ),
-                    SizedBox(height: Spacing.md),
-                    ...project.imagePaths.map((img) {
-                      return Padding(
-                        padding: EdgeInsets.only(bottom: Spacing.lg),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(12),
-                              child: Image.asset(img.path),
-                            ),
-                            SizedBox(height: Spacing.sm),
-                            Text(
-                              img.caption(context), 
-                              style: Theme.of(context).textTheme.bodySmall,
-                            ),
-                          ],
-                        ),
-                      );
-                    }),
-                  ],
+                _CaseStudyBlock(
+                  title: localizations.projectResult,
+                  body: project.result(context),
                 ),
+                SizedBox(height: Spacing.xxl),
 
-              SizedBox(height: Spacing.xl),
+                _CaseStudyBlock(
+                  title: localizations.projectPurpose,
+                  body: project.purpose(context),
+                ),
+                SizedBox(height: Spacing.xxl),
 
-              // ⭐ Accessibility Notes
-              _CaseStudyBlock(
-                title: 'Accessibility Notes',
-                body: project.accessibilityNotes(context),
-              ),
+                _CaseStudyBlock(
+                  title: localizations.projectActionsProcess,
+                  body: project.actions(context),
+                ),
+                SizedBox(height: Spacing.xxl),
 
-              SizedBox(height: Spacing.xl),
+                if (project.sections != null && project.sections!.isNotEmpty)
+                  ...project.sections!.map(
+                    (section) => Padding(
+                      padding: EdgeInsets.only(bottom: Spacing.xxl),
+                      child: _CaseStudySectionBlock(section: section),
+                    ),
+                  ),
 
-              // ⭐ Collaboration
-              _CaseStudyBlock(
-                title: 'Collaboration',
-                body: project.collaboration(context),
-              ),
-            ],
+                if (project.imagePaths.isNotEmpty) ...[
+                  SizedBox(height: Spacing.xxl),
+                  _ImageGallery(project: project),
+                ],
+
+                SizedBox(height: Spacing.xxl),
+
+                _CaseStudyBlock(
+                  title: localizations.accessibilityNotes,
+                  body: project.accessibilityNotes(context),
+                ),
+                SizedBox(height: Spacing.xxl),
+
+                _CaseStudyBlock(
+                  title: localizations.collaborationLabel,
+                  body: project.collaboration(context),
+                ),
+                SizedBox(height: Spacing.xl),
+
+                if (project.projectLink != null &&
+                    project.projectLink!.isNotEmpty)
+                  TextButton(
+                    onPressed: () {
+                      // TODO: open link with url_launcher
+                    },
+                    child: Text(localizations.projectView),
+                  ),
+              ],
+            ),
           ),
         );
       },
     );
   }
 }
+// HERO
+
+class _HeroHeader extends StatelessWidget {
+  final Project project;
+
+  const _HeroHeader({required this.project});
+
+  @override
+  Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+    final colors = Theme.of(context).colorScheme;
+    final localizations = AppLocalizations.of(context)!;
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          project.name(context),
+          style: textTheme.headlineLarge?.copyWith(
+            fontWeight: FontWeight.w700,
+            color: colors.onSurface,
+          ),
+        ),
+        SizedBox(height: Spacing.sm),
+        Text(
+          '${project.clientOrCompany} • ${project.projectType}',
+          style: textTheme.bodyMedium?.copyWith(color: colors.onSurfaceVariant),
+        ),
+        SizedBox(height: Spacing.md),
+        Text(
+          project.summary(context),
+          style: textTheme.bodyLarge?.copyWith(color: colors.onSurface),
+        ),
+        SizedBox(height: Spacing.lg),
+        if (project.heroImagePath != null && project.heroImagePath!.isNotEmpty)
+          Semantics(
+            label: localizations.projectImageLabel(project.name(context)),
+            image: true,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(12),
+              child: Image.asset(project.heroImagePath!, fit: BoxFit.cover),
+            ),
+          )
+        else
+          Container(
+            height: 240,
+            decoration: BoxDecoration(
+              color: colors.secondary,
+              borderRadius: BorderRadius.circular(12),
+            ),
+          ),
+      ],
+    );
+  }
+}
+
+// META ROW
+
+class _MetaRow extends StatelessWidget {
+  final Project project;
+
+  const _MetaRow({required this.project});
+
+  @override
+  Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+    final colors = Theme.of(context).colorScheme;
+    final localizations = AppLocalizations.of(context)!;
+
+    final isMobile = Responsive.isMobile;
+
+    final statusLabel = project.isOngoing
+        ? localizations.statusOngoing
+        : localizations.statusCompleted;
+
+    final items = <_MetaItem>[
+      _MetaItem(
+        label: localizations.projectClient,
+        value: project.clientOrCompany,
+      ),
+      if (project.duration.isNotEmpty)
+        _MetaItem(label: localizations.durationLabel, value: project.duration),
+      _MetaItem(label: localizations.typeLabel, value: project.projectType),
+      _MetaItem(label: localizations.statusLabel, value: statusLabel),
+    ];
+
+    final children = items
+        .map(
+          (item) => Padding(
+            padding: EdgeInsets.only(right: Spacing.lg, bottom: Spacing.sm),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  item.label,
+                  style: textTheme.labelSmall?.copyWith(
+                    color: colors.onSurfaceVariant,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                SizedBox(height: Spacing.xs),
+                Text(
+                  item.value,
+                  style: textTheme.bodyMedium?.copyWith(
+                    color: colors.onSurface,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        )
+        .toList();
+
+    return Semantics(
+      container: true,
+      label: localizations.projectMetadata,
+      child: isMobile
+          ? Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: children,
+            )
+          : Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: children,
+            ),
+    );
+  }
+}
+
+class _MetaItem {
+  final String label;
+  final String value;
+
+  _MetaItem({required this.label, required this.value});
+}
+
+// CASE STUDY BLOCK
 
 class _CaseStudyBlock extends StatelessWidget {
   final String title;
@@ -154,6 +281,98 @@ class _CaseStudyBlock extends StatelessWidget {
         Text(title, style: textTheme.headlineSmall),
         SizedBox(height: Spacing.md),
         Text(body, style: textTheme.bodyMedium),
+      ],
+    );
+  }
+}
+
+// STRUCTURED SECTION BLOCK
+
+class _CaseStudySectionBlock extends StatelessWidget {
+  final ProjectSection section;
+
+  const _CaseStudySectionBlock({required this.section});
+
+  @override
+  Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          localized(context, section.headingKey),
+          style: textTheme.headlineSmall,
+        ),
+        SizedBox(height: Spacing.md),
+        Text(localized(context, section.bodyKey), style: textTheme.bodyMedium),
+      ],
+    );
+  }
+}
+
+// IMAGE GALLERY
+
+class _ImageGallery extends StatelessWidget {
+  final Project project;
+
+  const _ImageGallery({required this.project});
+
+  @override
+  Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+    final colors = Theme.of(context).colorScheme;
+    final localizations = AppLocalizations.of(context)!;
+
+    final isMobile = Responsive.isMobile;
+    final isTablet = Responsive.isTablet;
+
+    int columns = 1;
+    if (isTablet) columns = 2;
+    if (Responsive.isDesktop) columns = 3;
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(localizations.imagesLabel, style: textTheme.headlineSmall),
+        SizedBox(height: Spacing.md),
+        LayoutBuilder(
+          builder: (context, constraints) {
+            final itemWidth =
+                (constraints.maxWidth - (Spacing.md * (columns - 1))) / columns;
+
+            return Wrap(
+              spacing: Spacing.md,
+              runSpacing: Spacing.md,
+              children: project.imagePaths.map((img) {
+                return SizedBox(
+                  width: isMobile ? constraints.maxWidth : itemWidth,
+                  child: Semantics(
+                    container: true,
+                    label: img.caption(context),
+                    image: true,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(12),
+                          child: Image.asset(img.path, fit: BoxFit.cover),
+                        ),
+                        SizedBox(height: Spacing.sm),
+                        Text(
+                          img.caption(context),
+                          style: textTheme.bodySmall?.copyWith(
+                            color: colors.onSurfaceVariant,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              }).toList(),
+            );
+          },
+        ),
       ],
     );
   }

@@ -13,3 +13,5 @@ class ProjectLoader {
     return data.map((p) => Project.fromJson(p)).toList();
   }
 }
+
+// TODO: Change loader color to theme

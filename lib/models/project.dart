@@ -1,15 +1,14 @@
-// DEFINES A STRUCTURED MODEL FOR A PROJECT CASE STUDY (including all metadata, images, and sections)
-// This is the main model used in the app.
+// PROJECT MODEL
 
 import 'package:flutter/material.dart';
 import 'package:wp_world/helpers/localization_helpers.dart';
-import 'project_image.dart';
-import 'project_section.dart';
+import 'package:wp_world/models/project_image.dart';
+import 'package:wp_world/models/project_section.dart';
 
 class Project {
   // IDENTIFIERS
-  final String id; // unique identifier for the project
-  final String slug; // unique slug for the project, used in URLs
+  final String id;
+  final String slug;
 
   // LOCALIZATION KEYS
   final String nameKey;
@@ -24,19 +23,23 @@ class Project {
   // METADATA
   final String projectType;
   final bool isOngoing;
-  final String projectLink;
+  final String? projectLink;
   final String clientOrCompany;
   final String duration;
 
-  final String logoPath;
+  // IMAGES (OPTIONAL)
+  final String? thumbnailPath;
+  final String? heroImagePath;
 
-  final List<Map<String, dynamic>> techStack;
+  // TAGS
+  final List<String> techStack;
   final List<String> rolesStack;
   final List<String> categories;
 
+  // CONTENT IMAGES
   final List<ProjectImage> imagePaths;
-  final List<ProjectImage> accessibilityImages;
 
+  // OPTIONAL STRUCTURED SECTIONS
   final List<ProjectSection>? sections;
 
   Project({
@@ -52,19 +55,19 @@ class Project {
     required this.collaborationKey,
     required this.projectType,
     required this.isOngoing,
-    required this.projectLink,
+    this.projectLink,
     required this.clientOrCompany,
     required this.duration,
-    required this.logoPath,
+    this.thumbnailPath,
+    this.heroImagePath,
     required this.techStack,
     required this.rolesStack,
     required this.categories,
     required this.imagePaths,
-    required this.accessibilityImages,
     this.sections,
   });
 
-  // HELPER METHODS to get localized strings for the project
+  // LOCALIZED GETTERS
   String name(BuildContext context) => localized(context, nameKey);
   String summary(BuildContext context) => localized(context, summaryKey);
   String purpose(BuildContext context) => localized(context, purposeKey);
@@ -96,17 +99,14 @@ class Project {
       clientOrCompany: json['clientOrCompany'],
       duration: json['duration'],
 
-      logoPath: json['logoPath'],
+      thumbnailPath: json['thumbnailPath'],
+      heroImagePath: json['heroImagePath'],
 
-      techStack: List<Map<String, dynamic>>.from(json['techStack']),
+      techStack: List<String>.from(json['techStack']),
       rolesStack: List<String>.from(json['rolesStack']),
       categories: List<String>.from(json['categories']),
 
       imagePaths: (json['imagePaths'] as List<dynamic>)
-          .map((i) => ProjectImage.fromJson(i))
-          .toList(),
-
-      accessibilityImages: (json['accessibilityImages'] as List<dynamic>)
           .map((i) => ProjectImage.fromJson(i))
           .toList(),
 

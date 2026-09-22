@@ -1,5 +1,6 @@
 // DEFINES LAYOUT CONSTANTS (max widths, gutters, etc.) & PROVIDES LAYOUT-RELATED UTILITIES
 
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'responsive.dart';
 
@@ -27,4 +28,8 @@ class Layout {
     if (Responsive.isTablet) return gutterTablet;
     return gutterDesktop;
   }
+
+  // MAX CONTENT WIDTH (used for centered case study layout)
+  static BoxConstraints get maxContentWidth =>
+      BoxConstraints(maxWidth: maxWidth());
 }

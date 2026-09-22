@@ -68,6 +68,18 @@
   "@languageEnglish": {
     "description": "Full title for English language in English"
   },
+  "statusLabel": "Status",
+  "@statusLabel": {
+    "description": "Status label"
+  },
+  "statusOngoing": "Ongoing",
+  "@statusOngoing": {
+    "description": "Status of project"
+  },
+  "statusCompleted": "Completed",
+  "@statusCompleted": {
+    "description": "Status of project"
+  },
   "openMenu": "Open the menu",
   "@openMenu": {
     "description": "Open menu label"
@@ -93,7 +105,13 @@
     "description": "Label for the page wrapper"
   },
   "project01_name": "My Portfolio",
+  "@project01_name": {
+    "description": "Project 1 title"
+  },
   "project01_summary": "A modern, responsive and accessible portfolio built with Flutter.",
+  "@project01_summary": {
+    "description": "The summary"
+  },
   "project01_purpose": "This portfolio showcases my design philosophy and technical skills.",
   "project01_actions": "Designed and developed a custom Flutter-based web portfolio...",
   "project01_result": "A cohesive personal brand identity and an engaging portfolio.",
@@ -101,5 +119,53 @@
   "project01_accessibility_notes": "WCAG AA-compliant typography and full keyboard navigation.",
   "project01_collaboration": "Solo project with iterative design and development.",
   "project01_image1_caption": "Low-fidelity wireframe of the project page layout.",
-  "project01_accessibility_image1_caption": "Accessibility legislation and standards."
+  "project01_accessibility_image1_caption": "Accessibility legislation and standards.",
+  "projectPurpose": "Purpose",
+  "@projectPurpose": {
+    "description": "Section title in a case study for purpose"
+  },
+  "projectClient": "Client",
+  "@projectClient": {
+    "description": "Client label"
+  },
+  "projectResult": "Result",
+  "@projectResult": {
+    "description": "Section title in a case study for results"
+  },
+  "projectActionsProcess": "Actions & Process",
+  "@projectActionsProcess": {
+    "description": "Section title in a case study for actions and the process"
+  },
+  "projectMetadata": "Project Metadata",
+  "@projectMetadata": {
+    "description": "Label for project metadata section"
+  },
+  "typeLabel": "Type",
+  "@typeLabel": {
+    "description": "Project type label"
+  },
+  "collaborationLabel": "Collaboration",
+  "@collaborationLabel": {
+    "description": "Section title in a case study for the collaboration, if any"
+  },
+  "accessibilityNotes": "Accessibility Notes",
+  "@accessibilityNotes": {
+    "description": "Section title in a case study for its accessibility"
+  },
+  "durationLabel": "Duration",
+  "@durationLabel": {
+    "description": "Label for 'duration'"
+  },
+  "imagesLabel": "Images",
+  "@imagesLabel": {
+    "description": "Label for images"
+  },
+  "projectImageLabel": "Image for {projectName}",
+  "@projectImageLabel": {
+    "description": "Kuva teksti"
+  },
+  "projectView": "View project",
+  "@projectView": {
+    "description": "For the 'view project' btn"
+  }
 }

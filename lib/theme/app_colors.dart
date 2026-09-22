@@ -25,5 +25,21 @@ class AppColors {
   static const Color error = Color(0xFFEF5350);
 
   // FOCUS STATES (ACCESSIBLE)
-  static const Color focusRing = Color(0xFF0066FF); // WCAG AA compliant
+  static const Color focusRing = Color(0xFF0066FF);
+
+  // TECH STACK COLORS (LIGHT MODE)
+  static const Color techFlutterLight = Color(0xFF42A5F5); // accessible blue
+  static const Color techDartLight = Color(0xFF3F51B5);
+  static const Color techLottieLight = Color(0xFFFFB74D); // softer orange
+  static const Color techFigmaLight = Color(0xFFE57373); // accessible red
+  static const Color techGitHubLight = Color(0xFF757575); // neutral grey
+  static const Color techAWSLight = Color(0xFFFFA726); // accessible amber
+
+  // TECH STACK COLORS (DARK MODE)
+  static const Color techFlutterDark = Color(0xFF90CAF9);
+  static const Color techDartDark = Color(0xFF7986CB);
+  static const Color techLottieDark = Color(0xFFFFCC80);
+  static const Color techFigmaDark = Color(0xFFEF9A9A);
+  static const Color techGitHubDark = Color(0xFFBDBDBD);
+  static const Color techAWSDark = Color(0xFFFFCC80);
 }

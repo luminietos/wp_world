@@ -200,6 +200,24 @@ abstract class AppLocalizations {
   /// **'English'**
   String get languageEnglish;
 
+  /// Status label
+  ///
+  /// In en, this message translates to:
+  /// **'Status'**
+  String get statusLabel;
+
+  /// Status of project
+  ///
+  /// In en, this message translates to:
+  /// **'Ongoing'**
+  String get statusOngoing;
+
+  /// Status of project
+  ///
+  /// In en, this message translates to:
+  /// **'Completed'**
+  String get statusCompleted;
+
   /// Open menu label
   ///
   /// In en, this message translates to:
@@ -236,13 +254,13 @@ abstract class AppLocalizations {
   /// **'Page content wrapper'**
   String get pageContentWrapper;
 
-  /// No description provided for @project01_name.
+  /// Project 1 title
   ///
   /// In en, this message translates to:
   /// **'My Portfolio'**
   String get project01_name;
 
-  /// No description provided for @project01_summary.
+  /// The summary
   ///
   /// In en, this message translates to:
   /// **'A modern, responsive and accessible portfolio built with Flutter.'**
@@ -295,6 +313,78 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Accessibility legislation and standards.'**
   String get project01_accessibility_image1_caption;
+
+  /// Section title in a case study for purpose
+  ///
+  /// In en, this message translates to:
+  /// **'Purpose'**
+  String get projectPurpose;
+
+  /// Client label
+  ///
+  /// In en, this message translates to:
+  /// **'Client'**
+  String get projectClient;
+
+  /// Section title in a case study for results
+  ///
+  /// In en, this message translates to:
+  /// **'Result'**
+  String get projectResult;
+
+  /// Section title in a case study for actions and the process
+  ///
+  /// In en, this message translates to:
+  /// **'Actions & Process'**
+  String get projectActionsProcess;
+
+  /// Label for project metadata section
+  ///
+  /// In en, this message translates to:
+  /// **'Project Metadata'**
+  String get projectMetadata;
+
+  /// Project type label
+  ///
+  /// In en, this message translates to:
+  /// **'Type'**
+  String get typeLabel;
+
+  /// Section title in a case study for the collaboration, if any
+  ///
+  /// In en, this message translates to:
+  /// **'Collaboration'**
+  String get collaborationLabel;
+
+  /// Section title in a case study for its accessibility
+  ///
+  /// In en, this message translates to:
+  /// **'Accessibility Notes'**
+  String get accessibilityNotes;
+
+  /// Label for 'duration'
+  ///
+  /// In en, this message translates to:
+  /// **'Duration'**
+  String get durationLabel;
+
+  /// Label for images
+  ///
+  /// In en, this message translates to:
+  /// **'Images'**
+  String get imagesLabel;
+
+  /// Kuva teksti
+  ///
+  /// In en, this message translates to:
+  /// **'Image for {projectName}'**
+  String projectImageLabel(Object projectName);
+
+  /// For the 'view project' btn
+  ///
+  /// In en, this message translates to:
+  /// **'View project'**
+  String get projectView;
 }
 
 class _AppLocalizationsDelegate

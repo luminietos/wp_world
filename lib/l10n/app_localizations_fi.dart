@@ -60,6 +60,15 @@ class AppLocalizationsFi extends AppLocalizations {
   String get languageEnglish => 'Englanti';
 
   @override
+  String get statusLabel => 'Status';
+
+  @override
+  String get statusOngoing => 'Jatkuva';
+
+  @override
+  String get statusCompleted => 'Valmis';
+
+  @override
   String get openMenu => 'Avaa valikko';
 
   @override
@@ -114,4 +123,42 @@ class AppLocalizationsFi extends AppLocalizations {
   @override
   String get project01_accessibility_image1_caption =>
       'Saavutettavuutta koskeva lainsäädäntö ja standardit.';
+
+  @override
+  String get projectPurpose => 'Tarkoitus';
+
+  @override
+  String get projectClient => 'Asiakas';
+
+  @override
+  String get projectResult => 'Tulos';
+
+  @override
+  String get projectActionsProcess => 'Teot & Prosessi';
+
+  @override
+  String get projectMetadata => 'Projektin Metadatasta';
+
+  @override
+  String get typeLabel => 'Type';
+
+  @override
+  String get collaborationLabel => 'Kollaboraatio';
+
+  @override
+  String get accessibilityNotes => 'Projektin Saavutettavuudesta';
+
+  @override
+  String get durationLabel => 'Kesto';
+
+  @override
+  String get imagesLabel => 'Kuvat';
+
+  @override
+  String projectImageLabel(Object projectName) {
+    return 'Kuva projektille $projectName';
+  }
+
+  @override
+  String get projectView => 'Katso projekti';
 }

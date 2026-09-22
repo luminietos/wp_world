@@ -33,10 +33,7 @@ abstract class _$AppRouter extends RootStackRouter {
           orElse: () => CaseStudyRouteArgs(slug: pathParams.getString('slug')));
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: CaseStudyPage(
-          key: args.key,
-          slug: args.slug,
-        ),
+        child: CaseStudyPage(slug: args.slug),
       );
     },
     ContactRoute.name: (routeData) {
@@ -92,15 +89,11 @@ class AppShellRoute extends PageRouteInfo<void> {
 /// [CaseStudyPage]
 class CaseStudyRoute extends PageRouteInfo<CaseStudyRouteArgs> {
   CaseStudyRoute({
-    Key? key,
     required String slug,
     List<PageRouteInfo>? children,
   }) : super(
           CaseStudyRoute.name,
-          args: CaseStudyRouteArgs(
-            key: key,
-            slug: slug,
-          ),
+          args: CaseStudyRouteArgs(slug: slug),
           rawPathParams: {'slug': slug},
           initialChildren: children,
         );
@@ -112,18 +105,13 @@ class CaseStudyRoute extends PageRouteInfo<CaseStudyRouteArgs> {
 }
 
 class CaseStudyRouteArgs {
-  const CaseStudyRouteArgs({
-    this.key,
-    required this.slug,
-  });
-
-  final Key? key;
+  const CaseStudyRouteArgs({required this.slug});
 
   final String slug;
 
   @override
   String toString() {
-    return 'CaseStudyRouteArgs{key: $key, slug: $slug}';
+    return 'CaseStudyRouteArgs{slug: $slug}';
   }
 }
 

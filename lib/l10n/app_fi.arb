@@ -68,6 +68,18 @@
   "@languageEnglish": {
     "description": "Englanninkielen koko otsikko englanniksi"
   },
+  "statusLabel": "Status",
+  "@statusLabel": {
+    "description": "Status teksti"
+  },
+  "statusOngoing": "Jatkuva",
+  "@statusOngoing": {
+    "description": "Projektin status"
+  },
+  "statusCompleted": "Valmis",
+  "@statusCompleted": {
+    "description": "Projektin status"
+  },
   "openMenu": "Avaa valikko",
   "@openMenu": {
     "description": "Avaa valikko -nappi"
@@ -93,7 +105,13 @@
     "description": "Sivun kehys"
   },
   "project01_name": "Portfolio",
+  "@project01_name": {
+    "description": "Projekti 1 otsikko"
+  },
   "project01_summary": "Moderni, responsiivinen ja saavutettava Flutterilla rakennettu portfolio.",
+  "@project01_summary": {
+    "description": "Tiivistelty kuvaus"
+  },
   "project01_purpose": "Tämä portfolio esittelee suunnittelufilosofiani ja tekniset taitoni.",
   "project01_actions": "Suunnittelin ja kehitin Flutteriin perustuvan yksilöllisen verkkoportfolion...",
   "project01_result": "Yhtenäinen henkilöbrändi ja kiinnostava portfolio.",
@@ -101,5 +119,53 @@
   "project01_accessibility_notes": "WCAG AA -vaatimusten mukainen typografia ja täysi näppäimistönavigointi.",
   "project01_collaboration": "Itsenäinen projekti, jossa suunnittelua ja kehitystä tehtiin iteratiivisesti.",
   "project01_image1_caption": "Projektisivun rakenteen matalan tarkkuuden rautalankamalli.",
-  "project01_accessibility_image1_caption": "Saavutettavuutta koskeva lainsäädäntö ja standardit."
+  "project01_accessibility_image1_caption": "Saavutettavuutta koskeva lainsäädäntö ja standardit.",
+  "projectPurpose": "Tarkoitus",
+  "@projectPurpose": {
+    "description": "Projektin tarkoitusta käsittelevän osion otsikko"
+  },
+  "projectClient": "Asiakas",
+  "@projectClient": {
+    "description": "Asiakas teksti"
+  },
+  "projectResult": "Tulos",
+  "@projectResult": {
+    "description": "Projektin tuloksia käsittelevän osion otsikko"
+  },
+  "projectActionsProcess": "Teot & Prosessi",
+  "@projectActionsProcess": {
+    "description": "Projektin tekoja ja tuloksia käsittelevän osion otsikko"
+  },
+  "projectMetadata": "Projektin Metadatasta",
+  "@projectMetadata": {
+    "description": "Teksti metadata osiolle"
+  },
+  "typeLabel": "Type",
+  "@typeLabel": {
+    "description": "Esim. projektin tyyppi"
+  },
+  "collaborationLabel": "Kollaboraatio",
+  "@collaborationLabel": {
+    "description": "Projektin kollaboraatiota käsittelevän osion otsikko"
+  },
+  "accessibilityNotes": "Projektin Saavutettavuudesta",
+  "@accessibilityNotes": {
+    "description": "Projektin saavutettavuutta käsittelevän osion otsikko"
+  },
+  "durationLabel": "Kesto",
+  "@durationLabel": {
+    "description": "Keston teksti"
+  },
+  "imagesLabel": "Kuvat",
+  "@imagesLabel": {
+    "description": "Kuvat teksti"
+  },
+  "projectImageLabel": "Kuva projektille {projectName}",
+  "@projectImageLabel": {
+    "description": "Kuva teksti"
+  },
+  "projectView": "Katso projekti",
+  "@projectView": {
+    "description": "Katso projekti"
+  }
 }
