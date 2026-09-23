@@ -26,16 +26,7 @@
     "rolesStack": ["designer", "developer", "illustrator"],
     "categories": ["solo", "portfolio", "accessible"],
 
-    "imagePaths": [
-      {
-        "path": "",
-        "caption_key": "project01_image1_caption"
-      },
-      {
-        "path": "",
-        "caption_key": "project01_accessibility_image1_caption"
-      }
-    ]
+    "imagePaths": []
   },
 
   {
@@ -58,12 +49,12 @@
     "clientOrCompany": "Taigoa Oy",
     "duration": "2024 – 2025",
 
-    "thumbnailPath": "assets/images/project_meaningful.jpg",
-    "heroImagePath": "assets/images/project_meaningful_hero.png",
+    "thumbnailPath": "assets/images/project_meaningful_hero.png",
+    "heroImagePath": "assets/images/project_meaningful.jpg",
 
     "techStack": ["Flutter", "AWS", "GitHub"],
     "rolesStack": ["team_lead", "developer", "designer"],
-    "categories": ["mobile", "wellbeing"],
+    "categories": ["wellbeing"],
 
     "imagePaths": []
   }
