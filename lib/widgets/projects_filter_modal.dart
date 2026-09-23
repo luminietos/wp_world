@@ -186,6 +186,21 @@ class _ProjectsFilterModalState extends State<ProjectsFilterModal> {
     );
   }
 
+  // Helper: counts project per tag
+  int _countForOption(String option, List<Project> allProjects, bool isStatus) {
+    if (isStatus) {
+      final bool statusValue = option == "true";
+      return allProjects.where((p) => p.isOngoing == statusValue).length;
+    }
+
+    return allProjects.where((p) {
+      return p.techStack.contains(option) ||
+          p.rolesStack.contains(option) ||
+          p.categories.contains(option) ||
+          p.projectType == option;
+    }).length;
+  }
+
   // Helper: builds a group of FilterChips
   Widget _buildGroup(
     BuildContext context, {
@@ -211,6 +226,7 @@ class _ProjectsFilterModalState extends State<ProjectsFilterModal> {
           runSpacing: Spacing.sm,
           children: options.map((option) {
             final isSelected = selected.contains(option);
+            final localizations = AppLocalizations.of(context)!;
 
             final Color selectedColor = isTechGroup
                 ? techColor(context, option) // tech-specific color
@@ -220,11 +236,19 @@ class _ProjectsFilterModalState extends State<ProjectsFilterModal> {
                 ? (isTechGroup ? colors.surface : colors.onPrimary)
                 : colors.onSurface;
 
+            final int count = _countForOption(
+              option,
+              widget.allProjects,
+              title == localizations.statusLabel, // status group
+            );
+
+            final String displayLabel = isTechGroup
+                ? "$option ($count)"
+                : "${localizeFilterLabel(context, option)} ($count)";
+
             return FilterChip(
               label: Text(
-                isTechGroup
-                    ? option // tech stack already human-readable = no need for localization helper
-                    : localizeFilterLabel(context, option),
+                displayLabel,
                 style: textTheme.bodySmall?.copyWith(
                   color: labelColor,
                   fontWeight: isSelected ? FontWeight.bold : null,
