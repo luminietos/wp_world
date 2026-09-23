@@ -80,6 +80,10 @@
   "@statusCompleted": {
     "description": "Status of project"
   },
+  "categoriesLabel": "Categories",
+  "@categoriesLabel": {
+    "description": "Filter's categories"
+  },
   "openMenu": "Open the menu",
   "@openMenu": {
     "description": "Open menu label"
@@ -104,6 +108,10 @@
   "@filterProjects": {
     "description": "Filter projects button text"
   },
+  "filterApply": "Apply filter/s",
+  "@filterApply": {
+    "description": "Btn text to apply filters"
+  },
   "filterReset": "Reset filter/s",
   "@filterReset": {
     "description": "Reset btn for filter component"
@@ -111,6 +119,14 @@
   "errorNoProjects": "No projects match these filters.",
   "@errorNoProjects": {
     "description": "Filter error message for if no projects match specifications"
+  },
+  "errorNoResults": "No results",
+  "@errorNoResults": {
+    "description": "No results error state"
+  },
+  "techStack": "Tech stack",
+  "@techStack": {
+    "description": "Tech stack label"
   },
   "responsiveGridLayout": "Responsive grid layout",
   "@responsiveGridLayout": {
@@ -148,6 +164,10 @@
   "@projectResult": {
     "description": "Section title in a case study for results"
   },
+  "projectRoles": "Roles",
+  "@projectRoles": {
+    "description": "Project's roles' label"
+  },
   "projectActionsProcess": "Actions & Process",
   "@projectActionsProcess": {
     "description": "Section title in a case study for actions and the process"
@@ -183,5 +203,49 @@
   "projectView": "View project",
   "@projectView": {
     "description": "For the 'view project' btn"
+  },
+  "projectTypeCrossPlatform": "Cross-platform",
+  "@projectTypeCrossPlatform": {
+    "description": "For tagging purposes"
+  },
+  "projectTypeMobileApp": "Mobile app",
+  "@projectTypeMobileApp": {
+    "description": "For tagging purposes"
+  },
+  "projectTypeWebApp": "Web app",
+  "@projectTypeWebApp": {
+    "description": "For tagging purposes"
+  },
+  "roleTeamLead": "Team lead",
+  "@roleTeamLead": {
+    "description": "A role in a project"
+  },
+  "roleDeveloper": "Developer",
+  "@roleDeveloper": {
+    "description": "A role in a project"
+  },
+  "roleDesigner": "Designer",
+  "@roleDesigner": {
+    "description": "A role in a project"
+  },
+  "roleIllustrator": "Illustrator",
+  "@roleIllustrator": {
+    "description": "A role in a project"
+  },
+  "categorySolo": "Solo",
+  "@categorySolo": {
+    "description": "A category to tag with"
+  },
+  "categoryPortfolio": "Portfolio",
+  "@categoryPortfolio": {
+    "description": "A category to tag with"
+  },
+  "categoryAccessible": "Accessible",
+  "@categoryAccessible": {
+    "description": "A category to tag with"
+  },
+  "categoryWellbeing": "Wellbeing",
+  "@categoryWellbeing": {
+    "description": "A category to tag with"
   }
 }

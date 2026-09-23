@@ -218,6 +218,12 @@ abstract class AppLocalizations {
   /// **'Completed'**
   String get statusCompleted;
 
+  /// Filter's categories
+  ///
+  /// In en, this message translates to:
+  /// **'Categories'**
+  String get categoriesLabel;
+
   /// Open menu label
   ///
   /// In en, this message translates to:
@@ -254,6 +260,12 @@ abstract class AppLocalizations {
   /// **'Filter projects'**
   String get filterProjects;
 
+  /// Btn text to apply filters
+  ///
+  /// In en, this message translates to:
+  /// **'Apply filter/s'**
+  String get filterApply;
+
   /// Reset btn for filter component
   ///
   /// In en, this message translates to:
@@ -265,6 +277,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No projects match these filters.'**
   String get errorNoProjects;
+
+  /// No results error state
+  ///
+  /// In en, this message translates to:
+  /// **'No results'**
+  String get errorNoResults;
+
+  /// Tech stack label
+  ///
+  /// In en, this message translates to:
+  /// **'Tech stack'**
+  String get techStack;
 
   /// Label for the responsive grid layout
   ///
@@ -356,6 +380,12 @@ abstract class AppLocalizations {
   /// **'Result'**
   String get projectResult;
 
+  /// Project's roles' label
+  ///
+  /// In en, this message translates to:
+  /// **'Roles'**
+  String get projectRoles;
+
   /// Section title in a case study for actions and the process
   ///
   /// In en, this message translates to:
@@ -409,6 +439,72 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'View project'**
   String get projectView;
+
+  /// For tagging purposes
+  ///
+  /// In en, this message translates to:
+  /// **'Cross-platform'**
+  String get projectTypeCrossPlatform;
+
+  /// For tagging purposes
+  ///
+  /// In en, this message translates to:
+  /// **'Mobile app'**
+  String get projectTypeMobileApp;
+
+  /// For tagging purposes
+  ///
+  /// In en, this message translates to:
+  /// **'Web app'**
+  String get projectTypeWebApp;
+
+  /// A role in a project
+  ///
+  /// In en, this message translates to:
+  /// **'Team lead'**
+  String get roleTeamLead;
+
+  /// A role in a project
+  ///
+  /// In en, this message translates to:
+  /// **'Developer'**
+  String get roleDeveloper;
+
+  /// A role in a project
+  ///
+  /// In en, this message translates to:
+  /// **'Designer'**
+  String get roleDesigner;
+
+  /// A role in a project
+  ///
+  /// In en, this message translates to:
+  /// **'Illustrator'**
+  String get roleIllustrator;
+
+  /// A category to tag with
+  ///
+  /// In en, this message translates to:
+  /// **'Solo'**
+  String get categorySolo;
+
+  /// A category to tag with
+  ///
+  /// In en, this message translates to:
+  /// **'Portfolio'**
+  String get categoryPortfolio;
+
+  /// A category to tag with
+  ///
+  /// In en, this message translates to:
+  /// **'Accessible'**
+  String get categoryAccessible;
+
+  /// A category to tag with
+  ///
+  /// In en, this message translates to:
+  /// **'Wellbeing'**
+  String get categoryWellbeing;
 }
 
 class _AppLocalizationsDelegate

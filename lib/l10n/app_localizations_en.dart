@@ -69,6 +69,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get statusCompleted => 'Completed';
 
   @override
+  String get categoriesLabel => 'Categories';
+
+  @override
   String get openMenu => 'Open the menu';
 
   @override
@@ -87,10 +90,19 @@ class AppLocalizationsEn extends AppLocalizations {
   String get filterProjects => 'Filter projects';
 
   @override
+  String get filterApply => 'Apply filter/s';
+
+  @override
   String get filterReset => 'Reset filter/s';
 
   @override
   String get errorNoProjects => 'No projects match these filters.';
+
+  @override
+  String get errorNoResults => 'No results';
+
+  @override
+  String get techStack => 'Tech stack';
 
   @override
   String get responsiveGridLayout => 'Responsive grid layout';
@@ -146,6 +158,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get projectResult => 'Result';
 
   @override
+  String get projectRoles => 'Roles';
+
+  @override
   String get projectActionsProcess => 'Actions & Process';
 
   @override
@@ -173,4 +188,37 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get projectView => 'View project';
+
+  @override
+  String get projectTypeCrossPlatform => 'Cross-platform';
+
+  @override
+  String get projectTypeMobileApp => 'Mobile app';
+
+  @override
+  String get projectTypeWebApp => 'Web app';
+
+  @override
+  String get roleTeamLead => 'Team lead';
+
+  @override
+  String get roleDeveloper => 'Developer';
+
+  @override
+  String get roleDesigner => 'Designer';
+
+  @override
+  String get roleIllustrator => 'Illustrator';
+
+  @override
+  String get categorySolo => 'Solo';
+
+  @override
+  String get categoryPortfolio => 'Portfolio';
+
+  @override
+  String get categoryAccessible => 'Accessible';
+
+  @override
+  String get categoryWellbeing => 'Wellbeing';
 }

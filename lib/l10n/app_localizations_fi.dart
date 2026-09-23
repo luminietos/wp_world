@@ -69,6 +69,9 @@ class AppLocalizationsFi extends AppLocalizations {
   String get statusCompleted => 'Valmis';
 
   @override
+  String get categoriesLabel => 'Kategoriat';
+
+  @override
   String get openMenu => 'Avaa valikko';
 
   @override
@@ -87,11 +90,20 @@ class AppLocalizationsFi extends AppLocalizations {
   String get filterProjects => 'Suodata projekteja';
 
   @override
+  String get filterApply => 'Käytä suodattimia';
+
+  @override
   String get filterReset => 'Tyhjennä filtteri/t';
 
   @override
   String get errorNoProjects =>
       'Mikään projekti ei sopeudu näihin filttereihin.';
+
+  @override
+  String get errorNoResults => 'Ei tuloksia';
+
+  @override
+  String get techStack => 'Teknologiapino';
 
   @override
   String get responsiveGridLayout => 'Responsiivinen ruudukkoasettelu';
@@ -147,13 +159,16 @@ class AppLocalizationsFi extends AppLocalizations {
   String get projectResult => 'Tulos';
 
   @override
+  String get projectRoles => 'Roolit';
+
+  @override
   String get projectActionsProcess => 'Teot & Prosessi';
 
   @override
   String get projectMetadata => 'Projektin Metadatasta';
 
   @override
-  String get typeLabel => 'Type';
+  String get typeLabel => 'Tyyppi';
 
   @override
   String get collaborationLabel => 'Kollaboraatio';
@@ -174,4 +189,37 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get projectView => 'Katso projekti';
+
+  @override
+  String get projectTypeCrossPlatform => 'Cross-platform';
+
+  @override
+  String get projectTypeMobileApp => 'Mobiili sovellus';
+
+  @override
+  String get projectTypeWebApp => 'Web sovellus';
+
+  @override
+  String get roleTeamLead => 'Tiiminvetäjä';
+
+  @override
+  String get roleDeveloper => 'Kehittäjä';
+
+  @override
+  String get roleDesigner => 'Suunnittelija';
+
+  @override
+  String get roleIllustrator => 'Kuvittaja';
+
+  @override
+  String get categorySolo => 'Soolo';
+
+  @override
+  String get categoryPortfolio => 'Portfolio';
+
+  @override
+  String get categoryAccessible => 'Saavutettava';
+
+  @override
+  String get categoryWellbeing => 'Hyvinvointi';
 }

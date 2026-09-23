@@ -80,6 +80,10 @@
   "@statusCompleted": {
     "description": "Projektin status"
   },
+  "categoriesLabel": "Kategoriat",
+  "@categoriesLabel": {
+    "description": "Filtterin kategorioiden otsikko"
+  },
   "openMenu": "Avaa valikko",
   "@openMenu": {
     "description": "Avaa valikko -nappi"
@@ -104,13 +108,25 @@
   "@filterProjects": {
     "description": "Projektien filtterointi-napin teksti"
   },
+  "filterApply": "Käytä suodattimia",
+  "@filterApply": {
+    "description": "'Apply filters' napin teksti"
+  },
   "filterReset": "Tyhjennä filtteri/t",
   "@filterReset": {
     "description": "Resetointi napin otsikko"
   },
   "errorNoProjects": "Mikään projekti ei sopeudu näihin filttereihin.",
   "@errorNoProjects": {
-    "description": "Virheviesti jos filtterit lyö tyhjää"
+    "description": "Virhetila viesti: jos filtterit lyö tyhjää"
+  },
+  "errorNoResults": "Ei tuloksia",
+  "@errorNoResults": {
+    "description": "Virhetila viesti: jos ei ole tuloksia"
+  },
+  "techStack": "Teknologiapino",
+  "@techStack": {
+    "description": "Otsikko 'tech stack' osiota varten"
   },
   "responsiveGridLayout": "Responsiivinen ruudukkoasettelu",
   "@responsiveGridLayout": {
@@ -148,6 +164,10 @@
   "@projectResult": {
     "description": "Projektin tuloksia käsittelevän osion otsikko"
   },
+  "projectRoles": "Roolit",
+  "@projectRoles": {
+    "description": "Projektin rooleja käsittelevän osion otsikko"
+  },
   "projectActionsProcess": "Teot & Prosessi",
   "@projectActionsProcess": {
     "description": "Projektin tekoja ja tuloksia käsittelevän osion otsikko"
@@ -156,7 +176,7 @@
   "@projectMetadata": {
     "description": "Teksti metadata osiolle"
   },
-  "typeLabel": "Type",
+  "typeLabel": "Tyyppi",
   "@typeLabel": {
     "description": "Esim. projektin tyyppi"
   },
@@ -183,5 +203,49 @@
   "projectView": "Katso projekti",
   "@projectView": {
     "description": "Katso projekti"
+  },
+  "projectTypeCrossPlatform": "Cross-platform",
+  "@projectTypeCrossPlatform": {
+    "description": "Filtterointia varten"
+  },
+  "projectTypeMobileApp": "Mobiili sovellus",
+  "@projectTypeMobileApp": {
+    "description": "Filtterointia varten"
+  },
+  "projectTypeWebApp": "Web sovellus",
+  "@projectTypeWebApp": {
+    "description": "Filtterointia varten"
+  },
+  "roleTeamLead": "Tiiminvetäjä",
+  "@roleTeamLead": {
+    "description": "Projektin rooli"
+  },
+  "roleDeveloper": "Kehittäjä",
+  "@roleDeveloper": {
+    "description": "Projektin rooli"
+  },
+  "roleDesigner": "Suunnittelija",
+  "@roleDesigner": {
+    "description": "Projektin rooli"
+  },
+  "roleIllustrator": "Kuvittaja",
+  "@roleIllustrator": {
+    "description": "Projektin rooli"
+  },
+  "categorySolo": "Soolo",
+  "@categorySolo": {
+    "description": "Filtteroitava kategoria"
+  },
+  "categoryPortfolio": "Portfolio",
+  "@categoryPortfolio": {
+    "description": "Filtteroitava kategoria"
+  },
+  "categoryAccessible": "Saavutettava",
+  "@categoryAccessible": {
+    "description": "Filtteroitava kategoria"
+  },
+  "categoryWellbeing": "Hyvinvointi",
+  "@categoryWellbeing": {
+    "description": "Filtteroitava kategoria"
   }
 }
