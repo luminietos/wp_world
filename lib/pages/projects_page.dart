@@ -4,6 +4,7 @@ import 'package:wp_world/data/project_loader.dart';
 import 'package:wp_world/l10n/app_localizations.dart';
 import 'package:wp_world/models/project.dart';
 import 'package:wp_world/state/projects_filter_state.dart';
+import 'package:wp_world/theme/app_colors.dart';
 import 'package:wp_world/widgets/projects_filter_button.dart';
 import 'package:wp_world/widgets/projects_filter_modal.dart';
 import 'package:wp_world/widgets/project_card.dart';
@@ -56,6 +57,8 @@ class _ProjectsPageState extends State<ProjectsPage> {
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+    final colors = Theme.of(context).colorScheme;
     final localizations = AppLocalizations.of(context)!;
 
     return FutureBuilder<List<Project>>(
@@ -82,10 +85,34 @@ class _ProjectsPageState extends State<ProjectsPage> {
 
               ProjectsFilterButton(onPressed: _openFilterModal),
 
+              SizedBox(height: Spacing.xxl),
+
+              // PROJECT COUNT TEXT
+              // 'Builder' ensures count is evaluated after 'filtered' is computed inside the FutureBuilder!
+              Builder(
+                builder: (context) {
+                  final count = filtered.length;
+
+                  final String countText = count == 1
+                      ? localizations.oneProjectFound
+                      : localizations.projectsFound(count);
+
+                  return Text(
+                    countText,
+                    style: Theme.of(
+                      context,
+                    ).textTheme.bodySmall?.copyWith(color: colors.primary),
+                  );
+                },
+              ),
+
               SizedBox(height: Spacing.xl),
 
               if (filtered.isEmpty)
-                Text(localizations.errorNoResults)
+                Text(
+                  localizations.errorNoResults,
+                  style: textTheme.bodySmall?.copyWith(color: colors.error),
+                )
               else
                 ResponsiveGrid(
                   children: filtered.map((project) {

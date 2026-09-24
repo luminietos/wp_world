@@ -198,7 +198,25 @@
   },
   "projectImageLabel": "Kuva projektille {projectName}",
   "@projectImageLabel": {
-    "description": "Kuva teksti"
+    "description": "Kuva teksti",
+    "placeholders": {
+      "projectName": {
+        "type": "String"
+      }
+    }
+  },
+  "projectsFound": "{count} projektia löydetty.",
+  "@projectsFound": {
+    "description": "Kuinka monta projektia filtteri löysi",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "oneProjectFound": "1 project found.",
+  "@oneProjectFound": {
+    "description": "Jos vain yksi projekti löydetty"
   },
   "projectView": "Katso projekti",
   "@projectView": {
@@ -247,5 +265,25 @@
   "categoryWellbeing": "Hyvinvointi",
   "@categoryWellbeing": {
     "description": "Filtteroitava kategoria"
+  },
+  "filterGroupTechStack": "Suodatin ryhmä: Teknologiapino",
+  "@filterGroupTechStack": {
+    "description": "Semanttinen teksti teknologiapino suodatinryhmälle"
+  },
+  "filterGroupProjectType": "Suodatin ryhmä: Projektin tyyppi",
+  "@filterGroupProjectType": {
+    "description": "Semanttinen teksti projektin tyypin suodatinryhmälle"
+  },
+  "filterGroupStatus": "Suodatin ryhmä: Status",
+  "@filterGroupStatus": {
+    "description": "Semanttinen teksti statuksen suodatinryhmälle"
+  },
+  "filterGroupCategories": "Suodatin ryhmä: Kategoriat",
+  "@filterGroupCategories": {
+    "description": "Semanttinen teksti kategorioiden suodatinryhmälle"
+  },
+  "filterGroupRoles": "Suodatin ryhmä: Roolit",
+  "@filterGroupRoles": {
+    "description": "Semanttinen teksti roolien suodatinryhmälle"
   }
 }

@@ -86,7 +86,7 @@ class ProjectCard extends StatelessWidget {
 
           SizedBox(height: Spacing.md),
 
-          // META ROW (DURATION + STATUS)
+          // META ROW (DURATION)
           Row(
             children: [
               if (project.duration.isNotEmpty)
@@ -96,13 +96,13 @@ class ProjectCard extends StatelessWidget {
                     color: colors.onSurfaceVariant,
                   ),
                 ),
-              if (project.duration.isNotEmpty) SizedBox(width: Spacing.md),
-              Text(
-                statusLabel,
-                style: textTheme.bodySmall?.copyWith(
-                  color: colors.onSurfaceVariant,
-                ),
-              ),
+              // if (project.duration.isNotEmpty) SizedBox(width: Spacing.md),
+              // Text(
+              //   statusLabel,
+              //   style: textTheme.bodySmall?.copyWith(
+              //     color: colors.onSurfaceVariant,
+              //   ),
+              // ),
             ],
           ),
 

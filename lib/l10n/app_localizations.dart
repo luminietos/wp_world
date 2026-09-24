@@ -432,7 +432,19 @@ abstract class AppLocalizations {
   ///
   /// In en, this message translates to:
   /// **'Image for {projectName}'**
-  String projectImageLabel(Object projectName);
+  String projectImageLabel(String projectName);
+
+  /// ProjectsPage label for how many projects are found
+  ///
+  /// In en, this message translates to:
+  /// **'{count} projects found.'**
+  String projectsFound(int count);
+
+  /// If only one project matches user-set params
+  ///
+  /// In en, this message translates to:
+  /// **'1 project found.'**
+  String get oneProjectFound;
 
   /// For the 'view project' btn
   ///
@@ -505,6 +517,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Wellbeing'**
   String get categoryWellbeing;
+
+  /// Semantic label for the tech stack filter group
+  ///
+  /// In en, this message translates to:
+  /// **'Filter group: Tech stack'**
+  String get filterGroupTechStack;
+
+  /// Semantic label for the project type filter group
+  ///
+  /// In en, this message translates to:
+  /// **'Filter group: Project type'**
+  String get filterGroupProjectType;
+
+  /// Semantic label for the status filter group
+  ///
+  /// In en, this message translates to:
+  /// **'Filter group: Status'**
+  String get filterGroupStatus;
+
+  /// Semantic label for the categories filter group
+  ///
+  /// In en, this message translates to:
+  /// **'Filter group: Categories'**
+  String get filterGroupCategories;
+
+  /// Semantic label for the roles filter group
+  ///
+  /// In en, this message translates to:
+  /// **'Filter group: Roles'**
+  String get filterGroupRoles;
 }
 
 class _AppLocalizationsDelegate

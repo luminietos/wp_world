@@ -183,9 +183,17 @@ class AppLocalizationsFi extends AppLocalizations {
   String get imagesLabel => 'Kuvat';
 
   @override
-  String projectImageLabel(Object projectName) {
+  String projectImageLabel(String projectName) {
     return 'Kuva projektille $projectName';
   }
+
+  @override
+  String projectsFound(int count) {
+    return '$count projektia löydetty.';
+  }
+
+  @override
+  String get oneProjectFound => '1 project found.';
 
   @override
   String get projectView => 'Katso projekti';
@@ -222,4 +230,19 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get categoryWellbeing => 'Hyvinvointi';
+
+  @override
+  String get filterGroupTechStack => 'Suodatin ryhmä: Teknologiapino';
+
+  @override
+  String get filterGroupProjectType => 'Suodatin ryhmä: Projektin tyyppi';
+
+  @override
+  String get filterGroupStatus => 'Suodatin ryhmä: Status';
+
+  @override
+  String get filterGroupCategories => 'Suodatin ryhmä: Kategoriat';
+
+  @override
+  String get filterGroupRoles => 'Suodatin ryhmä: Roolit';
 }

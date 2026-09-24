@@ -182,9 +182,17 @@ class AppLocalizationsEn extends AppLocalizations {
   String get imagesLabel => 'Images';
 
   @override
-  String projectImageLabel(Object projectName) {
+  String projectImageLabel(String projectName) {
     return 'Image for $projectName';
   }
+
+  @override
+  String projectsFound(int count) {
+    return '$count projects found.';
+  }
+
+  @override
+  String get oneProjectFound => '1 project found.';
 
   @override
   String get projectView => 'View project';
@@ -221,4 +229,19 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get categoryWellbeing => 'Wellbeing';
+
+  @override
+  String get filterGroupTechStack => 'Filter group: Tech stack';
+
+  @override
+  String get filterGroupProjectType => 'Filter group: Project type';
+
+  @override
+  String get filterGroupStatus => 'Filter group: Status';
+
+  @override
+  String get filterGroupCategories => 'Filter group: Categories';
+
+  @override
+  String get filterGroupRoles => 'Filter group: Roles';
 }

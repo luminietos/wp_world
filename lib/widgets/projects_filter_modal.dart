@@ -76,10 +76,8 @@ class _ProjectsFilterModalState extends State<ProjectsFilterModal> {
         padding: EdgeInsets.all(Spacing.lg),
         child: SingleChildScrollView(
           child: Column(
-            mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Top row: RESET | TITLE | CLOSE BTN
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -95,13 +93,10 @@ class _ProjectsFilterModalState extends State<ProjectsFilterModal> {
                     },
                     child: Text(
                       localizations.filterReset,
-                      style: textTheme.bodySmall, // smaller text
+                      style: textTheme.bodySmall,
                     ),
                   ),
-                  Text(
-                    localizations.filter,
-                    style: textTheme.titleMedium, // larger title
-                  ),
+                  Text(localizations.filter, style: textTheme.titleMedium),
                   IconButton(
                     icon: const Icon(Icons.close),
                     onPressed: () => Navigator.of(context).pop(),
@@ -111,48 +106,53 @@ class _ProjectsFilterModalState extends State<ProjectsFilterModal> {
 
               SizedBox(height: Spacing.lg),
 
-              // CATEGORY GROUPS
-              _buildGroup(
+              _buildStringGroup(
                 context,
                 title: localizations.techStack,
                 options: techOptions,
                 selected: tech,
                 isTechGroup: true,
+                semanticsLabel: localizations.filterGroupTechStack,
               ),
-              _buildGroup(
+
+              _buildStringGroup(
                 context,
                 title: localizations.typeLabel,
                 options: typeOptions,
                 selected: types,
+                semanticsLabel: localizations.filterGroupProjectType,
               ),
-              _buildGroup(
+
+              _buildStatusGroup(
                 context,
                 title: localizations.statusLabel,
-                options: statusOptions.map((s) => s.toString()).toList(),
-                selected: statuses.map((s) => s.toString()).toSet(),
-                convertBack: (v) => v == "true",
+                options: statusOptions,
+                selected: statuses,
+                semanticsLabel: localizations.filterGroupStatus,
               ),
-              _buildGroup(
+
+              _buildStringGroup(
                 context,
                 title: localizations.categoriesLabel,
                 options: categoryOptions,
                 selected: categories,
+                semanticsLabel: localizations.filterGroupCategories,
               ),
-              _buildGroup(
+
+              _buildStringGroup(
                 context,
                 title: localizations.projectRoles,
                 options: roleOptions,
                 selected: roles,
+                semanticsLabel: localizations.filterGroupRoles,
               ),
 
               SizedBox(height: Spacing.xl),
 
-              // APPLY BUTTON (WCAG 3.2.2)
               Align(
                 alignment: Alignment.centerRight,
                 child: ElevatedButton(
                   onPressed: () {
-                    // Commit temp selections to global state
                     _state.selectedTech
                       ..clear()
                       ..addAll(tech);
@@ -186,115 +186,171 @@ class _ProjectsFilterModalState extends State<ProjectsFilterModal> {
     );
   }
 
-  // Helper: counts project per tag
-  int _countForOption(String option, List<Project> allProjects, bool isStatus) {
-    if (isStatus) {
-      final bool statusValue = option == "true";
-      return allProjects.where((p) => p.isOngoing == statusValue).length;
-    }
+  int _countStatus(bool value) {
+    return widget.allProjects.where((p) => p.isOngoing == value).length;
+  }
 
-    return allProjects.where((p) {
-      return p.techStack.contains(option) ||
-          p.rolesStack.contains(option) ||
-          p.categories.contains(option) ||
-          p.projectType == option;
+  int _countTag(String value) {
+    return widget.allProjects.where((p) {
+      return p.techStack.contains(value) ||
+          p.rolesStack.contains(value) ||
+          p.categories.contains(value) ||
+          p.projectType == value;
     }).length;
   }
 
-  // Helper: builds a group of FilterChips
-  Widget _buildGroup(
+  Widget _buildStatusGroup(
+    BuildContext context, {
+    required String title,
+    required List<bool> options,
+    required Set<bool> selected,
+    String? semanticsLabel,
+  }) {
+    final colors = Theme.of(context).colorScheme;
+    final textTheme = Theme.of(context).textTheme;
+    final localizations = AppLocalizations.of(context)!;
+
+    return Semantics(
+      container: true,
+      label: semanticsLabel,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            title,
+            style: textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w600),
+          ),
+          SizedBox(height: Spacing.sm),
+          Wrap(
+            spacing: Spacing.sm,
+            runSpacing: Spacing.sm,
+            children: options.map((option) {
+              final bool isSelected = selected.contains(option);
+              final int count = _countStatus(option);
+
+              final String displayLabel = option
+                  ? "${localizations.statusOngoing} ($count)"
+                  : "${localizations.statusCompleted} ($count)";
+
+              return FilterChip(
+                label: Text(
+                  displayLabel,
+                  style: textTheme.bodySmall?.copyWith(
+                    color: isSelected ? colors.onPrimary : colors.onSurface,
+                    fontWeight: isSelected ? FontWeight.bold : null,
+                  ),
+                ),
+                side: isSelected
+                    ? BorderSide.none
+                    : BorderSide(color: colors.outlineVariant, width: 0.5),
+                selected: isSelected,
+                showCheckmark: true,
+                checkmarkColor: colors.onPrimary,
+                selectedColor: colors.primary,
+                backgroundColor: colors.surfaceVariant,
+                visualDensity: const VisualDensity(horizontal: 0, vertical: -2),
+                padding: EdgeInsets.symmetric(
+                  horizontal: Spacing.sm,
+                  vertical: Spacing.xs,
+                ),
+                shape: const StadiumBorder(),
+                onSelected: (value) {
+                  setState(() {
+                    if (value) {
+                      selected.add(option);
+                    } else {
+                      selected.remove(option);
+                    }
+                  });
+                },
+              );
+            }).toList(),
+          ),
+          SizedBox(height: Spacing.lg),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildStringGroup(
     BuildContext context, {
     required String title,
     required List<String> options,
     required Set<String> selected,
+    String? semanticsLabel,
     bool isTechGroup = false,
-    dynamic Function(String)? convertBack,
   }) {
     final colors = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
+    final localizations = AppLocalizations.of(context)!;
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          title,
-          style: textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w600),
-        ),
-        SizedBox(height: Spacing.sm),
-        Wrap(
-          spacing: Spacing.sm,
-          runSpacing: Spacing.sm,
-          children: options.map((option) {
-            final isSelected = selected.contains(option);
-            final localizations = AppLocalizations.of(context)!;
+    return Semantics(
+      container: true,
+      label: semanticsLabel,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            title,
+            style: textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w600),
+          ),
+          SizedBox(height: Spacing.sm),
+          Wrap(
+            spacing: Spacing.sm,
+            runSpacing: Spacing.sm,
+            children: options.map((option) {
+              final bool isSelected = selected.contains(option);
+              final int count = _countTag(option);
 
-            final Color selectedColor = isTechGroup
-                ? techColor(context, option) // tech-specific color
-                : colors.primary; // default for other groups
+              final String displayLabel = isTechGroup
+                  ? "$option ($count)"
+                  : "${localizeFilterLabel(context, option)} ($count)";
 
-            final Color labelColor = isSelected
-                ? (isTechGroup ? colors.surface : colors.onPrimary)
-                : colors.onSurface;
+              final Color selectedColor = isTechGroup
+                  ? techColor(context, option)
+                  : colors.primary;
 
-            final int count = _countForOption(
-              option,
-              widget.allProjects,
-              title == localizations.statusLabel, // status group
-            );
+              final Color labelColor = isSelected
+                  ? (isTechGroup ? colors.surface : colors.onPrimary)
+                  : colors.onSurface;
 
-            final String displayLabel = isTechGroup
-                ? "$option ($count)"
-                : "${localizeFilterLabel(context, option)} ($count)";
-
-            return FilterChip(
-              label: Text(
-                displayLabel,
-                style: textTheme.bodySmall?.copyWith(
-                  color: labelColor,
-                  fontWeight: isSelected ? FontWeight.bold : null,
+              return FilterChip(
+                label: Text(
+                  displayLabel,
+                  style: textTheme.bodySmall?.copyWith(
+                    color: labelColor,
+                    fontWeight: isSelected ? FontWeight.bold : null,
+                  ),
                 ),
-              ),
-
-              // Thin border when unselected
-              side: isSelected
-                  ? BorderSide.none
-                  : BorderSide(color: colors.outlineVariant, width: 0.5),
-
-              selected: isSelected,
-              showCheckmark: true,
-              checkmarkColor: isTechGroup ? colors.surface : colors.onPrimary,
-
-              selectedColor: selectedColor,
-
-              backgroundColor: colors.surfaceVariant,
-
-              visualDensity: const VisualDensity(
-                horizontal: 0,
-                vertical: -2, // smaller height
-              ),
-
-              padding: EdgeInsets.symmetric(
-                horizontal: Spacing.sm,
-                vertical: Spacing.xs,
-              ),
-
-              shape: const StadiumBorder(), // rounder chip
-
-              onSelected: (value) {
-                setState(() {
-                  if (value) {
-                    selected.add(option);
-                  } else {
-                    selected.remove(option);
-                  }
-                });
-              },
-            );
-          }).toList(),
-        ),
-
-        SizedBox(height: Spacing.lg),
-      ],
+                side: isSelected
+                    ? BorderSide.none
+                    : BorderSide(color: colors.outlineVariant, width: 0.5),
+                selected: isSelected,
+                showCheckmark: true,
+                checkmarkColor: isTechGroup ? colors.surface : colors.onPrimary,
+                selectedColor: selectedColor,
+                backgroundColor: colors.surfaceVariant,
+                visualDensity: const VisualDensity(horizontal: 0, vertical: -2),
+                padding: EdgeInsets.symmetric(
+                  horizontal: Spacing.sm,
+                  vertical: Spacing.xs,
+                ),
+                shape: const StadiumBorder(),
+                onSelected: (value) {
+                  setState(() {
+                    if (value) {
+                      selected.add(option);
+                    } else {
+                      selected.remove(option);
+                    }
+                  });
+                },
+              );
+            }).toList(),
+          ),
+          SizedBox(height: Spacing.lg),
+        ],
+      ),
     );
   }
 }

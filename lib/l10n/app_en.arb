@@ -198,7 +198,25 @@
   },
   "projectImageLabel": "Image for {projectName}",
   "@projectImageLabel": {
-    "description": "Kuva teksti"
+    "description": "Kuva teksti",
+    "placeholders": {
+      "projectName": {
+        "type": "String"
+      }
+    }
+  },
+  "projectsFound": "{count} projects found.",
+  "@projectsFound": {
+    "description": "ProjectsPage label for how many projects are found",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "oneProjectFound": "1 project found.",
+  "@oneProjectFound": {
+    "description": "If only one project matches user-set params"
   },
   "projectView": "View project",
   "@projectView": {
@@ -247,5 +265,25 @@
   "categoryWellbeing": "Wellbeing",
   "@categoryWellbeing": {
     "description": "A category to tag with"
+  },
+  "filterGroupTechStack": "Filter group: Tech stack",
+  "@filterGroupTechStack": {
+    "description": "Semantic label for the tech stack filter group"
+  },
+  "filterGroupProjectType": "Filter group: Project type",
+  "@filterGroupProjectType": {
+    "description": "Semantic label for the project type filter group"
+  },
+  "filterGroupStatus": "Filter group: Status",
+  "@filterGroupStatus": {
+    "description": "Semantic label for the status filter group"
+  },
+  "filterGroupCategories": "Filter group: Categories",
+  "@filterGroupCategories": {
+    "description": "Semantic label for the categories filter group"
+  },
+  "filterGroupRoles": "Filter group: Roles",
+  "@filterGroupRoles": {
+    "description": "Semantic label for the roles filter group"
   }
 }
