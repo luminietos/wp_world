@@ -152,6 +152,46 @@
   "project01_collaboration": "Itsenäinen projekti, jossa suunnittelua ja kehitystä tehtiin iteratiivisesti.",
   "project01_image1_caption": "Projektisivun rakenteen matalan tarkkuuden rautalankamalli.",
   "project01_accessibility_image1_caption": "Saavutettavuutta koskeva lainsäädäntö ja standardit.",
+  "project02_name": "Meaningful",
+  "@project02_name": {
+    "description": "Projektin 2 nimi: Meaningful-sovelluksen case"
+  },
+  "project02_summary": "Suunnittelin ja toteutin saavutettavan mielenterveyssovelluksen, jossa korostuu inklusiivinen käyttökokemus ja WCAG-yhteensopivat käyttäjäpolut.",
+  "@project02_summary": {
+    "description": "Lyhyt yhteenveto Meaningful-projektista"
+  },
+  "project02_purpose": "Tavoitteena oli luoda luotettava, rauhallinen ja saavutettava digitaalinen kumppani, joka tukee käyttäjää mielialan seurannassa, reflektiossa ja resurssien löytämisessä ilman kuormittamista.",
+  "@project02_purpose": {
+    "description": "Meaningful-projektin tarkoitus ja tavoitteet"
+  },
+  "project02_actions": "Vastasin UX- ja UI-suunnittelusta, rakensin design-järjestelmän, toteutin keskeiset käyttäjäpolut Flutterilla ja tein yhteistyötä sisällön ja saavutettavuuden parissa.",
+  "@project02_actions": {
+    "description": "Mitä teit Meaningful-projektissa"
+  },
+  "project02_result": "Sovellus julkaistiin toimivana MVP-versiona, jossa on saavutettava navigaatio, selkeä hierarkia ja ruudunlukijaystävälliset komponentit – valmiina jatkokehitykseen ja kliiniseen validointiin.",
+  "@project02_result": {
+    "description": "Meaningful-projektin lopputulos ja vaikutus"
+  },
+  "project02_date": "2024–2025",
+  "@project02_date": {
+    "description": "Meaningful-projektin aikataulu"
+  },
+  "project02_accessibility_notes": "WCAG 2.1 AA -tason värikontrasti, fokusjärjestys, semanttinen rakenne ja ruudunlukijatuki keskeisissä käyttäjäpoluissa.",
+  "@project02_accessibility_notes": {
+    "description": "Saavutettavuusmuistiinpanot Meaningful-projektista"
+  },
+  "project02_collaboration": "Tein tiivistä yhteistyötä tuotannon, sisällöntuotannon ja mielenterveysalan ammattilaisten kanssa, jotta kieli, käyttäjäpolut ja ominaisuudet tuntuvat turvallisilta ja inklusiivisilta.",
+  "@project02_collaboration": {
+    "description": "Yhteistyö Meaningful-projektissa"
+  },
+  "project02_image1_caption": "Meaningful-etusivu, jossa mielialan seuranta ja nopea pääsy reflektiomerkintöihin.",
+  "@project02_image1_caption": {
+    "description": "Ensimmäisen Meaningful-kuvan kuvateksti"
+  },
+  "project02_accessibility_image1_caption": "Kuvakaappaus Meaningful-sovelluksen etusivusta, jossa näkyy mielialakortteja, rauhallinen värimaailma ja selkeä navigaatio.",
+  "@project02_accessibility_image1_caption": {
+    "description": "Saavutettava kuvaus ensimmäisestä Meaningful-kuvasta"
+  },
   "projectPurpose": "Tarkoitus",
   "@projectPurpose": {
     "description": "Projektin tarkoitusta käsittelevän osion otsikko"
@@ -265,6 +305,18 @@
   "categoryWellbeing": "Hyvinvointi",
   "@categoryWellbeing": {
     "description": "Filtteroitava kategoria"
+  },
+  "filterGroupHint": "{selected} valittuna, {total} vaihtoehtoa",
+  "@filterGroupHint": {
+    "description": "Ruudunlukijavihje suodatinryhmille: saavutettavuus",
+    "placeholders": {
+      "selected": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
   },
   "filterGroupTechStack": "Suodatin ryhmä: Teknologiapino",
   "@filterGroupTechStack": {

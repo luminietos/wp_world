@@ -210,9 +210,17 @@ class _ProjectsFilterModalState extends State<ProjectsFilterModal> {
     final textTheme = Theme.of(context).textTheme;
     final localizations = AppLocalizations.of(context)!;
 
+    final int selectedCount = selected.length;
+    final int totalCount = options.length;
+    final String hint = localizations.filterGroupHint(
+      selectedCount,
+      totalCount,
+    );
+
     return Semantics(
       container: true,
       label: semanticsLabel,
+      hint: hint, // Screen reader hint for how many chips selected/left!
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -284,9 +292,17 @@ class _ProjectsFilterModalState extends State<ProjectsFilterModal> {
     final textTheme = Theme.of(context).textTheme;
     final localizations = AppLocalizations.of(context)!;
 
+    final int selectedCount = selected.length;
+    final int totalCount = options.length;
+    final String hint = localizations.filterGroupHint(
+      selectedCount,
+      totalCount,
+    );
+
     return Semantics(
       container: true,
       label: semanticsLabel,
+      hint: hint,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

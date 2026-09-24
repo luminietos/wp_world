@@ -149,6 +149,44 @@ class AppLocalizationsEn extends AppLocalizations {
       'Accessibility legislation and standards.';
 
   @override
+  String get project02_name => 'Meaningful';
+
+  @override
+  String get project02_summary =>
+      'Design and development of an accessible mental health companion app with a focus on inclusive UX and WCAG-compliant flows.';
+
+  @override
+  String get project02_purpose =>
+      'To create a trustworthy, calm, and accessible digital companion that supports users in tracking mood, reflecting, and finding resources without overwhelming them.';
+
+  @override
+  String get project02_actions =>
+      'I led UX and UI design, created the design system, implemented core flows in Flutter, and collaborated on content and accessibility reviews.';
+
+  @override
+  String get project02_result =>
+      'The app shipped as a functional MVP with accessible navigation, clear hierarchy, and screen-reader-friendly components, ready for further clinical validation.';
+
+  @override
+  String get project02_date => '2024–2025';
+
+  @override
+  String get project02_accessibility_notes =>
+      'WCAG 2.1 AA alignment for color contrast, focus order, semantic structure, and screen reader support across key flows.';
+
+  @override
+  String get project02_collaboration =>
+      'Worked closely with product, content, and mental health professionals to ensure language, flows, and features felt safe and inclusive.';
+
+  @override
+  String get project02_image1_caption =>
+      'Meaningful home screen with mood tracking and quick access to reflection entries.';
+
+  @override
+  String get project02_accessibility_image1_caption =>
+      'Screenshot of the Meaningful app home screen showing mood tracking cards, a calm color palette, and clear navigation.';
+
+  @override
   String get projectPurpose => 'Purpose';
 
   @override
@@ -229,6 +267,11 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get categoryWellbeing => 'Wellbeing';
+
+  @override
+  String filterGroupHint(int selected, int total) {
+    return '$selected selected, $total options';
+  }
 
   @override
   String get filterGroupTechStack => 'Filter group: Tech stack';

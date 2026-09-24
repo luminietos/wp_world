@@ -362,6 +362,66 @@ abstract class AppLocalizations {
   /// **'Accessibility legislation and standards.'**
   String get project01_accessibility_image1_caption;
 
+  /// Project 2 name: Meaningful app case study
+  ///
+  /// In en, this message translates to:
+  /// **'Meaningful'**
+  String get project02_name;
+
+  /// Short summary of the Meaningful project
+  ///
+  /// In en, this message translates to:
+  /// **'Design and development of an accessible mental health companion app with a focus on inclusive UX and WCAG-compliant flows.'**
+  String get project02_summary;
+
+  /// Purpose and goals of the Meaningful project
+  ///
+  /// In en, this message translates to:
+  /// **'To create a trustworthy, calm, and accessible digital companion that supports users in tracking mood, reflecting, and finding resources without overwhelming them.'**
+  String get project02_purpose;
+
+  /// What you did in the Meaningful project
+  ///
+  /// In en, this message translates to:
+  /// **'I led UX and UI design, created the design system, implemented core flows in Flutter, and collaborated on content and accessibility reviews.'**
+  String get project02_actions;
+
+  /// Outcome and impact of the Meaningful project
+  ///
+  /// In en, this message translates to:
+  /// **'The app shipped as a functional MVP with accessible navigation, clear hierarchy, and screen-reader-friendly components, ready for further clinical validation.'**
+  String get project02_result;
+
+  /// Timeline for the Meaningful project
+  ///
+  /// In en, this message translates to:
+  /// **'2024–2025'**
+  String get project02_date;
+
+  /// Accessibility notes for the Meaningful project
+  ///
+  /// In en, this message translates to:
+  /// **'WCAG 2.1 AA alignment for color contrast, focus order, semantic structure, and screen reader support across key flows.'**
+  String get project02_accessibility_notes;
+
+  /// Collaboration context for the Meaningful project
+  ///
+  /// In en, this message translates to:
+  /// **'Worked closely with product, content, and mental health professionals to ensure language, flows, and features felt safe and inclusive.'**
+  String get project02_collaboration;
+
+  /// Caption for the first Meaningful project image
+  ///
+  /// In en, this message translates to:
+  /// **'Meaningful home screen with mood tracking and quick access to reflection entries.'**
+  String get project02_image1_caption;
+
+  /// Accessible description for the first Meaningful project image
+  ///
+  /// In en, this message translates to:
+  /// **'Screenshot of the Meaningful app home screen showing mood tracking cards, a calm color palette, and clear navigation.'**
+  String get project02_accessibility_image1_caption;
+
   /// Section title in a case study for purpose
   ///
   /// In en, this message translates to:
@@ -517,6 +577,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Wellbeing'**
   String get categoryWellbeing;
+
+  /// Screen reader hint for filter groups: accessibility
+  ///
+  /// In en, this message translates to:
+  /// **'{selected} selected, {total} options'**
+  String filterGroupHint(int selected, int total);
 
   /// Semantic label for the tech stack filter group
   ///

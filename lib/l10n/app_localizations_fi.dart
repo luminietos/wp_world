@@ -150,6 +150,44 @@ class AppLocalizationsFi extends AppLocalizations {
       'Saavutettavuutta koskeva lainsäädäntö ja standardit.';
 
   @override
+  String get project02_name => 'Meaningful';
+
+  @override
+  String get project02_summary =>
+      'Suunnittelin ja toteutin saavutettavan mielenterveyssovelluksen, jossa korostuu inklusiivinen käyttökokemus ja WCAG-yhteensopivat käyttäjäpolut.';
+
+  @override
+  String get project02_purpose =>
+      'Tavoitteena oli luoda luotettava, rauhallinen ja saavutettava digitaalinen kumppani, joka tukee käyttäjää mielialan seurannassa, reflektiossa ja resurssien löytämisessä ilman kuormittamista.';
+
+  @override
+  String get project02_actions =>
+      'Vastasin UX- ja UI-suunnittelusta, rakensin design-järjestelmän, toteutin keskeiset käyttäjäpolut Flutterilla ja tein yhteistyötä sisällön ja saavutettavuuden parissa.';
+
+  @override
+  String get project02_result =>
+      'Sovellus julkaistiin toimivana MVP-versiona, jossa on saavutettava navigaatio, selkeä hierarkia ja ruudunlukijaystävälliset komponentit – valmiina jatkokehitykseen ja kliiniseen validointiin.';
+
+  @override
+  String get project02_date => '2024–2025';
+
+  @override
+  String get project02_accessibility_notes =>
+      'WCAG 2.1 AA -tason värikontrasti, fokusjärjestys, semanttinen rakenne ja ruudunlukijatuki keskeisissä käyttäjäpoluissa.';
+
+  @override
+  String get project02_collaboration =>
+      'Tein tiivistä yhteistyötä tuotannon, sisällöntuotannon ja mielenterveysalan ammattilaisten kanssa, jotta kieli, käyttäjäpolut ja ominaisuudet tuntuvat turvallisilta ja inklusiivisilta.';
+
+  @override
+  String get project02_image1_caption =>
+      'Meaningful-etusivu, jossa mielialan seuranta ja nopea pääsy reflektiomerkintöihin.';
+
+  @override
+  String get project02_accessibility_image1_caption =>
+      'Kuvakaappaus Meaningful-sovelluksen etusivusta, jossa näkyy mielialakortteja, rauhallinen värimaailma ja selkeä navigaatio.';
+
+  @override
   String get projectPurpose => 'Tarkoitus';
 
   @override
@@ -230,6 +268,11 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get categoryWellbeing => 'Hyvinvointi';
+
+  @override
+  String filterGroupHint(int selected, int total) {
+    return '$selected valittuna, $total vaihtoehtoa';
+  }
 
   @override
   String get filterGroupTechStack => 'Suodatin ryhmä: Teknologiapino';

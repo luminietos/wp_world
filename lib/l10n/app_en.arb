@@ -152,6 +152,46 @@
   "project01_collaboration": "Solo project with iterative design and development.",
   "project01_image1_caption": "Low-fidelity wireframe of the project page layout.",
   "project01_accessibility_image1_caption": "Accessibility legislation and standards.",
+  "project02_name": "Meaningful",
+  "@project02_name": {
+    "description": "Project 2 name: Meaningful app case study"
+  },
+  "project02_summary": "Design and development of an accessible mental health companion app with a focus on inclusive UX and WCAG-compliant flows.",
+  "@project02_summary": {
+    "description": "Short summary of the Meaningful project"
+  },
+  "project02_purpose": "To create a trustworthy, calm, and accessible digital companion that supports users in tracking mood, reflecting, and finding resources without overwhelming them.",
+  "@project02_purpose": {
+    "description": "Purpose and goals of the Meaningful project"
+  },
+  "project02_actions": "I led UX and UI design, created the design system, implemented core flows in Flutter, and collaborated on content and accessibility reviews.",
+  "@project02_actions": {
+    "description": "What you did in the Meaningful project"
+  },
+  "project02_result": "The app shipped as a functional MVP with accessible navigation, clear hierarchy, and screen-reader-friendly components, ready for further clinical validation.",
+  "@project02_result": {
+    "description": "Outcome and impact of the Meaningful project"
+  },
+  "project02_date": "2024–2025",
+  "@project02_date": {
+    "description": "Timeline for the Meaningful project"
+  },
+  "project02_accessibility_notes": "WCAG 2.1 AA alignment for color contrast, focus order, semantic structure, and screen reader support across key flows.",
+  "@project02_accessibility_notes": {
+    "description": "Accessibility notes for the Meaningful project"
+  },
+  "project02_collaboration": "Worked closely with product, content, and mental health professionals to ensure language, flows, and features felt safe and inclusive.",
+  "@project02_collaboration": {
+    "description": "Collaboration context for the Meaningful project"
+  },
+  "project02_image1_caption": "Meaningful home screen with mood tracking and quick access to reflection entries.",
+  "@project02_image1_caption": {
+    "description": "Caption for the first Meaningful project image"
+  },
+  "project02_accessibility_image1_caption": "Screenshot of the Meaningful app home screen showing mood tracking cards, a calm color palette, and clear navigation.",
+  "@project02_accessibility_image1_caption": {
+    "description": "Accessible description for the first Meaningful project image"
+  },
   "projectPurpose": "Purpose",
   "@projectPurpose": {
     "description": "Section title in a case study for purpose"
@@ -265,6 +305,18 @@
   "categoryWellbeing": "Wellbeing",
   "@categoryWellbeing": {
     "description": "A category to tag with"
+  },
+  "filterGroupHint": "{selected} selected, {total} options",
+  "@filterGroupHint": {
+    "description": "Screen reader hint for filter groups: accessibility",
+    "placeholders": {
+      "selected": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
   },
   "filterGroupTechStack": "Filter group: Tech stack",
   "@filterGroupTechStack": {
