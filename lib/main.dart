@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wp_world/router/app_router.dart';
+import 'package:wp_world/state/projects_filter_state.dart';
 import 'package:wp_world/theme/app_color_scheme.dart';
 import 'package:wp_world/theme/app_text_theme.dart';
 import 'l10n/app_localizations.dart';
@@ -12,6 +13,7 @@ import 'state/theme_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await ProjectsFilterState().load();
   runApp(const ProviderScope(child: MyApp()));
 }
 
@@ -58,7 +60,7 @@ class _AppRootState extends State<_AppRoot> {
       debugShowCheckedModeBanner: false,
       themeMode: themeMode,
 
-      // ⭐ FIX: router is stable, no rebuild → no zoom effect
+      // FIX: router is stable, no rebuild → no zoom effect
       routerDelegate: appRouter.delegate(),
       routeInformationParser: appRouter.defaultRouteParser(),
 

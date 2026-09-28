@@ -11,11 +11,13 @@ import 'package:wp_world/utils/tech_colors.dart';
 class ProjectsFilterModal extends StatefulWidget {
   final List<Project> allProjects;
   final VoidCallback onApply;
+  final VoidCallback? onReload;
 
   const ProjectsFilterModal({
     super.key,
     required this.allProjects,
     required this.onApply,
+    this.onReload,
   });
 
   @override
@@ -32,16 +34,24 @@ class _ProjectsFilterModalState extends State<ProjectsFilterModal> {
   late Set<String> categories;
   late Set<String> roles;
 
-  @override
-  void initState() {
-    super.initState();
-    _state = ProjectsFilterState();
-
+  void loadFromState() {
     tech = Set.from(_state.selectedTech);
     types = Set.from(_state.selectedProjectTypes);
     statuses = Set.from(_state.selectedStatuses);
     categories = Set.from(_state.selectedCategories);
     roles = Set.from(_state.selectedRoles);
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _state = ProjectsFilterState();
+
+    if (widget.onReload != null) {
+      widget.onReload!();
+    }
+
+    loadFromState();
   }
 
   @override
@@ -148,10 +158,11 @@ class _ProjectsFilterModalState extends State<ProjectsFilterModal> {
 
               SizedBox(height: Spacing.xl),
 
+              // ADD FILTER/S BUTTON
               Align(
                 alignment: Alignment.centerRight,
                 child: ElevatedButton(
-                  onPressed: () {
+                  onPressed: () async {
                     _state.selectedTech
                       ..clear()
                       ..addAll(tech);
@@ -171,6 +182,8 @@ class _ProjectsFilterModalState extends State<ProjectsFilterModal> {
                     _state.selectedRoles
                       ..clear()
                       ..addAll(roles);
+
+                    await _state.save(); // <-- persistence
 
                     widget.onApply();
                     Navigator.of(context).pop();

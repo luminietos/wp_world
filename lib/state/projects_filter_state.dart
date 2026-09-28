@@ -1,6 +1,7 @@
 // RETAINS FILTERS WHEN NAVIGATING AWAY
 
 import 'package:wp_world/models/project.dart';
+import 'package:shared_preferences/shared_preferences.dart'; // persistence
 
 // GLOBAL FILTER STATE (persists across navigation)
 class ProjectsFilterState {
@@ -50,5 +51,45 @@ class ProjectsFilterState {
     }
 
     return true;
+  }
+
+  Future<void> save() async {
+    final prefs = await SharedPreferences.getInstance();
+
+    prefs.setStringList('filter_tech', selectedTech.toList());
+    prefs.setStringList('filter_types', selectedProjectTypes.toList());
+    prefs.setStringList('filter_categories', selectedCategories.toList());
+    prefs.setStringList('filter_roles', selectedRoles.toList());
+
+    prefs.setStringList(
+      'filter_statuses',
+      selectedStatuses.map((s) => s.toString()).toList(),
+    );
+  }
+
+  Future<void> load() async {
+    final prefs = await SharedPreferences.getInstance();
+
+    selectedTech
+      ..clear()
+      ..addAll(prefs.getStringList('filter_tech') ?? []);
+
+    selectedProjectTypes
+      ..clear()
+      ..addAll(prefs.getStringList('filter_types') ?? []);
+
+    selectedCategories
+      ..clear()
+      ..addAll(prefs.getStringList('filter_categories') ?? []);
+
+    selectedRoles
+      ..clear()
+      ..addAll(prefs.getStringList('filter_roles') ?? []);
+
+    selectedStatuses
+      ..clear()
+      ..addAll(
+        (prefs.getStringList('filter_statuses') ?? []).map((s) => s == 'true'),
+      );
   }
 }
