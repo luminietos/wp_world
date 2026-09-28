@@ -5,6 +5,7 @@ import 'package:wp_world/models/project.dart';
 import 'package:wp_world/utils/spacing.dart';
 import 'package:wp_world/utils/tech_colors.dart';
 import 'package:wp_world/widgets/components/app_card.dart';
+import 'package:wp_world/helpers/localization_helpers.dart';
 
 class ProjectCard extends StatelessWidget {
   final Project project;
@@ -70,7 +71,7 @@ class ProjectCard extends StatelessWidget {
 
           // CLIENT + TYPE (subtle)
           Text(
-            '${project.clientOrCompany} • ${project.projectType}',
+            '${project.clientOrCompany} • ${localizeFilterLabel(context, project.projectType)}',
             style: textTheme.bodySmall?.copyWith(
               color: colors.onSurfaceVariant,
             ),

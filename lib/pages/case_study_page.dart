@@ -151,10 +151,10 @@ class _HeroHeader extends StatelessWidget {
           ),
         ),
         SizedBox(height: Spacing.sm),
-        Text(
-          '${project.clientOrCompany} • ${project.projectType}',
-          style: textTheme.bodyMedium?.copyWith(color: colors.onSurfaceVariant),
-        ),
+        // Text(
+        //   '${project.clientOrCompany} • ${localizeFilterLabel(context, project.projectType)}',
+        //   style: textTheme.bodyMedium?.copyWith(color: colors.onSurfaceVariant),
+        // ),
         SizedBox(height: Spacing.md),
         Text(
           project.summary(context),
@@ -209,7 +209,11 @@ class _MetaRow extends StatelessWidget {
       ),
       if (project.duration.isNotEmpty)
         _MetaItem(label: localizations.durationLabel, value: project.duration),
-      _MetaItem(label: localizations.typeLabel, value: project.projectType),
+      _MetaItem(
+        label: localizations.typeLabel,
+        value: localizeFilterLabel(context, project.projectType),
+      ),
+
       _MetaItem(label: localizations.statusLabel, value: statusLabel),
     ];
 

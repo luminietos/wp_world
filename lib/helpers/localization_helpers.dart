@@ -22,6 +22,18 @@ String localized(BuildContext context, String key) {
     'project01_accessibility_image1_caption':
         loc.project01_accessibility_image1_caption,
 
+    'project02_name': loc.project02_name,
+    'project02_summary': loc.project02_summary,
+    'project02_purpose': loc.project02_purpose,
+    'project02_actions': loc.project02_actions,
+    'project02_result': loc.project02_result,
+    'project02_date': loc.project02_date,
+    'project02_accessibility_notes': loc.project02_accessibility_notes,
+    'project02_collaboration': loc.project02_collaboration,
+    'project02_image1_caption': loc.project02_image1_caption,
+    'project02_accessibility_image1_caption':
+        loc.project02_accessibility_image1_caption,
+
     // Add more keys here as needed.
   };
 

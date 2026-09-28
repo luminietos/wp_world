@@ -47,7 +47,6 @@ class _ProjectsFilterModalState extends State<ProjectsFilterModal> {
   @override
   Widget build(BuildContext context) {
     final localizations = AppLocalizations.of(context)!;
-    final colors = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
 
     // Collect unique options
