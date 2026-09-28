@@ -24,12 +24,11 @@ class MyApp extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return ScreenUtilInit(
       designSize: const Size(1440, 1024), // desktop-first
-      minTextAdapt: true,
-      splitScreenMode: true,
-
-      // IMPORTANT FIX: Use child instead of builder
+      minTextAdapt: false, // do NOT adapt text
+      splitScreenMode: false, // do NOT scale text in split mode
+      // IMPORTANT FIX - use child instead of builder
       builder: (_, child) => child!,
-      child: _AppRoot(ref), // ⭐ persistent router lives here
+      child: _AppRoot(ref), // persistent router lives here
     );
   }
 }

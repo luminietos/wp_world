@@ -51,7 +51,7 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
               child: Text(
                 "Wilma Paloheimo",
                 style: TextStyle(
-                  fontSize: isMobile ? 20.sp : 28.sp,
+                  fontSize: isMobile ? 20 : 28,
                   fontWeight: FontWeight.bold,
                   color: colors.onSurface,
                 ),
@@ -156,7 +156,7 @@ class _NavItem extends StatelessWidget {
           child: Text(
             label,
             style: TextStyle(
-              fontSize: 18.sp,
+              fontSize: 18,
               fontWeight: FontWeight.w500,
               color: Theme.of(context).colorScheme.onSurface,
             ),
