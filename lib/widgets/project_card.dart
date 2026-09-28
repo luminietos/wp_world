@@ -90,20 +90,15 @@ class ProjectCard extends StatelessWidget {
           // META ROW (DURATION)
           Row(
             children: [
-              if (project.duration.isNotEmpty)
-                Text(
+              Flexible(
+                child: Text(
                   project.duration,
                   style: textTheme.bodySmall?.copyWith(
                     color: colors.onSurfaceVariant,
                   ),
+                  overflow: TextOverflow.ellipsis,
                 ),
-              // if (project.duration.isNotEmpty) SizedBox(width: Spacing.md),
-              // Text(
-              //   statusLabel,
-              //   style: textTheme.bodySmall?.copyWith(
-              //     color: colors.onSurfaceVariant,
-              //   ),
-              // ),
+              ),
             ],
           ),
 
