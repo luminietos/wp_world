@@ -55,73 +55,79 @@ class _CaseStudyPageState extends State<CaseStudyPage> {
           orElse: () => throw Exception('Project not found'),
         );
 
-        return Section(
-          child: ConstrainedBox(
-            constraints: Layout.maxContentWidth,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                _HeroHeader(project: project),
-                SizedBox(height: Spacing.xl),
-                _MetaRow(project: project),
-                SizedBox(height: Spacing.xxl),
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Section(
+              child: ConstrainedBox(
+                constraints: Layout.maxContentWidth,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    _HeroHeader(project: project),
+                    SizedBox(height: Spacing.xl),
+                    _MetaRow(project: project),
+                    SizedBox(height: Spacing.xxl),
 
-                _CaseStudyBlock(
-                  title: localizations.projectResult,
-                  body: project.result(context),
-                ),
-                SizedBox(height: Spacing.xxl),
-
-                _CaseStudyBlock(
-                  title: localizations.projectPurpose,
-                  body: project.purpose(context),
-                ),
-                SizedBox(height: Spacing.xxl),
-
-                _CaseStudyBlock(
-                  title: localizations.projectActionsProcess,
-                  body: project.actions(context),
-                ),
-                SizedBox(height: Spacing.xxl),
-
-                if (project.sections != null && project.sections!.isNotEmpty)
-                  ...project.sections!.map(
-                    (section) => Padding(
-                      padding: EdgeInsets.only(bottom: Spacing.xxl),
-                      child: _CaseStudySectionBlock(section: section),
+                    _CaseStudyBlock(
+                      title: localizations.projectResult,
+                      body: project.result(context),
                     ),
-                  ),
+                    SizedBox(height: Spacing.xxl),
 
-                if (project.imagePaths.isNotEmpty) ...[
-                  SizedBox(height: Spacing.xxl),
-                  _ImageGallery(project: project),
-                ],
+                    _CaseStudyBlock(
+                      title: localizations.projectPurpose,
+                      body: project.purpose(context),
+                    ),
+                    SizedBox(height: Spacing.xxl),
 
-                SizedBox(height: Spacing.xxl),
+                    _CaseStudyBlock(
+                      title: localizations.projectActionsProcess,
+                      body: project.actions(context),
+                    ),
+                    SizedBox(height: Spacing.xxl),
 
-                _CaseStudyBlock(
-                  title: localizations.accessibilityNotes,
-                  body: project.accessibilityNotes(context),
+                    if (project.sections != null &&
+                        project.sections!.isNotEmpty)
+                      ...project.sections!.map(
+                        (section) => Padding(
+                          padding: EdgeInsets.only(bottom: Spacing.xxl),
+                          child: _CaseStudySectionBlock(section: section),
+                        ),
+                      ),
+
+                    if (project.imagePaths.isNotEmpty) ...[
+                      SizedBox(height: Spacing.xxl),
+                      _ImageGallery(project: project),
+                    ],
+
+                    SizedBox(height: Spacing.xxl),
+
+                    _CaseStudyBlock(
+                      title: localizations.accessibilityNotes,
+                      body: project.accessibilityNotes(context),
+                    ),
+                    SizedBox(height: Spacing.xxl),
+
+                    _CaseStudyBlock(
+                      title: localizations.collaborationLabel,
+                      body: project.collaboration(context),
+                    ),
+                    SizedBox(height: Spacing.xl),
+
+                    if (project.projectLink != null &&
+                        project.projectLink!.isNotEmpty)
+                      TextButton(
+                        onPressed: () {
+                          // TODO: open link with url_launcher
+                        },
+                        child: Text(localizations.projectView),
+                      ),
+                  ],
                 ),
-                SizedBox(height: Spacing.xxl),
-
-                _CaseStudyBlock(
-                  title: localizations.collaborationLabel,
-                  body: project.collaboration(context),
-                ),
-                SizedBox(height: Spacing.xl),
-
-                if (project.projectLink != null &&
-                    project.projectLink!.isNotEmpty)
-                  TextButton(
-                    onPressed: () {
-                      // TODO: open link with url_launcher
-                    },
-                    child: Text(localizations.projectView),
-                  ),
-              ],
+              ),
             ),
-          ),
+          ],
         );
       },
     );
