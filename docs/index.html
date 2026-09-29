@@ -1,7 +1,7 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-  <!--
+  <head>
+    <!--
     If you are serving your web app in a path other than the root, change the
     href value below to reflect the base path you are serving from.
 
@@ -13,26 +13,68 @@
 
     This is a placeholder for base href that will be replaced by the value of
     the `--base-href` argument provided to `flutter build`.
-  -->
-  <base href="/wp_world/">
+    -->
+    <base href="/wp_world/" />
 
-  <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
+    <meta charset="UTF-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="description" content="A new Flutter project." />
 
-  <!-- iOS meta tags & icons -->
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="wp_world">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+    <!-- iOS meta tags & icons -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="wp_world" />
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
+    <!-- ========================================================= -->
+    <!-- THEME-AWARE FAVICONS (USER OS/BROWSER THEME, NOT APP THEME) -->
+    <!-- ========================================================= -->
 
-  <title>wp_world</title>
-  <link rel="manifest" href="manifest.json">
-</head>
-<body>
-  <script src="flutter_bootstrap.js" async></script>
-</body>
+    <!-- Default favicon (light mode 32x32) -->
+    <!-- Used when browser does not support prefers-color-scheme -->
+    <link
+      rel="icon"
+      sizes="32x32"
+      href="assets/icons/favicon-light-32x32.png"
+    />
+
+    <!-- Light mode favicon -->
+    <link
+      rel="icon"
+      href="assets/icons/favicon-light-32x32.png"
+      media="(prefers-color-scheme: light)"
+    />
+
+    <!-- Dark mode favicon -->
+    <link
+      rel="icon"
+      href="assets/icons/favicon-dark-32x32.png"
+      media="(prefers-color-scheme: dark)"
+    />
+
+    <!-- Apple touch icon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/icons/apple-touch-icon.png"
+    />
+
+    <!-- Optional: PWA icons -->
+    <link
+      rel="icon"
+      sizes="192x192"
+      href="assets/icons/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      sizes="512x512"
+      href="assets/icons/android-chrome-512x512.png"
+    />
+
+    <title>wp_world</title>
+    <link rel="manifest" href="manifest.json" />
+  </head>
+
+  <body>
+    <script src="flutter_bootstrap.js" async></script>
+  </body>
 </html>
