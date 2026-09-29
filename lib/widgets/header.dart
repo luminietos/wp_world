@@ -18,6 +18,9 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
     final localizations = AppLocalizations.of(context)!;
     final colors = Theme.of(context).colorScheme;
 
+    final brightness = Theme.of(context).brightness;
+    final isDark = brightness == Brightness.dark;
+
     final isMobile = Responsive.isMobile;
     final isTablet = Responsive.isTablet;
     final isDesktop = Responsive.isDesktop;
@@ -48,13 +51,13 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
             // Logo / Name
             Semantics(
               header: true,
-              child: Text(
-                "Wilma Paloheimo",
-                style: TextStyle(
-                  fontSize: isMobile ? 20 : 28,
-                  fontWeight: FontWeight.bold,
-                  color: colors.onSurface,
-                ),
+              label: 'Wilma Paloheimo',
+              child: Image.asset(
+                isDark
+                    ? 'assets/icons/favicon-dark.io/apple-touch-icon.png'
+                    : 'assets/icons/favicon-light.io/apple-touch-icon.png',
+                height: isMobile ? 56.h : 72.h,
+                fit: BoxFit.contain,
               ),
             ),
 

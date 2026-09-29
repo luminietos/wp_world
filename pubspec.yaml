@@ -73,6 +73,9 @@ flutter:
     - lib/data/projects.json
 
     # outside of lib
+    - assets/icons/
+    - assets/icons/favicon-dark.io/
+    - assets/icons/favicon-light.io/
     - assets/images/
     - assets/fonts/
 
