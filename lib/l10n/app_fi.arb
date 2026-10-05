@@ -349,5 +349,53 @@
   "timelineWorkTaigoa": "Ohjelmistokehittäjä- & suunnittelija, tiiminvetäjä, Taigoa Oy",
   "@timelineWorkTaigoa": {
     "description": "Label for my year-long stint as a dev at Taigoa"
+  },
+  "month1": "Tammikuu",
+  "@month1": {
+    "description": "Kuukauden nimi"
+  },
+  "month2": "Helmikuu",
+  "@month2": {
+    "description": "Kuukauden nimi"
+  },
+  "month3": "Maaliskuu",
+  "@month3": {
+    "description": "Kuukauden nimi"
+  },
+  "month4": "Huhtikuu",
+  "@month4": {
+    "description": "Kuukauden nimi"
+  },
+  "month5": "Toukokuu",
+  "@month5": {
+    "description": "Kuukauden nimi"
+  },
+  "month6": "Kesäkuu",
+  "@month6": {
+    "description": "Kuukauden nimi"
+  },
+  "month7": "Heinäkuu",
+  "@month7": {
+    "description": "Kuukauden nimi"
+  },
+  "month8": "Elokuu",
+  "@month8": {
+    "description": "Kuukauden nimi"
+  },
+  "month9": "Syyskuu",
+  "@month9": {
+    "description": "Kuukauden nimi"
+  },
+  "month10": "Lokakuu",
+  "@month10": {
+    "description": "Kuukauden nimi"
+  },
+  "month11": "Marraskuu",
+  "@month11": {
+    "description": "Kuukauden nimi"
+  },
+  "month12": "Joulukuu",
+  "@month12": {
+    "description": "Kuukauden nimi"
   }
 }

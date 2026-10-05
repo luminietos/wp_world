@@ -631,6 +631,78 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Product Designer & Developer, Taigoa Oy'**
   String get timelineWorkTaigoa;
+
+  /// Month name
+  ///
+  /// In en, this message translates to:
+  /// **'January'**
+  String get month1;
+
+  /// Month name
+  ///
+  /// In en, this message translates to:
+  /// **'February'**
+  String get month2;
+
+  /// Month name
+  ///
+  /// In en, this message translates to:
+  /// **'March'**
+  String get month3;
+
+  /// Month name
+  ///
+  /// In en, this message translates to:
+  /// **'April'**
+  String get month4;
+
+  /// Month name
+  ///
+  /// In en, this message translates to:
+  /// **'May'**
+  String get month5;
+
+  /// Month name
+  ///
+  /// In en, this message translates to:
+  /// **'June'**
+  String get month6;
+
+  /// Month name
+  ///
+  /// In en, this message translates to:
+  /// **'July'**
+  String get month7;
+
+  /// Month name
+  ///
+  /// In en, this message translates to:
+  /// **'August'**
+  String get month8;
+
+  /// Month name
+  ///
+  /// In en, this message translates to:
+  /// **'September'**
+  String get month9;
+
+  /// Month name
+  ///
+  /// In en, this message translates to:
+  /// **'October'**
+  String get month10;
+
+  /// Month name
+  ///
+  /// In en, this message translates to:
+  /// **'November'**
+  String get month11;
+
+  /// Month name
+  ///
+  /// In en, this message translates to:
+  /// **'December'**
+  String get month12;
 }
 
 class _AppLocalizationsDelegate

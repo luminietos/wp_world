@@ -300,4 +300,40 @@ class AppLocalizationsFi extends AppLocalizations {
   @override
   String get timelineWorkTaigoa =>
       'Ohjelmistokehittäjä- & suunnittelija, tiiminvetäjä, Taigoa Oy';
+
+  @override
+  String get month1 => 'Tammikuu';
+
+  @override
+  String get month2 => 'Helmikuu';
+
+  @override
+  String get month3 => 'Maaliskuu';
+
+  @override
+  String get month4 => 'Huhtikuu';
+
+  @override
+  String get month5 => 'Toukokuu';
+
+  @override
+  String get month6 => 'Kesäkuu';
+
+  @override
+  String get month7 => 'Heinäkuu';
+
+  @override
+  String get month8 => 'Elokuu';
+
+  @override
+  String get month9 => 'Syyskuu';
+
+  @override
+  String get month10 => 'Lokakuu';
+
+  @override
+  String get month11 => 'Marraskuu';
+
+  @override
+  String get month12 => 'Joulukuu';
 }

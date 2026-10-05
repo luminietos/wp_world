@@ -349,5 +349,53 @@
   "timelineWorkTaigoa": "Product Designer & Developer, Taigoa Oy",
   "@timelineWorkTaigoa": {
     "description": "Label for my year-long stint as a dev at Taigoa"
+  },
+  "month1": "January",
+  "@month1": {
+    "description": "Month name"
+  },
+  "month2": "February",
+  "@month2": {
+    "description": "Month name"
+  },
+  "month3": "March",
+  "@month3": {
+    "description": "Month name"
+  },
+  "month4": "April",
+  "@month4": {
+    "description": "Month name"
+  },
+  "month5": "May",
+  "@month5": {
+    "description": "Month name"
+  },
+  "month6": "June",
+  "@month6": {
+    "description": "Month name"
+  },
+  "month7": "July",
+  "@month7": {
+    "description": "Month name"
+  },
+  "month8": "August",
+  "@month8": {
+    "description": "Month name"
+  },
+  "month9": "September",
+  "@month9": {
+    "description": "Month name"
+  },
+  "month10": "October",
+  "@month10": {
+    "description": "Month name"
+  },
+  "month11": "November",
+  "@month11": {
+    "description": "Month name"
+  },
+  "month12": "December",
+  "@month12": {
+    "description": "Month name"
   }
 }

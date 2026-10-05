@@ -296,4 +296,40 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get timelineWorkTaigoa => 'Product Designer & Developer, Taigoa Oy';
+
+  @override
+  String get month1 => 'January';
+
+  @override
+  String get month2 => 'February';
+
+  @override
+  String get month3 => 'March';
+
+  @override
+  String get month4 => 'April';
+
+  @override
+  String get month5 => 'May';
+
+  @override
+  String get month6 => 'June';
+
+  @override
+  String get month7 => 'July';
+
+  @override
+  String get month8 => 'August';
+
+  @override
+  String get month9 => 'September';
+
+  @override
+  String get month10 => 'October';
+
+  @override
+  String get month11 => 'November';
+
+  @override
+  String get month12 => 'December';
 }
