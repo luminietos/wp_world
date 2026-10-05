@@ -34,7 +34,7 @@ String localized(BuildContext context, String key) {
     'project02_accessibility_image1_caption':
         loc.project02_accessibility_image1_caption,
 
-    // Add more keys here as needed.
+    // Add more keys here when more projects are added!
   };
 
   if (!map.containsKey(key)) {
@@ -105,27 +105,49 @@ class LocalizationHelpers {
       case 'timelineWorkTaigoa':
         return loc.timelineWorkTaigoa;
       default:
-        return key; // fallback: show key if missing
+        return key; // fallback if key is missing
     }
   }
 
+  // LOCALIZED MONTH LOOKUP using ARB keys (month1..month12)
+  static String translateMonth(BuildContext context, String key) {
+    final loc = of(context);
+
+    switch (key) {
+      case 'month1':
+        return loc.month1;
+      case 'month2':
+        return loc.month2;
+      case 'month3':
+        return loc.month3;
+      case 'month4':
+        return loc.month4;
+      case 'month5':
+        return loc.month5;
+      case 'month6':
+        return loc.month6;
+      case 'month7':
+        return loc.month7;
+      case 'month8':
+        return loc.month8;
+      case 'month9':
+        return loc.month9;
+      case 'month10':
+        return loc.month10;
+      case 'month11':
+        return loc.month11;
+      case 'month12':
+        return loc.month12;
+      default:
+        return key; // fallback
+    }
+  }
+
+  // LOCALIZED MONTH AND YEAR FORMATTING
   static String formatMonthYear(BuildContext context, DateTime date) {
-    // For now, simple English formatting; can later localize by locale.
-    const months = [
-      'Jan',
-      'Feb',
-      'Mar',
-      'Apr',
-      'May',
-      'Jun',
-      'Jul',
-      'Aug',
-      'Sep',
-      'Oct',
-      'Nov',
-      'Dec',
-    ];
-    return '${months[date.month - 1]} ${date.year}';
+    final monthKey = 'month${date.month}'; // month1..month12
+    final monthName = translateMonth(context, monthKey);
+    return '$monthName ${date.year}';
   }
 
   static String formatDateRange(
