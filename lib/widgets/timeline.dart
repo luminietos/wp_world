@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:wp_world/helpers/localization_helpers.dart';
 import 'package:wp_world/models/timeline_event.dart';
+import 'package:wp_world/utils/spacing.dart';
+import 'package:wp_world/widgets/timeline_date_pill.dart';
 
-/// ------------------------------------------------------------
-/// MARKER LAYOUT LOGIC
-/// ------------------------------------------------------------
+// MARKER LAYOUT LOGIC
 class TimelineLayout {
   final List<DateTime> markers;
   final Map<DateTime, int> markerIndexByDate;
@@ -32,9 +32,7 @@ class TimelineLayout {
   int indexFor(DateTime date) => markerIndexByDate[date]!;
 }
 
-/// ------------------------------------------------------------
 /// EVENT POSITIONING MODEL
-/// ------------------------------------------------------------
 class PositionedTimelineEvent {
   final TimelineEvent event;
   final int startIndex;
@@ -49,9 +47,7 @@ class PositionedTimelineEvent {
   int get span => endIndex - startIndex;
 }
 
-/// ------------------------------------------------------------
 /// MAIN WIDGET: VerticalTimeline
-/// ------------------------------------------------------------
 class VerticalTimeline extends StatelessWidget {
   final List<TimelineEvent> events;
 
@@ -101,6 +97,15 @@ class VerticalTimeline extends StatelessWidget {
                 totalWidth: totalWidth,
               ),
             ),
+
+            ..._buildMarkerArmsAndPills(
+              context: context,
+              layout: layout,
+              events: events,
+              centerX: centerX,
+              segmentHeight: segmentHeight,
+              totalWidth: totalWidth,
+            ),
           ],
         );
       },
@@ -123,17 +128,71 @@ class VerticalTimeline extends StatelessWidget {
     for (var i = 0; i < markerCount; i++) {
       final date = layout.markers[i];
 
-      // All events starting at this marker
       final startingEvents = events.where((e) => e.start == date).toList();
-
-      // All events ending at this marker
       final endingEvents = events.where((e) => e.end == date).toList();
 
       Color? color;
 
-      // ------------------------------------------------------------
-      // PRIORITY 1: Start-date rules
-      // ------------------------------------------------------------
+      if (startingEvents.isNotEmpty) {
+        final hasStudyStart = startingEvents.any((e) => e.isStudy);
+        final hasWorkStart = startingEvents.any((e) => !e.isStudy);
+
+        if (hasStudyStart)
+          color = colors.secondary;
+        else if (hasWorkStart)
+          color = colors.primary;
+      }
+
+      if (color == null && endingEvents.isNotEmpty) {
+        final hasStudyEnd = endingEvents.any((e) => e.isStudy);
+        final hasWorkEnd = endingEvents.any((e) => !e.isStudy);
+
+        final hasStudyStartHere = startingEvents.any((e) => e.isStudy);
+        final hasWorkStartHere = startingEvents.any((e) => !e.isStudy);
+
+        if (hasWorkEnd && !hasStudyStartHere)
+          color = colors.primary;
+        else if (hasStudyEnd && !hasWorkStartHere)
+          color = colors.secondary;
+      }
+
+      markerColors[i] = color ?? Colors.grey.shade700;
+    }
+
+    return Positioned.fill(
+      child: CustomPaint(
+        painter: _TimelinePainter(
+          centerX: centerX,
+          markerCount: markerCount,
+          segmentHeight: segmentHeight,
+          markerColors: markerColors,
+        ),
+      ),
+    );
+  }
+
+  // ARMS + PILLS (start-date only)
+  List<Widget> _buildMarkerArmsAndPills({
+    required BuildContext context,
+    required TimelineLayout layout,
+    required List<TimelineEvent> events,
+    required double centerX,
+    required double segmentHeight,
+    required double totalWidth,
+  }) {
+    final colors = Theme.of(context).colorScheme;
+    final markerCount = layout.markers.length;
+
+    final markerColors = <int, Color>{};
+
+    // Same color logic as markers
+    for (var i = 0; i < markerCount; i++) {
+      final date = layout.markers[i];
+      final startingEvents = events.where((e) => e.start == date).toList();
+      final endingEvents = events.where((e) => e.end == date).toList();
+
+      Color? color;
+
       if (startingEvents.isNotEmpty) {
         final hasStudyStart = startingEvents.any((e) => e.isStudy);
         final hasWorkStart = startingEvents.any((e) => !e.isStudy);
@@ -145,9 +204,6 @@ class VerticalTimeline extends StatelessWidget {
         }
       }
 
-      // ------------------------------------------------------------
-      // PRIORITY 2: End-date rules (only if no start-date color)
-      // ------------------------------------------------------------
       if (color == null && endingEvents.isNotEmpty) {
         final hasStudyEnd = endingEvents.any((e) => e.isStudy);
         final hasWorkEnd = endingEvents.any((e) => !e.isStudy);
@@ -162,20 +218,63 @@ class VerticalTimeline extends StatelessWidget {
         }
       }
 
-      // Fallback
       markerColors[i] = color ?? Colors.grey.shade700;
     }
 
-    return Positioned.fill(
-      child: CustomPaint(
-        painter: _TimelinePainter(
-          centerX: centerX,
-          markerCount: markerCount,
-          segmentHeight: segmentHeight,
-          markerColors: markerColors,
-        ),
-      ),
-    );
+    final widgets = <Widget>[];
+
+    for (var i = 0; i < markerCount; i++) {
+      final date = layout.markers[i];
+      final y = i * segmentHeight;
+
+      final startingEvents = events.where((e) => e.start == date).toList();
+      final color = markerColors[i]!;
+
+      for (final e in startingEvents) {
+        final text = LocalizationHelpers.formatMonthYear(context, e.start);
+        final pill = TimelineDatePill(text: text, color: color);
+
+        if (e.isStudy) {
+          // LEFT SIDE: pill + arm, row's right edge at centerX
+          widgets.add(
+            Positioned(
+              top: y,
+              right: totalWidth - centerX,
+              child: FractionalTranslation(
+                translation: const Offset(0, -0.5),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    pill,
+                    Container(width: Spacing.lg, height: 2, color: color),
+                  ],
+                ),
+              ),
+            ),
+          );
+        } else {
+          // RIGHT SIDE: arm + pill, row's left edge at centerX
+          widgets.add(
+            Positioned(
+              top: y,
+              left: centerX,
+              child: FractionalTranslation(
+                translation: const Offset(0, -0.5),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Container(width: Spacing.lg, height: 2, color: color),
+                    pill,
+                  ],
+                ),
+              ),
+            ),
+          );
+        }
+      }
+    }
+
+    return widgets;
   }
 
   // EVENT CONTAINER
@@ -196,7 +295,7 @@ class VerticalTimeline extends StatelessWidget {
     final halfWidth = totalWidth / 2;
     final containerWidth = halfWidth * 0.8;
 
-    const double sideSpacing = 24.0; // NEW SPACING
+    const double sideSpacing = 24.0;
 
     final isStudy = event.isStudy;
 
@@ -226,16 +325,21 @@ class VerticalTimeline extends StatelessWidget {
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
               color: isStudy ? colors.secondary : colors.primary,
-              width: 1.5,
+              width: 1,
             ),
           ),
           alignment: Alignment.center,
-          child: Text(
-            label,
-            textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.bodySmall?.copyWith(
-              fontWeight: FontWeight.w600,
-              // color: isStudy ? colors.secondary : colors.primary,
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: Spacing.lg,
+              vertical: Spacing.lg,
+            ),
+            child: Text(
+              label,
+              textAlign: isStudy ? TextAlign.right : TextAlign.left,
+              style: Theme.of(
+                context,
+              ).textTheme.bodySmall?.copyWith(fontWeight: FontWeight.w600),
             ),
           ),
         ),
@@ -244,9 +348,7 @@ class VerticalTimeline extends StatelessWidget {
   }
 }
 
-/// ------------------------------------------------------------
 /// CUSTOM PAINTER FOR TIMELINE
-/// ------------------------------------------------------------
 class _TimelinePainter extends CustomPainter {
   final double centerX;
   final int markerCount;
