@@ -613,6 +613,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Filter group: Roles'**
   String get filterGroupRoles;
+
+  /// Label for my BBA
+  ///
+  /// In en, this message translates to:
+  /// **'Studies (BBA, Developing Digital Services)'**
+  String get timelineStudiesBBA;
+
+  /// Label for my internship
+  ///
+  /// In en, this message translates to:
+  /// **'Software Engineer Intern, Taigoa Oy'**
+  String get timelineWorkInternship;
+
+  /// Label for my year-long stint as a dev at Taigoa
+  ///
+  /// In en, this message translates to:
+  /// **'Product Designer & Developer, Taigoa Oy'**
+  String get timelineWorkTaigoa;
 }
 
 class _AppLocalizationsDelegate

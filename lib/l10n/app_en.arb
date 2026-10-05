@@ -337,5 +337,17 @@
   "filterGroupRoles": "Filter group: Roles",
   "@filterGroupRoles": {
     "description": "Semantic label for the roles filter group"
+  },
+  "timelineStudiesBBA": "Studies (BBA, Developing Digital Services)",
+  "@timelineStudiesBBA": {
+    "description": "Label for my BBA"
+  },
+  "timelineWorkInternship": "Software Engineer Intern, Taigoa Oy",
+  "@timelineWorkInternship": {
+    "description": "Label for my internship"
+  },
+  "timelineWorkTaigoa": "Product Designer & Developer, Taigoa Oy",
+  "@timelineWorkTaigoa": {
+    "description": "Label for my year-long stint as a dev at Taigoa"
   }
 }

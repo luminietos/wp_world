@@ -88,5 +88,56 @@ String localizeFilterLabel(BuildContext context, String raw) {
   }
 }
 
+// FOR THE ABOUTPAGE TIMELINE (of my studies/career)
+class LocalizationHelpers {
+  static AppLocalizations of(BuildContext context) {
+    return AppLocalizations.of(context)!;
+  }
+
+  static String translate(BuildContext context, String key) {
+    final loc = of(context);
+
+    switch (key) {
+      case 'timelineStudiesBBA':
+        return loc.timelineStudiesBBA;
+      case 'timelineWorkInternship':
+        return loc.timelineWorkInternship;
+      case 'timelineWorkTaigoa':
+        return loc.timelineWorkTaigoa;
+      default:
+        return key; // fallback: show key if missing
+    }
+  }
+
+  static String formatMonthYear(BuildContext context, DateTime date) {
+    // For now, simple English formatting; can later localize by locale.
+    const months = [
+      'Jan',
+      'Feb',
+      'Mar',
+      'Apr',
+      'May',
+      'Jun',
+      'Jul',
+      'Aug',
+      'Sep',
+      'Oct',
+      'Nov',
+      'Dec',
+    ];
+    return '${months[date.month - 1]} ${date.year}';
+  }
+
+  static String formatDateRange(
+    BuildContext context,
+    DateTime start,
+    DateTime end,
+  ) {
+    final startStr = formatMonthYear(context, start);
+    final endStr = formatMonthYear(context, end);
+    return '$startStr – $endStr';
+  }
+}
+
 // Q: Why is this helper needed?
 // A: Flutter’s localization system does not support dynamic key lookup by default.

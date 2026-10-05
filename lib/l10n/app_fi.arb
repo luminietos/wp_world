@@ -337,5 +337,17 @@
   "filterGroupRoles": "Suodatin ryhmä: Roolit",
   "@filterGroupRoles": {
     "description": "Semanttinen teksti roolien suodatinryhmälle"
+  },
+  "timelineStudiesBBA": "Opinnot (BBA, digitaalisten palvelujen kehitys)",
+  "@timelineStudiesBBA": {
+    "description": "Label for my BBA"
+  },
+  "timelineWorkInternship": "Ohjelmistokehittäjä Harjoittelijja, Taigoa Oy",
+  "@timelineWorkInternship": {
+    "description": "Label for my internship"
+  },
+  "timelineWorkTaigoa": "Ohjelmistokehittäjä- & suunnittelija, tiiminvetäjä, Taigoa Oy",
+  "@timelineWorkTaigoa": {
+    "description": "Label for my year-long stint as a dev at Taigoa"
   }
 }

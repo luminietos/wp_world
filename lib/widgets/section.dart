@@ -51,6 +51,8 @@ class Section extends StatelessWidget {
               ),
             ),
 
+          SizedBox(height: Spacing.md),
+
           // MAIN CONTENT
           child,
 

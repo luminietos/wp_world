@@ -287,4 +287,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get filterGroupRoles => 'Filter group: Roles';
+
+  @override
+  String get timelineStudiesBBA => 'Studies (BBA, Developing Digital Services)';
+
+  @override
+  String get timelineWorkInternship => 'Software Engineer Intern, Taigoa Oy';
+
+  @override
+  String get timelineWorkTaigoa => 'Product Designer & Developer, Taigoa Oy';
 }

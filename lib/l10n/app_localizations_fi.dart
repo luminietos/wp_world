@@ -288,4 +288,16 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get filterGroupRoles => 'Suodatin ryhmä: Roolit';
+
+  @override
+  String get timelineStudiesBBA =>
+      'Opinnot (BBA, digitaalisten palvelujen kehitys)';
+
+  @override
+  String get timelineWorkInternship =>
+      'Ohjelmistokehittäjä Harjoittelijja, Taigoa Oy';
+
+  @override
+  String get timelineWorkTaigoa =>
+      'Ohjelmistokehittäjä- & suunnittelija, tiiminvetäjä, Taigoa Oy';
 }
