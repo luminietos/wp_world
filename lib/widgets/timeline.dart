@@ -3,6 +3,8 @@ import 'package:wp_world/helpers/localization_helpers.dart';
 import 'package:wp_world/models/timeline_event.dart';
 import 'package:wp_world/utils/spacing.dart';
 import 'package:wp_world/widgets/timeline_date_pill.dart';
+import 'package:wp_world/utils/icon_sizes.dart';
+import 'package:wp_world/widgets/timeline_marker_icon.dart';
 
 // MARKER LAYOUT LOGIC
 class TimelineLayout {
@@ -178,7 +180,7 @@ class VerticalTimeline extends StatelessWidget {
     );
   }
 
-  // ARMS + PILLS (start + end dates)
+  // ARMS + PILLS (start + end dates + marker icons)
   List<Widget> _buildMarkerArmsAndPills({
     required BuildContext context,
     required TimelineLayout layout,
@@ -193,7 +195,9 @@ class VerticalTimeline extends StatelessWidget {
 
     final markerColors = <int, Color>{};
 
-    // Same color logic as markers
+    // ------------------------------------------------------------
+    // DETERMINE MARKER COLORS (same logic as before)
+    // ------------------------------------------------------------
     for (var i = 0; i < markerCount; i++) {
       final date = layout.markers[i];
       final startingEvents = events.where((e) => e.start == date).toList();
@@ -205,11 +209,10 @@ class VerticalTimeline extends StatelessWidget {
         final hasStudyStart = startingEvents.any((e) => e.isStudy);
         final hasWorkStart = startingEvents.any((e) => !e.isStudy);
 
-        if (hasStudyStart) {
+        if (hasStudyStart)
           color = colors.secondary;
-        } else if (hasWorkStart) {
+        else if (hasWorkStart)
           color = colors.primary;
-        }
       }
 
       if (color == null && endingEvents.isNotEmpty) {
@@ -219,11 +222,10 @@ class VerticalTimeline extends StatelessWidget {
         final hasStudyStartHere = startingEvents.any((e) => e.isStudy);
         final hasWorkStartHere = startingEvents.any((e) => !e.isStudy);
 
-        if (hasWorkEnd && !hasStudyStartHere) {
+        if (hasWorkEnd && !hasStudyStartHere)
           color = colors.primary;
-        } else if (hasStudyEnd && !hasWorkStartHere) {
+        else if (hasStudyEnd && !hasWorkStartHere)
           color = colors.secondary;
-        }
       }
 
       markerColors[i] = color ?? Colors.grey.shade700;
@@ -231,6 +233,56 @@ class VerticalTimeline extends StatelessWidget {
 
     final widgets = <Widget>[];
 
+    // ------------------------------------------------------------
+    // MARKERS (start = icon, end = dot)
+    // ------------------------------------------------------------
+    final iconSize = IconSizes.medium;
+    final markerRadius = iconSize / 2;
+    const endMarkerRadius = 6.0; // old dot size
+
+    for (var i = 0; i < markerCount; i++) {
+      final date = layout.markers[i];
+      final y = verticalInset + (i * segmentHeight);
+
+      final startingEvents = events.where((e) => e.start == date).toList();
+      final endingEvents = events.where((e) => e.end == date).toList();
+
+      final color = markerColors[i]!;
+
+      if (startingEvents.isNotEmpty) {
+        // ------------------------------------------------------------
+        // START MARKER → ICON
+        // ------------------------------------------------------------
+        final iconEvent = startingEvents.first;
+
+        widgets.add(
+          Positioned(
+            top: y - markerRadius,
+            left: centerX - markerRadius,
+            child: TimelineMarkerIcon(event: iconEvent, color: color),
+          ),
+        );
+      } else {
+        // ------------------------------------------------------------
+        // END MARKER → SIMPLE DOT
+        // ------------------------------------------------------------
+        widgets.add(
+          Positioned(
+            top: y - endMarkerRadius,
+            left: centerX - endMarkerRadius,
+            child: Container(
+              width: endMarkerRadius * 2,
+              height: endMarkerRadius * 2,
+              decoration: BoxDecoration(color: color, shape: BoxShape.circle),
+            ),
+          ),
+        );
+      }
+    }
+
+    // ------------------------------------------------------------
+    // START + END PILLS
+    // ------------------------------------------------------------
     for (var i = 0; i < markerCount; i++) {
       final date = layout.markers[i];
       final y = verticalInset + (i * segmentHeight);
@@ -239,19 +291,33 @@ class VerticalTimeline extends StatelessWidget {
       final endingEvents = events.where((e) => e.end == date).toList();
       final color = markerColors[i]!;
 
+      final isStartMarker = startingEvents.isNotEmpty;
+
       // ------------------------------------------------------------
-      // START DATE PILLS (existing logic)
+      // ARM ATTACHMENT POINT
+      // ------------------------------------------------------------
+      final leftAttachX = isStartMarker
+          ? centerX -
+                markerRadius // attach to icon edge
+          : centerX - endMarkerRadius; // attach to dot edge
+
+      final rightAttachX = isStartMarker
+          ? centerX + markerRadius
+          : centerX + endMarkerRadius;
+
+      // ------------------------------------------------------------
+      // START DATE PILLS (unchanged except attachment point)
       // ------------------------------------------------------------
       for (final e in startingEvents) {
         final text = LocalizationHelpers.formatMonthYear(context, e.start);
         final pill = TimelineDatePill(text: text, color: color);
 
         if (e.isStudy) {
-          // LEFT SIDE: pill + arm, row's right edge at centerX
+          // LEFT SIDE: pill + arm
           widgets.add(
             Positioned(
               top: y,
-              right: totalWidth - centerX,
+              right: totalWidth - leftAttachX,
               child: FractionalTranslation(
                 translation: const Offset(0, -0.5),
                 child: Row(
@@ -265,11 +331,11 @@ class VerticalTimeline extends StatelessWidget {
             ),
           );
         } else {
-          // RIGHT SIDE: arm + pill, row's left edge at centerX
+          // RIGHT SIDE: arm + pill
           widgets.add(
             Positioned(
               top: y,
-              left: centerX,
+              left: rightAttachX,
               child: FractionalTranslation(
                 translation: const Offset(0, -0.5),
                 child: Row(
@@ -286,13 +352,9 @@ class VerticalTimeline extends StatelessWidget {
       }
 
       // ------------------------------------------------------------
-      // END DATE PILLS (armless, aligned with marker, no overlap)
+      // END DATE PILLS (skip if also a start date)
       // ------------------------------------------------------------
-
-      // If this date is also a start date, skip end pills entirely
-      if (startingEvents.isNotEmpty) {
-        continue;
-      }
+      if (isStartMarker) continue;
 
       for (final e in endingEvents) {
         final text = LocalizationHelpers.formatMonthYear(context, e.end);
@@ -312,18 +374,16 @@ class VerticalTimeline extends StatelessWidget {
         );
 
         if (isStudy) {
-          // LEFT SIDE — slightly below marker, no arm
           widgets.add(
             Positioned(
               top: y + Spacing.sm,
-              right: totalWidth - centerX,
+              right: totalWidth - leftAttachX,
               child: endPill,
             ),
           );
         } else {
-          // RIGHT SIDE — slightly below marker, no arm
           widgets.add(
-            Positioned(top: y + Spacing.sm, left: centerX, child: endPill),
+            Positioned(top: y + Spacing.sm, left: rightAttachX, child: endPill),
           );
         }
       }

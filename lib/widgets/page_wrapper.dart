@@ -22,8 +22,6 @@ class PageWrapper extends StatelessWidget {
         ? 24.0
         : 48.0;
 
-    final verticalPadding = isMobile ? 24.0 : 32.0;
-
     final maxWidth = isDesktop ? 1200.0 : 680.0;
 
     return Semantics(
@@ -33,10 +31,7 @@ class PageWrapper extends StatelessWidget {
       child: Container(
         color: Theme.of(context).colorScheme.surface,
         child: Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: horizontalPadding,
-            vertical: verticalPadding,
-          ),
+          padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
           child: Align(
             alignment: Alignment.topCenter,
             child: ConstrainedBox(
