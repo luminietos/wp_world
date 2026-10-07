@@ -75205,19 +75205,17 @@ A.ajC.prototype={
 $0(){return this.a.d=!1},
 $S:0}
 A.M3.prototype={
-L(a){var s,r,q,p,o,n,m=null,l=A.cJ(a,B.ak,t.J)
-l.toString
+L(a){var s,r,q,p,o=null,n=A.cJ(a,B.ak,t.J)
+n.toString
 s=$.a7().d
 s===$&&A.b()
 s=s.a.a
-r=s<600
-q=s>=600&&s<840
-if(r)p=16
-else p=q?24:48
-o=r?24:32
-n=s>=840?1200:680
-l=l.gPw()
-return A.bz(m,A.dK(m,new A.cj(new A.aS(p,o,p,o),new A.f2(B.Ec,m,m,new A.er(new A.aq(0,n,0,1/0),this.c,m),m),m),B.x,A.P(a).ax.k2,m,m,m,m,m,m,m,m,m),!0,m,m,!0,m,m,m,m,m,m,l,m,m,m,m,m,m,m,m,m,m,m,m,m,m,m)}}
+r=s>=600&&s<840
+if(s<600)q=16
+else q=r?24:48
+p=s>=840?1200:680
+n=n.gPw()
+return A.bz(o,A.dK(o,new A.cj(new A.aS(q,0,q,0),new A.f2(B.Ec,o,o,new A.er(new A.aq(0,p,0,1/0),this.c,o),o),o),B.x,A.P(a).ax.k2,o,o,o,o,o,o,o,o,o),!0,o,o,!0,o,o,o,o,o,o,n,o,o,o,o,o,o,o,o,o,o,o,o,o,o,o)}}
 A.oq.prototype={
 L(a){var s,r,q=null,p=A.P(a).ok,o=A.P(a).ax,n=this.c,m=n.Q?"Ongoing":"Completed",l=n.c,k=A.f_(a,l),j=n.z,i=n.at,h=24*$.a7().ga6(),g=t.p,f=A.a([],g),e=n.ay
 if(e!=null&&e.length!==0){s=A.f_(a,l)
