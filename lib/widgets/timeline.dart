@@ -405,13 +405,21 @@ class VerticalTimeline extends StatelessWidget {
     final startIndex = positionedEvent.startIndex;
     final endIndex = positionedEvent.endIndex;
 
-    final top = verticalInset + (startIndex * segmentHeight);
-    final height = (endIndex - startIndex) * segmentHeight;
+    // Vertical spacing above & below the container
+    double verticalMargin = Spacing.xs;
+
+    final top = verticalInset + (startIndex * segmentHeight) + verticalMargin;
+    final height =
+        (endIndex - startIndex) * segmentHeight - (verticalMargin * 2);
 
     final halfWidth = totalWidth / 2;
-    final containerWidth = halfWidth * 0.8;
-
-    const double sideSpacing = 24.0;
+    const double sideSpacing = 40.0;
+    final availableWidth = (halfWidth - sideSpacing - Spacing.sm)
+        .clamp(0.0, double.infinity)
+        .toDouble();
+    final containerWidth = (halfWidth * 0.8)
+        .clamp(0.0, availableWidth)
+        .toDouble();
 
     final isStudy = event.isStudy;
 
