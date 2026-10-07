@@ -34,6 +34,7 @@ class Section extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          SizedBox(height: Spacing.md), // space below header and above title
           // TITLE (optional)
           if (title != null)
             Padding(

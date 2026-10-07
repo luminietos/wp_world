@@ -2,8 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:wp_world/l10n/app_localizations.dart';
-import 'package:wp_world/widgets/responsive_grid.dart';
-// import '../utils/layout.dart';
 import '../utils/responsive.dart';
 
 class PageWrapper extends StatelessWidget {
@@ -26,16 +24,7 @@ class PageWrapper extends StatelessWidget {
 
     final verticalPadding = isMobile ? 24.0 : 32.0;
 
-    // dynamic maxWidth based on page type
-    double maxWidth;
-
-    if (child is ResponsiveGrid) {
-      // ProjectsPage grid
-      maxWidth = 1200;
-    } else {
-      // Text-heavy pages
-      maxWidth = isDesktop ? 840 : 680;
-    }
+    final maxWidth = isDesktop ? 1200.0 : 680.0;
 
     return Semantics(
       container: true,
@@ -43,19 +32,16 @@ class PageWrapper extends StatelessWidget {
       label: localizations.pageContentWrapper,
       child: Container(
         color: Theme.of(context).colorScheme.surface,
-        // global scroll container
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: horizontalPadding,
-              vertical: verticalPadding,
-            ),
-            child: Align(
-              alignment: Alignment.topCenter,
-              child: ConstrainedBox(
-                constraints: BoxConstraints(maxWidth: maxWidth),
-                child: child,
-              ),
+        child: Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: horizontalPadding,
+            vertical: verticalPadding,
+          ),
+          child: Align(
+            alignment: Alignment.topCenter,
+            child: ConstrainedBox(
+              constraints: BoxConstraints(maxWidth: maxWidth),
+              child: child,
             ),
           ),
         ),

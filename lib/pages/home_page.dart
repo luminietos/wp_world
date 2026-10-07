@@ -13,15 +13,17 @@ class HomePage extends StatelessWidget {
     final localizations = AppLocalizations.of(context)!;
     final colors = Theme.of(context).colorScheme;
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Section(
-          title: localizations.title,
-          description: Text("TODO: description"),
-          child: Center(child: Text("TODO: content")),
-        ),
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Section(
+            title: localizations.title,
+            description: Text("TODO: description"),
+            child: Center(child: Text("TODO: content")),
+          ),
+        ],
+      ),
     );
   }
 }

@@ -64,7 +64,9 @@ class VerticalTimeline extends StatelessWidget {
 
         final markerCount = layout.markers.length;
         final segmentCount = markerCount > 1 ? markerCount - 1 : 1;
-        final segmentHeight = totalHeight / segmentCount;
+        final verticalInset = totalHeight < 96 ? totalHeight / 2 : 48.0;
+        final timelineHeight = totalHeight - (verticalInset * 2);
+        final segmentHeight = timelineHeight / segmentCount;
 
         final centerX = totalWidth / 2;
 
@@ -86,6 +88,7 @@ class VerticalTimeline extends StatelessWidget {
               events: events,
               centerX: centerX,
               segmentHeight: segmentHeight,
+              verticalInset: verticalInset,
             ),
 
             ...positionedEvents.map(
@@ -94,6 +97,7 @@ class VerticalTimeline extends StatelessWidget {
                 positionedEvent: pe,
                 centerX: centerX,
                 segmentHeight: segmentHeight,
+                verticalInset: verticalInset,
                 totalWidth: totalWidth,
               ),
             ),
@@ -104,6 +108,7 @@ class VerticalTimeline extends StatelessWidget {
               events: events,
               centerX: centerX,
               segmentHeight: segmentHeight,
+              verticalInset: verticalInset,
               totalWidth: totalWidth,
             ),
           ],
@@ -119,6 +124,7 @@ class VerticalTimeline extends StatelessWidget {
     required List<TimelineEvent> events,
     required double centerX,
     required double segmentHeight,
+    required double verticalInset,
   }) {
     final markerCount = layout.markers.length;
     final colors = Theme.of(context).colorScheme;
@@ -165,19 +171,21 @@ class VerticalTimeline extends StatelessWidget {
           centerX: centerX,
           markerCount: markerCount,
           segmentHeight: segmentHeight,
+          verticalInset: verticalInset,
           markerColors: markerColors,
         ),
       ),
     );
   }
 
-  // ARMS + PILLS (start-date only)
+  // ARMS + PILLS (start + end dates)
   List<Widget> _buildMarkerArmsAndPills({
     required BuildContext context,
     required TimelineLayout layout,
     required List<TimelineEvent> events,
     required double centerX,
     required double segmentHeight,
+    required double verticalInset,
     required double totalWidth,
   }) {
     final colors = Theme.of(context).colorScheme;
@@ -225,11 +233,15 @@ class VerticalTimeline extends StatelessWidget {
 
     for (var i = 0; i < markerCount; i++) {
       final date = layout.markers[i];
-      final y = i * segmentHeight;
+      final y = verticalInset + (i * segmentHeight);
 
       final startingEvents = events.where((e) => e.start == date).toList();
+      final endingEvents = events.where((e) => e.end == date).toList();
       final color = markerColors[i]!;
 
+      // ------------------------------------------------------------
+      // START DATE PILLS (existing logic)
+      // ------------------------------------------------------------
       for (final e in startingEvents) {
         final text = LocalizationHelpers.formatMonthYear(context, e.start);
         final pill = TimelineDatePill(text: text, color: color);
@@ -272,6 +284,49 @@ class VerticalTimeline extends StatelessWidget {
           );
         }
       }
+
+      // ------------------------------------------------------------
+      // END DATE PILLS (armless, aligned with marker, no overlap)
+      // ------------------------------------------------------------
+
+      // If this date is also a start date, skip end pills entirely
+      if (startingEvents.isNotEmpty) {
+        continue;
+      }
+
+      for (final e in endingEvents) {
+        final text = LocalizationHelpers.formatMonthYear(context, e.end);
+        final isStudy = e.isStudy;
+
+        final pillColor = isStudy ? colors.secondary : colors.primary;
+        final pillBg = isStudy
+            ? colors.secondary.withOpacity(0.15)
+            : colors.primary.withOpacity(0.15);
+
+        final endPill = TimelineDatePill(
+          text: text,
+          color: pillColor,
+          backgroundColor: pillBg,
+          textColor: pillColor,
+          withBorder: false,
+        );
+
+        if (isStudy) {
+          // LEFT SIDE — slightly below marker, no arm
+          widgets.add(
+            Positioned(
+              top: y + Spacing.sm,
+              right: totalWidth - centerX,
+              child: endPill,
+            ),
+          );
+        } else {
+          // RIGHT SIDE — slightly below marker, no arm
+          widgets.add(
+            Positioned(top: y + Spacing.sm, left: centerX, child: endPill),
+          );
+        }
+      }
     }
 
     return widgets;
@@ -283,13 +338,14 @@ class VerticalTimeline extends StatelessWidget {
     required PositionedTimelineEvent positionedEvent,
     required double centerX,
     required double segmentHeight,
+    required double verticalInset,
     required double totalWidth,
   }) {
     final event = positionedEvent.event;
     final startIndex = positionedEvent.startIndex;
     final endIndex = positionedEvent.endIndex;
 
-    final top = startIndex * segmentHeight;
+    final top = verticalInset + (startIndex * segmentHeight);
     final height = (endIndex - startIndex) * segmentHeight;
 
     final halfWidth = totalWidth / 2;
@@ -353,12 +409,14 @@ class _TimelinePainter extends CustomPainter {
   final double centerX;
   final int markerCount;
   final double segmentHeight;
+  final double verticalInset;
   final Map<int, Color> markerColors;
 
   _TimelinePainter({
     required this.centerX,
     required this.markerCount,
     required this.segmentHeight,
+    required this.verticalInset,
     required this.markerColors,
   });
 
@@ -368,15 +426,15 @@ class _TimelinePainter extends CustomPainter {
       ..color = Colors.grey.shade400
       ..strokeWidth = 2.0;
 
-    final topY = 0.0;
-    final bottomY = (markerCount - 1) * segmentHeight;
+    final topY = verticalInset;
+    final bottomY = verticalInset + ((markerCount - 1) * segmentHeight);
 
     canvas.drawLine(Offset(centerX, topY), Offset(centerX, bottomY), paintLine);
 
     const markerRadius = 5.0;
 
     for (var i = 0; i < markerCount; i++) {
-      final y = i * segmentHeight;
+      final y = verticalInset + (i * segmentHeight);
       final paintMarker = Paint()..color = markerColors[i]!;
       canvas.drawCircle(Offset(centerX, y), markerRadius, paintMarker);
     }

@@ -13,15 +13,17 @@ class ContactPage extends StatelessWidget {
     final colors = Theme.of(context).colorScheme;
     final localizations = AppLocalizations.of(context)!;
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Section(
-          title: localizations.pagesContact,
-          description: Text("TODO: description"),
-          child: Center(child: Text("TODO: content")),
-        ),
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Section(
+            title: localizations.pagesContact,
+            description: Text("TODO: description"),
+            child: Center(child: Text("TODO: content")),
+          ),
+        ],
+      ),
     );
   }
 }
