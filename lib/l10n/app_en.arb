@@ -28,6 +28,10 @@
   "@pagesContact": {
     "description": "Contact page title"
   },
+  "myJourney": "My journey",
+  "@myJourney": {
+    "description": "About page section title"
+  },
   "themeToggle": "Toggle theme",
   "@themeToggle": {
     "description": "Toggle theme title"

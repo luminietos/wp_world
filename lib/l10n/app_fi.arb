@@ -28,6 +28,10 @@
   "@pagesContact": {
     "description": "Ota yhteyttä-sivun otsikko"
   },
+  "myJourney": "Minun matkani",
+  "@myJourney": {
+    "description": "Minusta-sivun lohkon otsikko"
+  },
   "themeToggle": "Vaihda teema",
   "@themeToggle": {
     "description": "Teemanvaihdon otsikko"

@@ -30,6 +30,9 @@ class AppLocalizationsFi extends AppLocalizations {
   String get pagesContact => 'Ota yhteyttä';
 
   @override
+  String get myJourney => 'Minun matkani';
+
+  @override
   String get themeToggle => 'Vaihda teema';
 
   @override

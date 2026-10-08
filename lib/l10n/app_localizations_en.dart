@@ -30,6 +30,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get pagesContact => 'Contact';
 
   @override
+  String get myJourney => 'My journey';
+
+  @override
   String get themeToggle => 'Toggle theme';
 
   @override

@@ -140,6 +140,12 @@ abstract class AppLocalizations {
   /// **'Contact'**
   String get pagesContact;
 
+  /// About page section title
+  ///
+  /// In en, this message translates to:
+  /// **'My journey'**
+  String get myJourney;
+
   /// Toggle theme title
   ///
   /// In en, this message translates to:

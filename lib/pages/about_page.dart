@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:wp_world/data/timeline_data.dart';
 import 'package:wp_world/l10n/app_localizations.dart';
-// import 'package:wp_world/utils/spacing.dart';
+import 'package:wp_world/utils/spacing.dart';
 import 'package:wp_world/widgets/section.dart';
 import 'package:wp_world/widgets/timeline.dart';
 
@@ -19,10 +19,16 @@ class AboutPage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          // SizedBox(height: Spacing.lg),
+          // Text(
+          //   localizations.pagesAbout,
+          //   style: Theme.of(context).textTheme.headlineLarge,
+          // ),
+          SizedBox(height: Spacing.lg),
           Section(
-            title: localizations.pagesAbout,
+            title: localizations.myJourney,
             child: SizedBox(
-              height: 600,
+              height: 600, // based on the number of events and their heights
               child: VerticalTimeline(events: timelineEvents),
             ),
           ),
