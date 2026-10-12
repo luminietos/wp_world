@@ -1,0 +1,41 @@
+{
+  "introBlocks": [
+    {
+      "type": "heading",
+      "key": "contactIntroHeading",
+      "headingLevel": 1,
+      "semanticLabel": null,
+      "ariaDescription": null
+    },
+    {
+      "type": "paragraph",
+      "key": "contactIntroParagraph",
+      "semanticLabel": null,
+      "ariaDescription": null
+    }
+  ],
+
+  "methods": [
+    {
+      "id": "email",
+      "labelKey": "contactMethodEmail",
+      "url": "mailto:helenapaloheimo@gmail.com",
+      "semanticLabel": "Email to Wilma"
+    },
+    {
+      "id": "linkedin",
+      "labelKey": "contactMethodLinkedIn",
+      "url": "https://linkedin.com/in/wilmapaloheimo",
+      "semanticLabel": "Wilma's LinkedIn profile"
+    }
+  ],
+
+  "links": [
+    {
+      "id": "github",
+      "labelKey": "contactLinkGitHub",
+      "url": "https://github.com/luminietos",
+      "semanticLabel": "Wilma's GitHub"
+    }
+  ]
+}

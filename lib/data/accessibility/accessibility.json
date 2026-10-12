@@ -1,0 +1,23 @@
+{
+  "blocks": [
+    {
+      "type": "heading",
+      "key": "accessibilityHeading",
+      "headingLevel": 1,
+      "semanticLabel": null,
+      "ariaDescription": null
+    },
+    {
+      "type": "paragraph",
+      "key": "accessibilityParagraph1",
+      "semanticLabel": null,
+      "ariaDescription": null
+    },
+    {
+      "type": "paragraph",
+      "key": "accessibilityParagraph2",
+      "semanticLabel": null,
+      "ariaDescription": null
+    }
+  ]
+}

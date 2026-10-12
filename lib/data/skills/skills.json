@@ -1,0 +1,21 @@
+{
+  "skills": [
+    { "id": "flutter", "labelKey": "skillLabelFlutter" },
+    { "id": "dart", "labelKey": "skillLabelDart" },
+    { "id": "figma", "labelKey": "skillLabelFigma" },
+    { "id": "accessibility", "labelKey": "skillLabelAccessibility" }
+  ],
+
+  "categories": [
+    {
+      "id": "frontend",
+      "labelKey": "skillCategoryFrontend",
+      "skillIds": ["flutter", "dart"]
+    },
+    {
+      "id": "design",
+      "labelKey": "skillCategoryDesign",
+      "skillIds": ["figma", "accessibility"]
+    }
+  ]
+}
