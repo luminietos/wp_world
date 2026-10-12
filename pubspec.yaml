@@ -70,7 +70,8 @@ flutter:
   # IMAGES
   # Note: An image asset can refer to one or more resolution-specific 'variants'
   assets:
-    - lib/data/projects.json
+    - lib/data/
+    - lib/data/projects/projects.json
 
     # outside of lib
     - assets/icons/

@@ -149,13 +149,37 @@
     "description": "The summary"
   },
   "project01_purpose": "This portfolio showcases my design philosophy and technical skills.",
+  "@project01_purpose": {
+    "description": "The purpose and goals of the project"
+  },
   "project01_actions": "Designed and developed a custom Flutter-based web portfolio...",
+  "@project01_actions": {
+    "description": "What you did in the project"
+  },
   "project01_result": "A cohesive personal brand identity and an engaging portfolio.",
+  "@project01_result": {
+    "description": "Outcome and impact of the project"
+  },
   "project01_date": "October 2025",
+  "@project01_date": {
+    "description": "Timeline for the project"
+  },
   "project01_accessibility_notes": "WCAG AA-compliant typography and full keyboard navigation.",
+  "@project01_accessibility_notes": {
+    "description": "Accessibility notes for the project"
+  },
   "project01_collaboration": "Solo project with iterative design and development.",
+  "@project01_collaboration": {
+    "description": "Collaboration details for the project"
+  },
   "project01_image1_caption": "Low-fidelity wireframe of the project page layout.",
+  "@project01_image1_caption": {
+    "description": "Caption for the first image of the project"
+  },
   "project01_accessibility_image1_caption": "Accessibility legislation and standards.",
+  "@project01_accessibility_image1_caption": {
+    "description": "Accessible description for the first image of the project"
+  },
   "project02_name": "Meaningful",
   "@project02_name": {
     "description": "Project 2 name: Meaningful app case study"

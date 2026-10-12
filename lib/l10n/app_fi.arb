@@ -149,13 +149,37 @@
     "description": "Tiivistelty kuvaus"
   },
   "project01_purpose": "Tämä portfolio esittelee suunnittelufilosofiani ja tekniset taitoni.",
+  "@project01_purpose": {
+    "description": "Projektin tarkoitus"
+  },
   "project01_actions": "Suunnittelin ja kehitin Flutteriin perustuvan yksilöllisen verkkoportfolion...",
+  "@project01_actions": {
+    "description": "Projektin toimet"
+  },
   "project01_result": "Yhtenäinen henkilöbrändi ja kiinnostava portfolio.",
+  "@project01_result": {
+    "description": "Projektin lopputulos"
+  },
   "project01_date": "Lokakuu 2025",
+  "@project01_date": {
+    "description": "Projektin aikataulu"
+  },
   "project01_accessibility_notes": "WCAG AA -vaatimusten mukainen typografia ja täysi näppäimistönavigointi.",
+  "@project01_accessibility_notes": {
+    "description": "Saavutettavuutta koskevat huomiot"
+  },
   "project01_collaboration": "Itsenäinen projekti, jossa suunnittelua ja kehitystä tehtiin iteratiivisesti.",
+  "@project01_collaboration": {
+    "description": "Yhteistyö tiedot"
+  },
   "project01_image1_caption": "Projektisivun rakenteen matalan tarkkuuden rautalankamalli.",
+  "@project01_image1_caption": {
+    "description": "Ensimmäisen projektikuvan kuvateksti"
+  },
   "project01_accessibility_image1_caption": "Saavutettavuutta koskeva lainsäädäntö ja standardit.",
+  "@project01_accessibility_image1_caption": {
+    "description": "Saavutettavuuskuvauksen kuvateksti"
+  },
   "project02_name": "Meaningful",
   "@project02_name": {
     "description": "Projektin 2 nimi: Meaningful-sovelluksen case"
