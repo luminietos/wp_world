@@ -1,3 +1,5 @@
+// DEFINES A SINGLE TIMELINE EVENT (start/end, label, type) FOR THE ABOUT PAGE'S TIMELINE; raw data
+
 class TimelineEvent {
   final DateTime start;
   final DateTime end;
@@ -7,7 +9,7 @@ class TimelineEvent {
   const TimelineEvent({
     required this.start,
     required this.end,
-    required this.labelKey, 
+    required this.labelKey,
     required this.isStudy,
   });
 

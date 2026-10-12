@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:wp_world/helpers/localization_helpers.dart';
-import 'package:wp_world/models/project.dart';
+import 'package:wp_world/models/projects/project.dart';
 import 'package:wp_world/state/projects_filter_state.dart';
 import 'package:wp_world/utils/spacing.dart';
 import 'package:wp_world/l10n/app_localizations.dart';

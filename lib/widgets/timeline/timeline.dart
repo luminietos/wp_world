@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:wp_world/helpers/localization_helpers.dart';
-import 'package:wp_world/models/timeline_event.dart';
+import 'package:wp_world/models/timeline/timeline_event.dart';
 import 'package:wp_world/utils/spacing.dart';
-import 'package:wp_world/widgets/timeline_date_pill.dart';
+import 'package:wp_world/widgets/timeline/timeline_date_pill.dart';
 import 'package:wp_world/utils/icon_sizes.dart';
-import 'package:wp_world/widgets/timeline_marker_icon.dart';
+import 'package:wp_world/widgets/timeline/timeline_marker_icon.dart';
 
 // MARKER LAYOUT LOGIC
 class TimelineLayout {

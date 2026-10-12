@@ -3,7 +3,7 @@
 
 import 'dart:convert';
 import 'package:flutter/services.dart';
-import 'package:wp_world/models/project.dart';
+import 'package:wp_world/models/projects/project.dart';
 
 class ProjectLoader {
   static Future<List<Project>> load() async {

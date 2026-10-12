@@ -1,9 +1,10 @@
 // PROJECT MODEL
+// Represents a single project case study, including all relevant metadata, localized text, images, and structured sections.
 
 import 'package:flutter/material.dart';
 import 'package:wp_world/helpers/localization_helpers.dart';
-import 'package:wp_world/models/project_image.dart';
-import 'package:wp_world/models/project_section.dart';
+import 'package:wp_world/models/projects/project_image.dart';
+import 'package:wp_world/models/projects/project_section.dart';
 
 class Project {
   // IDENTIFIERS
@@ -19,6 +20,8 @@ class Project {
   final String dateKey;
   final String accessibilityNotesKey;
   final String collaborationKey;
+  final String? semanticLabel;
+  final String? ariaDescription;
 
   // METADATA
   final String projectType;
@@ -53,6 +56,8 @@ class Project {
     required this.dateKey,
     required this.accessibilityNotesKey,
     required this.collaborationKey,
+    this.semanticLabel,
+    this.ariaDescription,
     required this.projectType,
     required this.isOngoing,
     this.projectLink,
@@ -92,6 +97,8 @@ class Project {
       dateKey: json['date_key'],
       accessibilityNotesKey: json['accessibility_notes_key'],
       collaborationKey: json['collaboration_key'],
+      semanticLabel: json['semantic_label'] as String?,
+      ariaDescription: json['aria_description'] as String?,
 
       projectType: json['projectType'],
       isOngoing: json['isOngoing'],

@@ -1,7 +1,7 @@
 // TIMELINE DOTS' (markers) ICONS FOR THE TIMELINE WIDGET IN ABOUT PAGE
 
 import 'package:flutter/material.dart';
-import 'package:wp_world/models/timeline_event.dart';
+import 'package:wp_world/models/timeline/timeline_event.dart';
 import 'package:wp_world/utils/icon_sizes.dart';
 
 class TimelineMarkerIcon extends StatelessWidget {

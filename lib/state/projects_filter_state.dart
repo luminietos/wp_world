@@ -1,6 +1,6 @@
 // RETAINS FILTERS WHEN NAVIGATING AWAY
 
-import 'package:wp_world/models/project.dart';
+import 'package:wp_world/models/projects/project.dart';
 import 'package:shared_preferences/shared_preferences.dart'; // persistence
 
 // GLOBAL FILTER STATE (persists across navigation)

@@ -1,4 +1,4 @@
-import 'package:wp_world/models/timeline_event.dart';
+import 'package:wp_world/models/timeline/timeline_event.dart';
 
 final DateTime timelineStart = DateTime(2021, 1); // JAN 2021
 final DateTime timelineEnd = DateTime(2025, 10); // OCT 2025
