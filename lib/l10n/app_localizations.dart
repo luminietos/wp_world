@@ -140,12 +140,6 @@ abstract class AppLocalizations {
   /// **'Contact'**
   String get pagesContact;
 
-  /// About page section title
-  ///
-  /// In en, this message translates to:
-  /// **'My journey'**
-  String get myJourney;
-
   /// Toggle theme title
   ///
   /// In en, this message translates to:
@@ -290,12 +284,6 @@ abstract class AppLocalizations {
   /// **'No results'**
   String get errorNoResults;
 
-  /// Tech stack label
-  ///
-  /// In en, this message translates to:
-  /// **'Tech stack'**
-  String get techStack;
-
   /// Label for the responsive grid layout
   ///
   /// In en, this message translates to:
@@ -307,6 +295,360 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Page content wrapper'**
   String get pageContentWrapper;
+
+  /// No description provided for @accessibilityHeading.
+  ///
+  /// In en, this message translates to:
+  /// **'Accessibility Commitment'**
+  String get accessibilityHeading;
+
+  /// No description provided for @accessibilityParagraph1.
+  ///
+  /// In en, this message translates to:
+  /// **'This portfolio follows WCAG 2.2 AA guidelines and aims to provide an inclusive experience.'**
+  String get accessibilityParagraph1;
+
+  /// No description provided for @accessibilityParagraph2.
+  ///
+  /// In en, this message translates to:
+  /// **'All content is structured, semantic, and optimized for assistive technologies.'**
+  String get accessibilityParagraph2;
+
+  /// Home page hero heading
+  ///
+  /// In en, this message translates to:
+  /// **'Hi, I\'m Wilma — Designer & Developer'**
+  String get homeHeroHeading;
+
+  /// Home page hero paragraph
+  ///
+  /// In en, this message translates to:
+  /// **'I build accessible digital products with Front End code, modern UI design, and thoughtful engineering.'**
+  String get homeHeroParagraph1;
+
+  /// About me heading
+  ///
+  /// In en, this message translates to:
+  /// **'About Me'**
+  String get aboutIntroHeading;
+
+  /// About me paragraph
+  ///
+  /// In en, this message translates to:
+  /// **'I am a product designer and developer focused on accessibility and user-centric digital experiences.'**
+  String get aboutIntroParagraph1;
+
+  /// About me paragraph
+  ///
+  /// In en, this message translates to:
+  /// **'I enjoy building thoughtful, inclusive interfaces and solving complex problems with clean, scalable systems.'**
+  String get aboutIntroParagraph2;
+
+  /// About me timeline heading
+  ///
+  /// In en, this message translates to:
+  /// **'My journey'**
+  String get myJourney;
+
+  /// About me timeline paragraph
+  ///
+  /// In en, this message translates to:
+  /// **'Here is a timeline of my studies and professional experience.'**
+  String get aboutTimelineParagraph;
+
+  /// Tech stack label
+  ///
+  /// In en, this message translates to:
+  /// **'Tech stack'**
+  String get techStack;
+
+  /// Skill category label
+  ///
+  /// In en, this message translates to:
+  /// **'Frontend Development'**
+  String get skillCategoryFrontend;
+
+  /// Skill category label
+  ///
+  /// In en, this message translates to:
+  /// **'Cross-Platform Development'**
+  String get skillCategoryCrossPlatform;
+
+  /// Skill category label
+  ///
+  /// In en, this message translates to:
+  /// **'Backend Development'**
+  String get skillCategoryBackend;
+
+  /// Skill category label
+  ///
+  /// In en, this message translates to:
+  /// **'Design'**
+  String get skillCategoryDesign;
+
+  /// Skill category label
+  ///
+  /// In en, this message translates to:
+  /// **'Accessibility'**
+  String get skillCategoryAccessibility;
+
+  /// Skill category label
+  ///
+  /// In en, this message translates to:
+  /// **'Tools'**
+  String get skillCategoryTools;
+
+  /// Skill category label
+  ///
+  /// In en, this message translates to:
+  /// **'Soft Skills'**
+  String get skillCategorySoftSkills;
+
+  /// A tools skill label
+  ///
+  /// In en, this message translates to:
+  /// **'Git'**
+  String get skillsToolsGit;
+
+  /// A tools skill label
+  ///
+  /// In en, this message translates to:
+  /// **'Cypress'**
+  String get skillsToolsCypress;
+
+  /// A tools skill label
+  ///
+  /// In en, this message translates to:
+  /// **'Android Studio'**
+  String get skillsToolsAndroidStudio;
+
+  /// A tools skill label
+  ///
+  /// In en, this message translates to:
+  /// **'VS Code'**
+  String get skillsToolsVSCode;
+
+  /// A cross-platform skill label
+  ///
+  /// In en, this message translates to:
+  /// **'Flutter'**
+  String get skillsCrossPlatformFlutter;
+
+  /// A cross-platform skill label
+  ///
+  /// In en, this message translates to:
+  /// **'Dart'**
+  String get skillsCrossPlatformDart;
+
+  /// A frontend skill label
+  ///
+  /// In en, this message translates to:
+  /// **'React'**
+  String get skillsFrontendReact;
+
+  /// A frontend skill label
+  ///
+  /// In en, this message translates to:
+  /// **'TypeScript'**
+  String get skillsFrontendTypeScript;
+
+  /// A frontend skill label
+  ///
+  /// In en, this message translates to:
+  /// **'JavaScript'**
+  String get skillsFrontendJavaScript;
+
+  /// A frontend skill label
+  ///
+  /// In en, this message translates to:
+  /// **'HTML'**
+  String get skillsFrontendHTML;
+
+  /// A frontend skill label
+  ///
+  /// In en, this message translates to:
+  /// **'CSS'**
+  String get skillsFrontendCSS;
+
+  /// A frontend skill label
+  ///
+  /// In en, this message translates to:
+  /// **'Tailwind CSS'**
+  String get skillsFrontendTailwind;
+
+  /// A frontend skill label
+  ///
+  /// In en, this message translates to:
+  /// **'Bootstrap'**
+  String get skillsFrontendBootstrap;
+
+  /// A backend skill label
+  ///
+  /// In en, this message translates to:
+  /// **'Node.js'**
+  String get skillsBackendNodeJS;
+
+  /// A backend skill label
+  ///
+  /// In en, this message translates to:
+  /// **'SQL'**
+  String get skillsBackendSQL;
+
+  /// A backend skill label
+  ///
+  /// In en, this message translates to:
+  /// **'MongoDB'**
+  String get skillsBackendMongoDB;
+
+  /// A backend skill label
+  ///
+  /// In en, this message translates to:
+  /// **'Firebase'**
+  String get skillsBackendFirebase;
+
+  /// A backend skill label
+  ///
+  /// In en, this message translates to:
+  /// **'MySQL'**
+  String get skillsBackendMySQL;
+
+  /// A design skill label
+  ///
+  /// In en, this message translates to:
+  /// **'Figma'**
+  String get skillsDesignFigma;
+
+  /// A design skill label
+  ///
+  /// In en, this message translates to:
+  /// **'Wireframing'**
+  String get skillsDesignWireframing;
+
+  /// A design skill label
+  ///
+  /// In en, this message translates to:
+  /// **'Prototyping'**
+  String get skillsDesignPrototyping;
+
+  /// A design skill label
+  ///
+  /// In en, this message translates to:
+  /// **'UX/UI Design'**
+  String get skillsDesignUXUI;
+
+  /// A design skill label
+  ///
+  /// In en, this message translates to:
+  /// **'Information Architecture'**
+  String get skillsDesignInformationArchitecture;
+
+  /// A design skill label
+  ///
+  /// In en, this message translates to:
+  /// **'Responsive Design'**
+  String get skillsDesignResponsivity;
+
+  /// A design skill label
+  ///
+  /// In en, this message translates to:
+  /// **'User Research'**
+  String get skillsDesignResearch;
+
+  /// A design skill label
+  ///
+  /// In en, this message translates to:
+  /// **'Documentation'**
+  String get skillsDesignDocumentation;
+
+  /// An accessibility skill label
+  ///
+  /// In en, this message translates to:
+  /// **'Accessibility'**
+  String get skillsAccessibilityAccessibility;
+
+  /// An accessibility skill label
+  ///
+  /// In en, this message translates to:
+  /// **'WCAG'**
+  String get skillsAccessibilityWCAG;
+
+  /// An accessibility skill label
+  ///
+  /// In en, this message translates to:
+  /// **'ARIA'**
+  String get skillsAccessibilityARIA;
+
+  /// An accessibility skill label
+  ///
+  /// In en, this message translates to:
+  /// **'Universal Design'**
+  String get skillsAccessibilityUniversalDesign;
+
+  /// A soft skill label
+  ///
+  /// In en, this message translates to:
+  /// **'Teamwork'**
+  String get skillsSoftTeamwork;
+
+  /// A soft skill label
+  ///
+  /// In en, this message translates to:
+  /// **'Communication'**
+  String get skillsSoftCommunication;
+
+  /// A soft skill label
+  ///
+  /// In en, this message translates to:
+  /// **'Problem Solving'**
+  String get skillsSoftProblemSolving;
+
+  /// A soft skill label
+  ///
+  /// In en, this message translates to:
+  /// **'Critical Thinking'**
+  String get skillsSoftCriticalThinking;
+
+  /// A soft skill label
+  ///
+  /// In en, this message translates to:
+  /// **'Time Management'**
+  String get skillsSoftTimeManagement;
+
+  /// A soft skill label
+  ///
+  /// In en, this message translates to:
+  /// **'Empathy'**
+  String get skillsSoftEmpathy;
+
+  /// A soft skill label
+  ///
+  /// In en, this message translates to:
+  /// **'Remote Work Readiness'**
+  String get skillsSoftRemoteReadiness;
+
+  /// My values heading
+  ///
+  /// In en, this message translates to:
+  /// **'My Values'**
+  String get valuesHeading;
+
+  /// Accessibility value
+  ///
+  /// In en, this message translates to:
+  /// **'Accessibility-first design'**
+  String get valuesAccessibility;
+
+  /// Collaboration value
+  ///
+  /// In en, this message translates to:
+  /// **'Collaborative, transparent teamwork'**
+  String get valuesCollaboration;
+
+  /// Craftsmanship value
+  ///
+  /// In en, this message translates to:
+  /// **'Attention to detail and craftsmanship'**
+  String get valuesCraftsmanship;
 
   /// Project 1 title
   ///

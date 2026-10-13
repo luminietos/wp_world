@@ -28,10 +28,6 @@
   "@pagesContact": {
     "description": "Contact page title"
   },
-  "myJourney": "My journey",
-  "@myJourney": {
-    "description": "About page section title"
-  },
   "themeToggle": "Toggle theme",
   "@themeToggle": {
     "description": "Toggle theme title"
@@ -128,10 +124,6 @@
   "@errorNoResults": {
     "description": "No results error state"
   },
-  "techStack": "Tech stack",
-  "@techStack": {
-    "description": "Tech stack label"
-  },
   "responsiveGridLayout": "Responsive grid layout",
   "@responsiveGridLayout": {
     "description": "Label for the responsive grid layout"
@@ -139,6 +131,233 @@
   "pageContentWrapper": "Page content wrapper",
   "@pageContentWrapper": {
     "description": "Label for the page wrapper"
+  },
+  "accessibilityHeading": "Accessibility Commitment",
+  "accessibilityParagraph1": "This portfolio follows WCAG 2.2 AA guidelines and aims to provide an inclusive experience.",
+  "accessibilityParagraph2": "All content is structured, semantic, and optimized for assistive technologies.",
+  "homeHeroHeading": "Hi, I'm Wilma — Designer & Developer",
+  "@homeHeroHeading": {
+    "description": "Home page hero heading"
+  },
+  "homeHeroParagraph1": "I build accessible digital products with Front End code, modern UI design, and thoughtful engineering.",
+  "@homeHeroParagraph1": {
+    "description": "Home page hero paragraph"
+  },
+  "aboutIntroHeading": "About Me",
+  "@aboutIntroHeading": {
+    "description": "About me heading"
+  },
+  "aboutIntroParagraph1": "I am a product designer and developer focused on accessibility and user-centric digital experiences.",
+  "@aboutIntroParagraph1": {
+    "description": "About me paragraph"
+  },
+  "aboutIntroParagraph2": "I enjoy building thoughtful, inclusive interfaces and solving complex problems with clean, scalable systems.",
+  "@aboutIntroParagraph2": {
+    "description": "About me paragraph"
+  },
+  "myJourney": "My journey",
+  "@myJourney": {
+    "description": "About me timeline heading"
+  },
+  "aboutTimelineParagraph": "Here is a timeline of my studies and professional experience.",
+  "@aboutTimelineParagraph": {
+    "description": "About me timeline paragraph"
+  },
+  "techStack": "Tech stack",
+  "@techStack": {
+    "description": "Tech stack label"
+  },
+  "skillCategoryFrontend": "Frontend Development",
+  "@skillCategoryFrontend": {
+    "description": "Skill category label"
+  },
+  "skillCategoryCrossPlatform": "Cross-Platform Development",
+  "@skillCategoryCrossPlatform": {
+    "description": "Skill category label"
+  },
+  "skillCategoryBackend": "Backend Development",
+  "@skillCategoryBackend": {
+    "description": "Skill category label"
+  },
+  "skillCategoryDesign": "Design",
+  "@skillCategoryDesign": {
+    "description": "Skill category label"
+  },
+  "skillCategoryAccessibility": "Accessibility",
+  "@skillCategoryAccessibility": {
+    "description": "Skill category label"
+  },
+  "skillCategoryTools": "Tools",
+  "@skillCategoryTools": {
+    "description": "Skill category label"
+  },
+  "skillCategorySoftSkills": "Soft Skills",
+  "@skillCategorySoftSkills": {
+    "description": "Skill category label"
+  },
+  "skillsToolsGit": "Git",
+  "@skillsToolsGit": {
+    "description": "A tools skill label"
+  },
+  "skillsToolsCypress": "Cypress",
+  "@skillsToolsCypress": {
+    "description": "A tools skill label"
+  },
+  "skillsToolsAndroidStudio": "Android Studio",
+  "@skillsToolsAndroidStudio": {
+    "description": "A tools skill label"
+  },
+  "skillsToolsVSCode": "VS Code",
+  "@skillsToolsVSCode": {
+    "description": "A tools skill label"
+  },
+  "skillsCrossPlatformFlutter": "Flutter",
+  "@skillsCrossPlatformFlutter": {
+    "description": "A cross-platform skill label"
+  },
+  "skillsCrossPlatformDart": "Dart",
+  "@skillsCrossPlatformDart": {
+    "description": "A cross-platform skill label"
+  },
+  "skillsFrontendReact": "React",
+  "@skillsFrontendReact": {
+    "description": "A frontend skill label"
+  },
+  "skillsFrontendTypeScript": "TypeScript",
+  "@skillsFrontendTypeScript": {
+    "description": "A frontend skill label"
+  },
+  "skillsFrontendJavaScript": "JavaScript",
+  "@skillsFrontendJavaScript": {
+    "description": "A frontend skill label"
+  },
+  "skillsFrontendHTML": "HTML",
+  "@skillsFrontendHTML": {
+    "description": "A frontend skill label"
+  },
+  "skillsFrontendCSS": "CSS",
+  "@skillsFrontendCSS": {
+    "description": "A frontend skill label"
+  },
+  "skillsFrontendTailwind": "Tailwind CSS",
+  "@skillsFrontendTailwind": {
+    "description": "A frontend skill label"
+  },
+  "skillsFrontendBootstrap": "Bootstrap",
+  "@skillsFrontendBootstrap": {
+    "description": "A frontend skill label"
+  },
+  "skillsBackendNodeJS": "Node.js",
+  "@skillsBackendNodeJS": {
+    "description": "A backend skill label"
+  },
+  "skillsBackendSQL": "SQL",
+  "@skillsBackendSQL": {
+    "description": "A backend skill label"
+  },
+  "skillsBackendMongoDB": "MongoDB",
+  "@skillsBackendMongoDB": {
+    "description": "A backend skill label"
+  },
+  "skillsBackendFirebase": "Firebase",
+  "@skillsBackendFirebase": {
+    "description": "A backend skill label"
+  },
+  "skillsBackendMySQL": "MySQL",
+  "@skillsBackendMySQL": {
+    "description": "A backend skill label"
+  },
+  "skillsDesignFigma": "Figma",
+  "@skillsDesignFigma": {
+    "description": "A design skill label"
+  },
+  "skillsDesignWireframing": "Wireframing",
+  "@skillsDesignWireframing": {
+    "description": "A design skill label"
+  },
+  "skillsDesignPrototyping": "Prototyping",
+  "@skillsDesignPrototyping": {
+    "description": "A design skill label"
+  },
+  "skillsDesignUXUI": "UX/UI Design",
+  "@skillsDesignUXUI": {
+    "description": "A design skill label"
+  },
+  "skillsDesignInformationArchitecture": "Information Architecture",
+  "@skillsDesignInformationArchitecture": {
+    "description": "A design skill label"
+  },
+  "skillsDesignResponsivity": "Responsive Design",
+  "@skillsDesignResponsivity": {
+    "description": "A design skill label"
+  },
+  "skillsDesignResearch": "User Research",
+  "@skillsDesignResearch": {
+    "description": "A design skill label"
+  },
+  "skillsDesignDocumentation": "Documentation",
+  "@skillsDesignDocumentation": {
+    "description": "A design skill label"
+  },
+  "skillsAccessibilityAccessibility": "Accessibility",
+  "@skillsAccessibilityAccessibility": {
+    "description": "An accessibility skill label"
+  },
+  "skillsAccessibilityWCAG": "WCAG",
+  "@skillsAccessibilityWCAG": {
+    "description": "An accessibility skill label"
+  },
+  "skillsAccessibilityARIA": "ARIA",
+  "@skillsAccessibilityARIA": {
+    "description": "An accessibility skill label"
+  },
+  "skillsAccessibilityUniversalDesign": "Universal Design",
+  "@skillsAccessibilityUniversalDesign": {
+    "description": "An accessibility skill label"
+  },
+  "skillsSoftTeamwork": "Teamwork",
+  "@skillsSoftTeamwork": {
+    "description": "A soft skill label"
+  },
+  "skillsSoftCommunication": "Communication",
+  "@skillsSoftCommunication": {
+    "description": "A soft skill label"
+  },
+  "skillsSoftProblemSolving": "Problem Solving",
+  "@skillsSoftProblemSolving": {
+    "description": "A soft skill label"
+  },
+  "skillsSoftCriticalThinking": "Critical Thinking",
+  "@skillsSoftCriticalThinking": {
+    "description": "A soft skill label"
+  },
+  "skillsSoftTimeManagement": "Time Management",
+  "@skillsSoftTimeManagement": {
+    "description": "A soft skill label"
+  },
+  "skillsSoftEmpathy": "Empathy",
+  "@skillsSoftEmpathy": {
+    "description": "A soft skill label"
+  },
+  "skillsSoftRemoteReadiness": "Remote Work Readiness",
+  "@skillsSoftRemoteReadiness": {
+    "description": "A soft skill label"
+  },
+  "valuesHeading": "My Values",
+  "@valuesHeading": {
+    "description": "My values heading"
+  },
+  "valuesAccessibility": "Accessibility-first design",
+  "@valuesAccessibility": {
+    "description": "Accessibility value"
+  },
+  "valuesCollaboration": "Collaborative, transparent teamwork",
+  "@valuesCollaboration": {
+    "description": "Collaboration value"
+  },
+  "valuesCraftsmanship": "Attention to detail and craftsmanship",
+  "@valuesCraftsmanship": {
+    "description": "Craftsmanship value"
   },
   "project01_name": "My Portfolio",
   "@project01_name": {

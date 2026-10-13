@@ -30,9 +30,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get pagesContact => 'Contact';
 
   @override
-  String get myJourney => 'My journey';
-
-  @override
   String get themeToggle => 'Toggle theme';
 
   @override
@@ -105,13 +102,193 @@ class AppLocalizationsEn extends AppLocalizations {
   String get errorNoResults => 'No results';
 
   @override
-  String get techStack => 'Tech stack';
-
-  @override
   String get responsiveGridLayout => 'Responsive grid layout';
 
   @override
   String get pageContentWrapper => 'Page content wrapper';
+
+  @override
+  String get accessibilityHeading => 'Accessibility Commitment';
+
+  @override
+  String get accessibilityParagraph1 =>
+      'This portfolio follows WCAG 2.2 AA guidelines and aims to provide an inclusive experience.';
+
+  @override
+  String get accessibilityParagraph2 =>
+      'All content is structured, semantic, and optimized for assistive technologies.';
+
+  @override
+  String get homeHeroHeading => 'Hi, I\'m Wilma — Designer & Developer';
+
+  @override
+  String get homeHeroParagraph1 =>
+      'I build accessible digital products with Front End code, modern UI design, and thoughtful engineering.';
+
+  @override
+  String get aboutIntroHeading => 'About Me';
+
+  @override
+  String get aboutIntroParagraph1 =>
+      'I am a product designer and developer focused on accessibility and user-centric digital experiences.';
+
+  @override
+  String get aboutIntroParagraph2 =>
+      'I enjoy building thoughtful, inclusive interfaces and solving complex problems with clean, scalable systems.';
+
+  @override
+  String get myJourney => 'My journey';
+
+  @override
+  String get aboutTimelineParagraph =>
+      'Here is a timeline of my studies and professional experience.';
+
+  @override
+  String get techStack => 'Tech stack';
+
+  @override
+  String get skillCategoryFrontend => 'Frontend Development';
+
+  @override
+  String get skillCategoryCrossPlatform => 'Cross-Platform Development';
+
+  @override
+  String get skillCategoryBackend => 'Backend Development';
+
+  @override
+  String get skillCategoryDesign => 'Design';
+
+  @override
+  String get skillCategoryAccessibility => 'Accessibility';
+
+  @override
+  String get skillCategoryTools => 'Tools';
+
+  @override
+  String get skillCategorySoftSkills => 'Soft Skills';
+
+  @override
+  String get skillsToolsGit => 'Git';
+
+  @override
+  String get skillsToolsCypress => 'Cypress';
+
+  @override
+  String get skillsToolsAndroidStudio => 'Android Studio';
+
+  @override
+  String get skillsToolsVSCode => 'VS Code';
+
+  @override
+  String get skillsCrossPlatformFlutter => 'Flutter';
+
+  @override
+  String get skillsCrossPlatformDart => 'Dart';
+
+  @override
+  String get skillsFrontendReact => 'React';
+
+  @override
+  String get skillsFrontendTypeScript => 'TypeScript';
+
+  @override
+  String get skillsFrontendJavaScript => 'JavaScript';
+
+  @override
+  String get skillsFrontendHTML => 'HTML';
+
+  @override
+  String get skillsFrontendCSS => 'CSS';
+
+  @override
+  String get skillsFrontendTailwind => 'Tailwind CSS';
+
+  @override
+  String get skillsFrontendBootstrap => 'Bootstrap';
+
+  @override
+  String get skillsBackendNodeJS => 'Node.js';
+
+  @override
+  String get skillsBackendSQL => 'SQL';
+
+  @override
+  String get skillsBackendMongoDB => 'MongoDB';
+
+  @override
+  String get skillsBackendFirebase => 'Firebase';
+
+  @override
+  String get skillsBackendMySQL => 'MySQL';
+
+  @override
+  String get skillsDesignFigma => 'Figma';
+
+  @override
+  String get skillsDesignWireframing => 'Wireframing';
+
+  @override
+  String get skillsDesignPrototyping => 'Prototyping';
+
+  @override
+  String get skillsDesignUXUI => 'UX/UI Design';
+
+  @override
+  String get skillsDesignInformationArchitecture => 'Information Architecture';
+
+  @override
+  String get skillsDesignResponsivity => 'Responsive Design';
+
+  @override
+  String get skillsDesignResearch => 'User Research';
+
+  @override
+  String get skillsDesignDocumentation => 'Documentation';
+
+  @override
+  String get skillsAccessibilityAccessibility => 'Accessibility';
+
+  @override
+  String get skillsAccessibilityWCAG => 'WCAG';
+
+  @override
+  String get skillsAccessibilityARIA => 'ARIA';
+
+  @override
+  String get skillsAccessibilityUniversalDesign => 'Universal Design';
+
+  @override
+  String get skillsSoftTeamwork => 'Teamwork';
+
+  @override
+  String get skillsSoftCommunication => 'Communication';
+
+  @override
+  String get skillsSoftProblemSolving => 'Problem Solving';
+
+  @override
+  String get skillsSoftCriticalThinking => 'Critical Thinking';
+
+  @override
+  String get skillsSoftTimeManagement => 'Time Management';
+
+  @override
+  String get skillsSoftEmpathy => 'Empathy';
+
+  @override
+  String get skillsSoftRemoteReadiness => 'Remote Work Readiness';
+
+  @override
+  String get valuesHeading => 'My Values';
+
+  @override
+  String get valuesAccessibility => 'Accessibility-first design';
+
+  @override
+  String get valuesCollaboration => 'Collaborative, transparent teamwork';
+
+  @override
+  String get valuesCraftsmanship => 'Attention to detail and craftsmanship';
 
   @override
   String get project01_name => 'My Portfolio';

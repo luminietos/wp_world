@@ -1,21 +1,116 @@
 {
   "skills": [
-    { "id": "flutter", "labelKey": "skillLabelFlutter" },
-    { "id": "dart", "labelKey": "skillLabelDart" },
-    { "id": "figma", "labelKey": "skillLabelFigma" },
-    { "id": "accessibility", "labelKey": "skillLabelAccessibility" }
+    { "id": "flutter", "labelKey": "skillsCrossPlatformFlutter" },
+    { "id": "dart", "labelKey": "skillsCrossPlatformDart" },
+
+    { "id": "react", "labelKey": "skillsFrontendReact" },
+    { "id": "typescript", "labelKey": "skillsFrontendTypeScript" },
+    { "id": "javascript", "labelKey": "skillsFrontendJavaScript" },
+    { "id": "html", "labelKey": "skillsFrontendHTML" },
+    { "id": "css", "labelKey": "skillsFrontendCSS" },
+    { "id": "tailwind", "labelKey": "skillsFrontendTailwind" },
+    { "id": "bootstrap", "labelKey": "skillsFrontendBootstrap" },
+
+    { "id": "figma", "labelKey": "skillsDesignFigma" },
+    { "id": "wireframing", "labelKey": "skillsDesignWireframing" },
+    { "id": "prototyping", "labelKey": "skillsDesignPrototyping" },
+    { "id": "uxui", "labelKey": "skillsDesignUXUI" },
+    {
+      "id": "informationArchitecture",
+      "labelKey": "skillsDesignInformationArchitecture"
+    },
+    { "id": "responsivity", "labelKey": "skillsDesignResponsivity" },
+    { "id": "research", "labelKey": "skillsDesignResearch" },
+    { "id": "documentation", "labelKey": "skillsDesignDocumentation" },
+
+    { "id": "accessibility", "labelKey": "skillsAccessibilityAccessibility" },
+    { "id": "wcag", "labelKey": "skillsAccessibilityWCAG" },
+    { "id": "aria", "labelKey": "skillsAccessibilityARIA" },
+    {
+      "id": "universalDesign",
+      "labelKey": "skillsAccessibilityUniversalDesign"
+    },
+
+    { "id": "nodejs", "labelKey": "skillsBackendNodeJS" },
+    { "id": "sql", "labelKey": "skillsBackendSQL" },
+    { "id": "mongodb", "labelKey": "skillsBackendMongoDB" },
+    { "id": "firebase", "labelKey": "skillsBackendFirebase" },
+    { "id": "mysql", "labelKey": "skillsBackendMySQL" },
+
+    { "id": "git", "labelKey": "skillsToolsGit" },
+    { "id": "cypress", "labelKey": "skillsToolsCypress" },
+    { "id": "androidStudio", "labelKey": "skillsToolsAndroidStudio" },
+    { "id": "vscode", "labelKey": "skillsToolsVSCode" },
+
+    { "id": "teamwork", "labelKey": "skillsSoftTeamwork" },
+    { "id": "communication", "labelKey": "skillsSoftCommunication" },
+    { "id": "problemSolving", "labelKey": "skillsSoftProblemSolving" },
+    { "id": "criticalThinking", "labelKey": "skillsSoftCriticalThinking" },
+    { "id": "timeManagement", "labelKey": "skillsSoftTimeManagement" },
+    { "id": "empathy", "labelKey": "skillsSoftEmpathy" },
+    { "id": "remoteReadiness", "labelKey": "skillsSoftRemoteReadiness" }
   ],
 
   "categories": [
     {
       "id": "frontend",
       "labelKey": "skillCategoryFrontend",
+      "skillIds": [
+        "react",
+        "typescript",
+        "javascript",
+        "html",
+        "css",
+        "tailwind",
+        "bootstrap"
+      ]
+    },
+    {
+      "id": "crossPlatform",
+      "labelKey": "skillCategoryCrossPlatform",
       "skillIds": ["flutter", "dart"]
+    },
+    {
+      "id": "backend",
+      "labelKey": "skillCategoryBackend",
+      "skillIds": ["nodejs", "sql", "mongodb", "firebase", "mysql"]
     },
     {
       "id": "design",
       "labelKey": "skillCategoryDesign",
-      "skillIds": ["figma", "accessibility"]
+      "skillIds": [
+        "figma",
+        "wireframing",
+        "prototyping",
+        "uxui",
+        "informationArchitecture",
+        "responsivity",
+        "research",
+        "documentation"
+      ]
+    },
+    {
+      "id": "accessibility",
+      "labelKey": "skillCategoryAccessibility",
+      "skillIds": ["accessibility", "wcag", "aria", "universalDesign"]
+    },
+    {
+      "id": "tools",
+      "labelKey": "skillCategoryTools",
+      "skillIds": ["git", "cypress", "androidStudio", "vscode", "figma"]
+    },
+    {
+      "id": "softSkills",
+      "labelKey": "skillCategorySoftSkills",
+      "skillIds": [
+        "teamwork",
+        "communication",
+        "problemSolving",
+        "criticalThinking",
+        "timeManagement",
+        "empathy",
+        "remoteReadiness"
+      ]
     }
   ]
 }

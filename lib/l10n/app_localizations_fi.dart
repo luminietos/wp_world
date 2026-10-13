@@ -30,9 +30,6 @@ class AppLocalizationsFi extends AppLocalizations {
   String get pagesContact => 'Ota yhteyttä';
 
   @override
-  String get myJourney => 'Minun matkani';
-
-  @override
   String get themeToggle => 'Vaihda teema';
 
   @override
@@ -106,13 +103,194 @@ class AppLocalizationsFi extends AppLocalizations {
   String get errorNoResults => 'Ei tuloksia';
 
   @override
-  String get techStack => 'Teknologiapino';
-
-  @override
   String get responsiveGridLayout => 'Responsiivinen ruudukkoasettelu';
 
   @override
   String get pageContentWrapper => 'Sivun sisältökehys';
+
+  @override
+  String get accessibilityHeading => 'Saavutettavuuslupaus';
+
+  @override
+  String get accessibilityParagraph1 =>
+      'Tämä portfolio noudattaa WCAG 2.2 AA -ohjeita ja pyrkii tarjoamaan inklusiivisen käyttökokemuksen.';
+
+  @override
+  String get accessibilityParagraph2 =>
+      'Kaikki sisältö on semanttista, rakenteellista ja optimoitu apuvälineille.';
+
+  @override
+  String get homeHeroHeading => 'Hei, olen Wilma — suunnittelija ja kehittäjä';
+
+  @override
+  String get homeHeroParagraph1 =>
+      'Rakennan saavutettavia digitaalisia tuotteita Front End koodilla, modernilla UI-suunnittelulla ja harkitulla ohjelmistokehityksellä.';
+
+  @override
+  String get aboutIntroHeading => 'Tietoa minusta';
+
+  @override
+  String get aboutIntroParagraph1 =>
+      'Olen tuotesuunnittelija ja -kehittäjä, joka keskittyy saavutettavuuteen ja käyttäjälähtöisiin digitaalisiin kokemuksiin.';
+
+  @override
+  String get aboutIntroParagraph2 =>
+      'Rakastan rakentaa harkittuja, inklusiivisia käyttöliittymiä ja ratkaista monimutkaisia ongelmia selkeillä, skaalautuvilla järjestelmillä.';
+
+  @override
+  String get myJourney => 'Minun matkani';
+
+  @override
+  String get aboutTimelineParagraph =>
+      'Tässä on aikajana opinnoistani ja työkokemuksestani.';
+
+  @override
+  String get techStack => 'Teknologiapino';
+
+  @override
+  String get skillCategoryFrontend => 'Frontend-kehitys';
+
+  @override
+  String get skillCategoryCrossPlatform => 'Cross-platform-kehitys';
+
+  @override
+  String get skillCategoryBackend => 'Backend-kehitys';
+
+  @override
+  String get skillCategoryDesign => 'Suunnittelu';
+
+  @override
+  String get skillCategoryAccessibility => 'Saavutettavuus';
+
+  @override
+  String get skillCategoryTools => 'Työkalut';
+
+  @override
+  String get skillCategorySoftSkills => 'Vuorovaikutustaidot';
+
+  @override
+  String get skillsToolsGit => 'Git';
+
+  @override
+  String get skillsToolsCypress => 'Cypress';
+
+  @override
+  String get skillsToolsAndroidStudio => 'Android Studio';
+
+  @override
+  String get skillsToolsVSCode => 'VS Code';
+
+  @override
+  String get skillsCrossPlatformFlutter => 'Flutter';
+
+  @override
+  String get skillsCrossPlatformDart => 'Dart';
+
+  @override
+  String get skillsFrontendReact => 'React';
+
+  @override
+  String get skillsFrontendTypeScript => 'TypeScript';
+
+  @override
+  String get skillsFrontendJavaScript => 'JavaScript';
+
+  @override
+  String get skillsFrontendHTML => 'HTML';
+
+  @override
+  String get skillsFrontendCSS => 'CSS';
+
+  @override
+  String get skillsFrontendTailwind => 'Tailwind CSS';
+
+  @override
+  String get skillsFrontendBootstrap => 'Bootstrap';
+
+  @override
+  String get skillsBackendNodeJS => 'Node.js';
+
+  @override
+  String get skillsBackendSQL => 'SQL';
+
+  @override
+  String get skillsBackendMongoDB => 'MongoDB';
+
+  @override
+  String get skillsBackendFirebase => 'Firebase';
+
+  @override
+  String get skillsBackendMySQL => 'MySQL';
+
+  @override
+  String get skillsDesignFigma => 'Figma';
+
+  @override
+  String get skillsDesignWireframing => 'Rautalankamallit';
+
+  @override
+  String get skillsDesignPrototyping => 'Prototyypit';
+
+  @override
+  String get skillsDesignUXUI => 'UX/UI-suunnittelu';
+
+  @override
+  String get skillsDesignInformationArchitecture =>
+      'Informaation arkkitehtuuri';
+
+  @override
+  String get skillsDesignResponsivity => 'Responsiivinen suunnittelu';
+
+  @override
+  String get skillsDesignResearch => 'Käyttäjätutkimus';
+
+  @override
+  String get skillsDesignDocumentation => 'Dokumentointi';
+
+  @override
+  String get skillsAccessibilityAccessibility => 'Saavutettavuus';
+
+  @override
+  String get skillsAccessibilityWCAG => 'WCAG';
+
+  @override
+  String get skillsAccessibilityARIA => 'ARIA';
+
+  @override
+  String get skillsAccessibilityUniversalDesign => 'Universaali suunnittelu';
+
+  @override
+  String get skillsSoftTeamwork => 'Tiimityö';
+
+  @override
+  String get skillsSoftCommunication => 'Kommunikaatio';
+
+  @override
+  String get skillsSoftProblemSolving => 'Ongelmanratkaisu';
+
+  @override
+  String get skillsSoftCriticalThinking => 'Kriittinen ajattelu';
+
+  @override
+  String get skillsSoftTimeManagement => 'Ajanhallinta';
+
+  @override
+  String get skillsSoftEmpathy => 'Empatia';
+
+  @override
+  String get skillsSoftRemoteReadiness => 'Valmius etätyöhön';
+
+  @override
+  String get valuesHeading => 'Arvoni';
+
+  @override
+  String get valuesAccessibility => 'Saavutettavuus ensin';
+
+  @override
+  String get valuesCollaboration => 'Yhteistyö ja avoin kommunikaatio';
+
+  @override
+  String get valuesCraftsmanship => 'Huolellisuus ja viimeistely';
 
   @override
   String get project01_name => 'Portfolio';

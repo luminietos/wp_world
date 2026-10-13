@@ -28,10 +28,6 @@
   "@pagesContact": {
     "description": "Ota yhteyttä-sivun otsikko"
   },
-  "myJourney": "Minun matkani",
-  "@myJourney": {
-    "description": "Minusta-sivun lohkon otsikko"
-  },
   "themeToggle": "Vaihda teema",
   "@themeToggle": {
     "description": "Teemanvaihdon otsikko"
@@ -128,10 +124,6 @@
   "@errorNoResults": {
     "description": "Virhetila viesti: jos ei ole tuloksia"
   },
-  "techStack": "Teknologiapino",
-  "@techStack": {
-    "description": "Otsikko 'tech stack' osiota varten"
-  },
   "responsiveGridLayout": "Responsiivinen ruudukkoasettelu",
   "@responsiveGridLayout": {
     "description": "Label for the responsive grid layout"
@@ -139,6 +131,233 @@
   "pageContentWrapper": "Sivun sisältökehys",
   "@pageContentWrapper": {
     "description": "Sivun kehys"
+  },
+  "accessibilityHeading": "Saavutettavuuslupaus",
+  "accessibilityParagraph1": "Tämä portfolio noudattaa WCAG 2.2 AA -ohjeita ja pyrkii tarjoamaan inklusiivisen käyttökokemuksen.",
+  "accessibilityParagraph2": "Kaikki sisältö on semanttista, rakenteellista ja optimoitu apuvälineille.",
+  "homeHeroHeading": "Hei, olen Wilma — suunnittelija ja kehittäjä",
+  "@homeHeroHeading": {
+    "description": "Koti-sivun hero-otsikko"
+  },
+  "homeHeroParagraph1": "Rakennan saavutettavia digitaalisia tuotteita Front End koodilla, modernilla UI-suunnittelulla ja harkitulla ohjelmistokehityksellä.",
+  "@homeHeroParagraph1": {
+    "description": "Koti-sivun hero-kappale"
+  },
+  "aboutIntroHeading": "Tietoa minusta",
+  "@aboutIntroHeading": {
+    "description": "Minusta-sivun otsikko"
+  },
+  "aboutIntroParagraph1": "Olen tuotesuunnittelija ja -kehittäjä, joka keskittyy saavutettavuuteen ja käyttäjälähtöisiin digitaalisiin kokemuksiin.",
+  "@aboutIntroParagraph1": {
+    "description": "Minusta-sivun ensimmäinen kappale"
+  },
+  "aboutIntroParagraph2": "Rakastan rakentaa harkittuja, inklusiivisia käyttöliittymiä ja ratkaista monimutkaisia ongelmia selkeillä, skaalautuvilla järjestelmillä.",
+  "@aboutIntroParagraph2": {
+    "description": "Minusta-sivun toinen kappale"
+  },
+  "myJourney": "Minun matkani",
+  "@myJourney": {
+    "description": "Minusta-sivun lohkon otsikko"
+  },
+  "aboutTimelineParagraph": "Tässä on aikajana opinnoistani ja työkokemuksestani.",
+  "@aboutTimelineParagraph": {
+    "description": "Minusta-sivun aikajanan kuvaus"
+  },
+  "techStack": "Teknologiapino",
+  "@techStack": {
+    "description": "Otsikko 'tech stack' osiota varten"
+  },
+  "skillCategoryFrontend": "Frontend-kehitys",
+  "@skillCategoryFrontend": {
+    "description": "Taito kategoria"
+  },
+  "skillCategoryCrossPlatform": "Cross-platform-kehitys",
+  "@skillCategoryCrossPlatform": {
+    "description": "Taito kategoria"
+  },
+  "skillCategoryBackend": "Backend-kehitys",
+  "@skillCategoryBackend": {
+    "description": "Taito kategoria"
+  },
+  "skillCategoryDesign": "Suunnittelu",
+  "@skillCategoryDesign": {
+    "description": "Taito kategoria"
+  },
+  "skillCategoryAccessibility": "Saavutettavuus",
+  "@skillCategoryAccessibility": {
+    "description": "Taito kategoria"
+  },
+  "skillCategoryTools": "Työkalut",
+  "@skillCategoryTools": {
+    "description": "Taito kategoria"
+  },
+  "skillCategorySoftSkills": "Vuorovaikutustaidot",
+  "@skillCategorySoftSkills": {
+    "description": "Taito kategoria"
+  },
+  "skillsToolsGit": "Git",
+  "@skillsToolsGit": {
+    "description": "Työkalu taito"
+  },
+  "skillsToolsCypress": "Cypress",
+  "@skillsToolsCypress": {
+    "description": "Työkalu taito"
+  },
+  "skillsToolsAndroidStudio": "Android Studio",
+  "@skillsToolsAndroidStudio": {
+    "description": "Työkalu taito"
+  },
+  "skillsToolsVSCode": "VS Code",
+  "@skillsToolsVSCode": {
+    "description": "Työkalu taito"
+  },
+  "skillsCrossPlatformFlutter": "Flutter",
+  "@skillsCrossPlatformFlutter": {
+    "description": "Flutter"
+  },
+  "skillsCrossPlatformDart": "Dart",
+  "@skillsCrossPlatformDart": {
+    "description": "Dart"
+  },
+  "skillsFrontendReact": "React",
+  "@skillsFrontendReact": {
+    "description": "React"
+  },
+  "skillsFrontendTypeScript": "TypeScript",
+  "@skillsFrontendTypeScript": {
+    "description": "TypeScript"
+  },
+  "skillsFrontendJavaScript": "JavaScript",
+  "@skillsFrontendJavaScript": {
+    "description": "JavaScript"
+  },
+  "skillsFrontendHTML": "HTML",
+  "@skillsFrontendHTML": {
+    "description": "HTML"
+  },
+  "skillsFrontendCSS": "CSS",
+  "@skillsFrontendCSS": {
+    "description": "CSS"
+  },
+  "skillsFrontendTailwind": "Tailwind CSS",
+  "@skillsFrontendTailwind": {
+    "description": "Tailwind CSS"
+  },
+  "skillsFrontendBootstrap": "Bootstrap",
+  "@skillsFrontendBootstrap": {
+    "description": "Bootstrap"
+  },
+  "skillsBackendNodeJS": "Node.js",
+  "@skillsBackendNodeJS": {
+    "description": "Backend taito"
+  },
+  "skillsBackendSQL": "SQL",
+  "@skillsBackendSQL": {
+    "description": "Backend taito"
+  },
+  "skillsBackendMongoDB": "MongoDB",
+  "@skillsBackendMongoDB": {
+    "description": "Backend taito"
+  },
+  "skillsBackendFirebase": "Firebase",
+  "@skillsBackendFirebase": {
+    "description": "Backend taito"
+  },
+  "skillsBackendMySQL": "MySQL",
+  "@skillsBackendMySQL": {
+    "description": "Backend taito"
+  },
+  "skillsDesignFigma": "Figma",
+  "@skillsDesignFigma": {
+    "description": "Suunnittelu taito"
+  },
+  "skillsDesignWireframing": "Rautalankamallit",
+  "@skillsDesignWireframing": {
+    "description": "Suunnittelu taito"
+  },
+  "skillsDesignPrototyping": "Prototyypit",
+  "@skillsDesignPrototyping": {
+    "description": "Suunnittelu taito"
+  },
+  "skillsDesignUXUI": "UX/UI-suunnittelu",
+  "@skillsDesignUXUI": {
+    "description": "Suunnittelu taito"
+  },
+  "skillsDesignInformationArchitecture": "Informaation arkkitehtuuri",
+  "@skillsDesignInformationArchitecture": {
+    "description": "Suunnittelu taito"
+  },
+  "skillsDesignResponsivity": "Responsiivinen suunnittelu",
+  "@skillsDesignResponsivity": {
+    "description": "Suunnittelu taito"
+  },
+  "skillsDesignResearch": "Käyttäjätutkimus",
+  "@skillsDesignResearch": {
+    "description": "Suunnittelu taito"
+  },
+  "skillsDesignDocumentation": "Dokumentointi",
+  "@skillsDesignDocumentation": {
+    "description": "Suunnittelu taito"
+  },
+  "skillsAccessibilityAccessibility": "Saavutettavuus",
+  "@skillsAccessibilityAccessibility": {
+    "description": "Saavutettavuus taito"
+  },
+  "skillsAccessibilityWCAG": "WCAG",
+  "@skillsAccessibilityWCAG": {
+    "description": "Saavutettavuus taito"
+  },
+  "skillsAccessibilityARIA": "ARIA",
+  "@skillsAccessibilityARIA": {
+    "description": "Saavutettavuus taito"
+  },
+  "skillsAccessibilityUniversalDesign": "Universaali suunnittelu",
+  "@skillsAccessibilityUniversalDesign": {
+    "description": "Saavutettavuus taito"
+  },
+  "skillsSoftTeamwork": "Tiimityö",
+  "@skillsSoftTeamwork": {
+    "description": "Pehmeä-/vuorovaikutustaito"
+  },
+  "skillsSoftCommunication": "Kommunikaatio",
+  "@skillsSoftCommunication": {
+    "description": "Pehmeä-/vuorovaikutustaito"
+  },
+  "skillsSoftProblemSolving": "Ongelmanratkaisu",
+  "@skillsSoftProblemSolving": {
+    "description": "Pehmeä-/vuorovaikutustaito"
+  },
+  "skillsSoftCriticalThinking": "Kriittinen ajattelu",
+  "@skillsSoftCriticalThinking": {
+    "description": "Pehmeä-/vuorovaikutustaito"
+  },
+  "skillsSoftTimeManagement": "Ajanhallinta",
+  "@skillsSoftTimeManagement": {
+    "description": "Pehmeä-/vuorovaikutustaito"
+  },
+  "skillsSoftEmpathy": "Empatia",
+  "@skillsSoftEmpathy": {
+    "description": "Pehmeä-/vuorovaikutustaito"
+  },
+  "skillsSoftRemoteReadiness": "Valmius etätyöhön",
+  "@skillsSoftRemoteReadiness": {
+    "description": "Pehmeä-/vuorovaikutustaito"
+  },
+  "valuesHeading": "Arvoni",
+  "@valuesHeading": {
+    "description": "Minusta-sivun arvot otsikko"
+  },
+  "valuesAccessibility": "Saavutettavuus ensin",
+  "@valuesAccessibility": {
+    "description": "Saavutettavuus ensin"
+  },
+  "valuesCollaboration": "Yhteistyö ja avoin kommunikaatio",
+  "@valuesCollaboration": {
+    "description": "Yhteistyö ja avoin kommunikaatio"
+  },
+  "valuesCraftsmanship": "Huolellisuus ja viimeistely",
+  "@valuesCraftsmanship": {
+    "description": "Huolellisuus ja viimeistely"
   },
   "project01_name": "Portfolio",
   "@project01_name": {
