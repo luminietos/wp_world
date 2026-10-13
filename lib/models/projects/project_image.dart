@@ -9,6 +9,7 @@ class ProjectImage {
   final String captionKey;
   final bool isDecorative;
   final String? semanticLabel;
+  final List<ProjectImage> images; // already filtered by parent
 
   ProjectImage({
     required this.path,
@@ -16,6 +17,7 @@ class ProjectImage {
     this.isDecorative =
         false, // defaults to false = the image is considered content and should be described for accessibility!
     this.semanticLabel,
+    this.images = const [],
   });
 
   factory ProjectImage.fromJson(Map<String, dynamic> json) {
@@ -24,6 +26,14 @@ class ProjectImage {
       captionKey: json['caption_key'] as String,
       isDecorative: json['is_decorative'] as bool? ?? false,
       semanticLabel: json['semantic_label'] as String?,
+      images:
+          (json['images'] as List<dynamic>?)
+              ?.map(
+                (imgJson) =>
+                    ProjectImage.fromJson(imgJson as Map<String, dynamic>),
+              )
+              .toList() ??
+          [],
     );
   }
 
