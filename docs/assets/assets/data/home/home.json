@@ -1,0 +1,27 @@
+{
+  "hero": {
+    "blocks": [
+      {
+        "type": "heading",
+        "key": "homeHeroHeading",
+        "headingLevel": 1,
+        "semanticLabel": null,
+        "ariaDescription": null
+      },
+      {
+        "type": "paragraph",
+        "key": "homeHeroParagraph1",
+        "semanticLabel": null,
+        "ariaDescription": null
+      }
+    ]
+  },
+
+  "featuredSkills": {
+    "skillIds": ["flutter", "dart", "figma", "accessibility"]
+  },
+
+  "featuredProjects": {
+    "projectIds": ["project_01", "project_02"]
+  }
+}

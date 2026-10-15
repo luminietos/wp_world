@@ -1,0 +1,68 @@
+{
+  "sections": [
+    {
+      "id": "about_intro",
+      "blocks": [
+        {
+          "type": "heading",
+          "key": "aboutIntroHeading",
+          "headingLevel": 1,
+          "semanticLabel": null,
+          "ariaDescription": null
+        },
+        {
+          "type": "paragraph",
+          "key": "aboutIntroParagraph1",
+          "semanticLabel": null,
+          "ariaDescription": null
+        },
+        {
+          "type": "paragraph",
+          "key": "aboutIntroParagraph2",
+          "semanticLabel": null,
+          "ariaDescription": null
+        }
+      ]
+    },
+    {
+      "id": "about_values",
+      "blocks": [
+        {
+          "type": "heading",
+          "key": "aboutValuesHeading",
+          "headingLevel": 2,
+          "semanticLabel": null,
+          "ariaDescription": null
+        },
+        {
+          "type": "list",
+          "listKeys": [
+            "valuesAccessibility",
+            "valuesCollaboration",
+            "valuesCraftsmanship"
+          ],
+          "semanticLabel": null,
+          "ariaDescription": null
+        }
+      ]
+    }
+  ],
+
+  "timelineSection": {
+    "introBlocks": [
+      {
+        "type": "heading",
+        "key": "aboutTimelineHeading",
+        "headingLevel": 2,
+        "semanticLabel": null,
+        "ariaDescription": null
+      },
+      {
+        "type": "paragraph",
+        "key": "aboutTimelineParagraph",
+        "semanticLabel": null,
+        "ariaDescription": null
+      }
+    ]
+  }
+}
