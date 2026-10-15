@@ -172,6 +172,14 @@
   "@aboutTimelineParagraph": {
     "description": "About me timeline paragraph"
   },
+  "aboutStrengthsHeading": "My Strengths",
+  "@aboutStrengthsHeading": {
+    "description": "About me strengths heading"
+  },
+  "aboutLookingForHeading": "What I’m Looking For",
+  "@aboutLookingForHeading": {
+    "description": "About me looking for heading"
+  },
   "techStack": "Tech stack",
   "@techStack": {
     "description": "Tech stack label"

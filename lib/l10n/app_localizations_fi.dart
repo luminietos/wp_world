@@ -145,6 +145,12 @@ class AppLocalizationsFi extends AppLocalizations {
       'Tässä on aikajana opinnoistani ja työkokemuksestani.';
 
   @override
+  String get aboutStrengthsHeading => 'Vahvuuteni';
+
+  @override
+  String get aboutLookingForHeading => 'Mitä etsin';
+
+  @override
   String get techStack => 'Teknologiapino';
 
   @override

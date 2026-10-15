@@ -163,6 +163,14 @@
   "@aboutTimelineParagraph": {
     "description": "Minusta-sivun aikajanan kuvaus"
   },
+  "aboutStrengthsHeading": "Vahvuuteni",
+  "@aboutStrengthsHeading": {
+    "description": "Minusta-sivun vahvuudet otsikko"
+  },
+  "aboutLookingForHeading": "Mitä etsin",
+  "@aboutLookingForHeading": {
+    "description": "Minusta-sivun etsit otsikko"
+  },
   "techStack": "Teknologiapino",
   "@techStack": {
     "description": "Otsikko 'tech stack' osiota varten"

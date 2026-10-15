@@ -356,6 +356,18 @@ abstract class AppLocalizations {
   /// **'Here is a timeline of my studies and professional experience.'**
   String get aboutTimelineParagraph;
 
+  /// About me strengths heading
+  ///
+  /// In en, this message translates to:
+  /// **'My Strengths'**
+  String get aboutStrengthsHeading;
+
+  /// About me looking for heading
+  ///
+  /// In en, this message translates to:
+  /// **'What I’m Looking For'**
+  String get aboutLookingForHeading;
+
   /// Tech stack label
   ///
   /// In en, this message translates to:

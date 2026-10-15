@@ -144,6 +144,12 @@ class AppLocalizationsEn extends AppLocalizations {
       'Here is a timeline of my studies and professional experience.';
 
   @override
+  String get aboutStrengthsHeading => 'My Strengths';
+
+  @override
+  String get aboutLookingForHeading => 'What I’m Looking For';
+
+  @override
   String get techStack => 'Tech stack';
 
   @override
