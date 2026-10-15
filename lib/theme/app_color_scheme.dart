@@ -10,6 +10,8 @@ class AppColorScheme {
     onPrimary: Colors.white,
     secondary: AppColors.accentLavender,
     onSecondary: Colors.white,
+    tertiary: AppColors.accentTertiary,
+    onTertiary: Colors.white,
 
     // SURFACES (Material 3)
     surface: AppColors.lightSurface,
@@ -36,6 +38,8 @@ class AppColorScheme {
     onPrimary: Colors.white,
     secondary: AppColors.accentLavender,
     onSecondary: Colors.white,
+    tertiary: AppColors.accentTertiary,
+    onTertiary: Colors.white,
 
     // SURFACES
     surface: AppColors.darkSurface,

@@ -6,6 +6,7 @@ class AppColors {
   // 'BRAND' ACCENTS
   static const Color accentGreen = Color(0xFF4A6F5A); // woodsy, cool-toned
   static const Color accentLavender = Color(0xFFB8A8C9); // muted lavender
+  static const Color accentTertiary = Color(0xFFBF965C);
 
   // NEUTRALS (LIGHT MODE)
   static const Color lightBackground = Color(0xFFF7F7F7);
