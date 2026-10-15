@@ -2,7 +2,7 @@
 // Can be used elsewhere, but is primarily intended for use in the case study page, where images are often accompanied by captions that require localization support.
 
 import 'package:flutter/material.dart';
-import 'package:wp_world/helpers/localization_helpers.dart';
+import 'package:wp_world/helpers/localization_help.dart';
 
 class ProjectImage {
   final String path;

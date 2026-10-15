@@ -1,7 +1,7 @@
 // PILL-SHAPED SKILL CHIP USING TECH COLORS & INTERACTIONS
 
 import 'package:flutter/material.dart';
-import 'package:wp_world/helpers/localization_extensions.dart';
+import 'package:wp_world/helpers/localization_help.dart';
 import 'package:wp_world/models/skills/skill.dart';
 import 'package:wp_world/utils/tech_colors.dart';
 import 'package:wp_world/utils/spacing.dart';

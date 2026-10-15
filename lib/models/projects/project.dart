@@ -2,7 +2,7 @@
 // Represents a single project case study, including all relevant metadata, localized text, images, and structured sections.
 
 import 'package:flutter/material.dart';
-import 'package:wp_world/helpers/localization_helpers.dart';
+import 'package:wp_world/helpers/localization_help.dart';
 import 'package:wp_world/models/projects/project_image.dart';
 import 'package:wp_world/models/projects/project_section.dart';
 

@@ -148,6 +148,9 @@ class AppLocalizationsFi extends AppLocalizations {
   String get techStack => 'Teknologiapino';
 
   @override
+  String get skillsTitle => 'Taidot';
+
+  @override
   String get skillCategoryFrontend => 'Frontend-kehitys';
 
   @override
@@ -291,6 +294,9 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get valuesCraftsmanship => 'Huolellisuus ja viimeistely';
+
+  @override
+  String get projectsFeaturedTitle => 'Muutama Projekti';
 
   @override
   String get project01_name => 'Portfolio';

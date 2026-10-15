@@ -2,7 +2,7 @@
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:wp_world/helpers/localization_extensions.dart';
+import 'package:wp_world/helpers/localization_help.dart';
 import 'package:wp_world/models/global/localized_text_block.dart';
 import 'package:wp_world/l10n/app_localizations.dart';
 import 'package:wp_world/utils/spacing.dart';

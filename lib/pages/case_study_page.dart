@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:wp_world/loaders/project_loader.dart';
-import 'package:wp_world/helpers/localization_helpers.dart';
+import 'package:wp_world/helpers/localization_help.dart';
 import 'package:wp_world/l10n/app_localizations.dart';
 import 'package:wp_world/models/projects/project.dart';
 import 'package:wp_world/models/projects/project_section.dart';

@@ -1,7 +1,7 @@
 // EXTERNAL CONTACT LINK TILE, SAME SHAPE AS CONTACTMETHODTILE BUT CAN DIFFER IN COLOR
 
 import 'package:flutter/material.dart';
-import 'package:wp_world/helpers/localization_extensions.dart';
+import 'package:wp_world/helpers/localization_help.dart';
 import 'package:wp_world/models/contact/contact_link.dart';
 import 'package:wp_world/utils/spacing.dart';
 import 'package:wp_world/l10n/app_localizations.dart';

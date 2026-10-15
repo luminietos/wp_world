@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wp_world/helpers/localization_helpers.dart';
+import 'package:wp_world/helpers/localization_help.dart';
 import 'package:wp_world/models/timeline/timeline_event.dart';
 import 'package:wp_world/utils/spacing.dart';
 import 'package:wp_world/widgets/timeline/timeline_date_pill.dart';

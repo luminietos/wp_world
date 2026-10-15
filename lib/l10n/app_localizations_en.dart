@@ -147,6 +147,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get techStack => 'Tech stack';
 
   @override
+  String get skillsTitle => 'Skills';
+
+  @override
   String get skillCategoryFrontend => 'Frontend Development';
 
   @override
@@ -289,6 +292,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get valuesCraftsmanship => 'Attention to detail and craftsmanship';
+
+  @override
+  String get projectsFeaturedTitle => 'Featured Projects';
 
   @override
   String get project01_name => 'My Portfolio';

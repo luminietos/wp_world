@@ -133,8 +133,17 @@
     "description": "Label for the page wrapper"
   },
   "accessibilityHeading": "Accessibility Commitment",
+  "@accessibilityHeading": {
+    "description": "Accessibility heading"
+  },
   "accessibilityParagraph1": "This portfolio follows WCAG 2.2 AA guidelines and aims to provide an inclusive experience.",
+  "@accessibilityParagraph1": {
+    "description": "Accessibility paragraph"
+  },
   "accessibilityParagraph2": "All content is structured, semantic, and optimized for assistive technologies.",
+  "@accessibilityParagraph2": {
+    "description": "Accessibility paragraph"
+  },
   "homeHeroHeading": "Hi, I'm Wilma — Designer & Developer",
   "@homeHeroHeading": {
     "description": "Home page hero heading"
@@ -166,6 +175,10 @@
   "techStack": "Tech stack",
   "@techStack": {
     "description": "Tech stack label"
+  },
+  "skillsTitle": "Skills",
+  "@skillsTitle": {
+    "description": "Skills section title"
   },
   "skillCategoryFrontend": "Frontend Development",
   "@skillCategoryFrontend": {
@@ -358,6 +371,10 @@
   "valuesCraftsmanship": "Attention to detail and craftsmanship",
   "@valuesCraftsmanship": {
     "description": "Craftsmanship value"
+  },
+  "projectsFeaturedTitle": "Featured Projects",
+  "@projectsFeaturedTitle": {
+    "description": "Featured projects section title"
   },
   "project01_name": "My Portfolio",
   "@project01_name": {

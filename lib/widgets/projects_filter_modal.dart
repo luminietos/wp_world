@@ -1,7 +1,7 @@
 // FILTERS ARE GROUPED BY ATTRIBUTE & USERS CAN SELECT MULTIPLE OPTIONS PER GROUP
 
 import 'package:flutter/material.dart';
-import 'package:wp_world/helpers/localization_helpers.dart';
+import 'package:wp_world/helpers/localization_help.dart';
 import 'package:wp_world/models/projects/project.dart';
 import 'package:wp_world/state/projects_filter_state.dart';
 import 'package:wp_world/utils/spacing.dart';

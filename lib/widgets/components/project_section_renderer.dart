@@ -1,7 +1,7 @@
 // RENDERS PROJECT SECTIONS WITH HEADING, BODY & OPTIONAL IMAGES
 
 import 'package:flutter/material.dart';
-import 'package:wp_world/helpers/localization_extensions.dart';
+import 'package:wp_world/helpers/localization_help.dart';
 import 'package:wp_world/models/projects/project_section.dart';
 import 'package:wp_world/models/projects/project_image.dart';
 import 'package:wp_world/utils/spacing.dart';

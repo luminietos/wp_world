@@ -1,7 +1,7 @@
 // RENDERS A HEADING LocalizedTextBlock, SPACING CONTROLLED BY PARENT
 
 import 'package:flutter/material.dart';
-import 'package:wp_world/helpers/localization_extensions.dart';
+import 'package:wp_world/helpers/localization_help.dart';
 import 'package:wp_world/models/global/localized_text_block.dart';
 import 'package:wp_world/l10n/app_localizations.dart';
 import 'package:wp_world/theme/app_text_theme.dart';

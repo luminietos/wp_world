@@ -296,19 +296,19 @@ abstract class AppLocalizations {
   /// **'Page content wrapper'**
   String get pageContentWrapper;
 
-  /// No description provided for @accessibilityHeading.
+  /// Accessibility heading
   ///
   /// In en, this message translates to:
   /// **'Accessibility Commitment'**
   String get accessibilityHeading;
 
-  /// No description provided for @accessibilityParagraph1.
+  /// Accessibility paragraph
   ///
   /// In en, this message translates to:
   /// **'This portfolio follows WCAG 2.2 AA guidelines and aims to provide an inclusive experience.'**
   String get accessibilityParagraph1;
 
-  /// No description provided for @accessibilityParagraph2.
+  /// Accessibility paragraph
   ///
   /// In en, this message translates to:
   /// **'All content is structured, semantic, and optimized for assistive technologies.'**
@@ -361,6 +361,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Tech stack'**
   String get techStack;
+
+  /// Skills section title
+  ///
+  /// In en, this message translates to:
+  /// **'Skills'**
+  String get skillsTitle;
 
   /// Skill category label
   ///
@@ -649,6 +655,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Attention to detail and craftsmanship'**
   String get valuesCraftsmanship;
+
+  /// Featured projects section title
+  ///
+  /// In en, this message translates to:
+  /// **'Featured Projects'**
+  String get projectsFeaturedTitle;
 
   /// Project 1 title
   ///

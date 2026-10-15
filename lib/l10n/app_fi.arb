@@ -167,6 +167,10 @@
   "@techStack": {
     "description": "Otsikko 'tech stack' osiota varten"
   },
+  "skillsTitle": "Taidot",
+  "@skillsTitle": {
+    "description": "Taidot osion otsikko"
+  },
   "skillCategoryFrontend": "Frontend-kehitys",
   "@skillCategoryFrontend": {
     "description": "Taito kategoria"
@@ -358,6 +362,10 @@
   "valuesCraftsmanship": "Huolellisuus ja viimeistely",
   "@valuesCraftsmanship": {
     "description": "Huolellisuus ja viimeistely"
+  },
+  "projectsFeaturedTitle": "Muutama Projekti",
+  "@projectsFeaturedTitle": {
+    "description": "Muutama projekti -osio otsikko"
   },
   "project01_name": "Portfolio",
   "@project01_name": {

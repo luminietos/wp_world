@@ -5,7 +5,7 @@ import 'package:wp_world/models/projects/project.dart';
 import 'package:wp_world/utils/spacing.dart';
 import 'package:wp_world/utils/tech_colors.dart';
 import 'package:wp_world/widgets/components/app_card.dart';
-import 'package:wp_world/helpers/localization_helpers.dart';
+import 'package:wp_world/helpers/localization_help.dart';
 
 class ProjectCard extends StatelessWidget {
   final Project project;
