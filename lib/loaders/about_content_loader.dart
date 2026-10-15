@@ -11,7 +11,9 @@ import 'package:wp_world/models/global/localized_text_block.dart';
 
 class AboutContentLoader {
   static Future<AboutContent> load() async {
-    final jsonString = await rootBundle.loadString('lib/data/about/about.json');
+    final jsonString = await rootBundle.loadString(
+      'assets/data/about/about.json',
+    );
     final Map<String, dynamic> data = json.decode(jsonString);
 
     final sections = (data['sections'] as List<dynamic>).map((section) {

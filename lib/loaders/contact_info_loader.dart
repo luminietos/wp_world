@@ -12,7 +12,7 @@ import 'package:wp_world/models/global/localized_text_block.dart';
 class ContactInfoLoader {
   static Future<ContactInfo> load() async {
     final jsonString = await rootBundle.loadString(
-      'lib/data/contact/contact.json',
+      'assets/data/contact/contact.json',
     );
     final Map<String, dynamic> data = json.decode(jsonString);
 

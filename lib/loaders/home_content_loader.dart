@@ -12,7 +12,9 @@ import 'package:wp_world/models/global/localized_text_block.dart';
 
 class HomeContentLoader {
   static Future<HomeContent> load() async {
-    final jsonString = await rootBundle.loadString('lib/data/home/home.json');
+    final jsonString = await rootBundle.loadString(
+      'assets/data/home/home.json',
+    );
     final Map<String, dynamic> data = json.decode(jsonString);
 
     final hero = HomeHero(

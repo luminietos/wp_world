@@ -1,140 +1,181 @@
+// HOME PAGE — CLEAN, RESPONSIVE, ACCESSIBLE, MODEL-ALIGNED
+
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:wp_world/helpers/localization_help.dart';
 import 'package:wp_world/l10n/app_localizations.dart';
+
 import 'package:wp_world/loaders/home_content_loader.dart';
+import 'package:wp_world/loaders/project_loader.dart';
 import 'package:wp_world/models/home/home_content.dart';
-import 'package:wp_world/utils/spacing.dart';
+import 'package:wp_world/models/global/localized_text_block.dart';
+import 'package:wp_world/models/projects/project.dart';
+
+import 'package:wp_world/models/skills/skill.dart';
 import 'package:wp_world/utils/layout.dart';
+import 'package:wp_world/utils/spacing.dart';
 import 'package:wp_world/utils/responsive.dart';
 
 import 'package:wp_world/widgets/section.dart';
 import 'package:wp_world/widgets/components/section_header.dart';
 import 'package:wp_world/widgets/components/section_content.dart';
-import 'package:wp_world/widgets//skill_chip.dart';
 import 'package:wp_world/widgets/project_card.dart';
+import 'package:wp_world/widgets/skill_chip.dart';
 
 @RoutePage()
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
-  Future<HomeContent> _loadHomeContent() {
-    return HomeContentLoader.load();
-  }
+  Future<HomeContent> _load() => HomeContentLoader.load();
 
   @override
   Widget build(BuildContext context) {
     final colors = Theme.of(context).colorScheme;
 
-    return Scaffold(
-      backgroundColor: colors.background,
-      body: FutureBuilder<HomeContent>(
-        future: _loadHomeContent(),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(child: CircularProgressIndicator());
-          }
+    return FutureBuilder<HomeContent>(
+      future: _load(),
+      builder: (context, snapshot) {
+        if (!snapshot.hasData) {
+          return const Center(child: CircularProgressIndicator());
+        }
 
-          if (snapshot.hasError || !snapshot.hasData) {
-            return Center(
-              child: Text(
-                'Failed to load home content.',
-                style: Theme.of(context).textTheme.bodyLarge,
-              ),
-            );
-          }
+        final home = snapshot.data!;
+        final localizations = AppLocalizations.of(context)!;
 
-          final home = snapshot.data!;
-          final localizations = AppLocalizations.of(context)!;
+        return SingleChildScrollView(
+          padding: EdgeInsets.symmetric(
+            horizontal: Layout.horizontalPadding(),
+            vertical: Spacing.lg,
+          ),
+          child: ConstrainedBox(
+            constraints: Layout.maxContentWidth,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                //
+                // ────────────────────────────────────────────────
+                // HERO SECTION
+                // ────────────────────────────────────────────────
+                //
+                Section(
+                  title: localizations.title,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: _buildHeroBlocks(context, home.hero.blocks),
+                  ),
+                ),
 
-          return SingleChildScrollView(
-            padding: EdgeInsets.symmetric(
-              horizontal: Layout.horizontalPadding(),
-              vertical: Spacing.lg,
-            ),
-            child: ConstrainedBox(
-              constraints: Layout.maxContentWidth,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  // HERO SECTION
+                //
+                // ────────────────────────────────────────────────
+                // FEATURED SKILLS
+                // ────────────────────────────────────────────────
+                //
+                // if (home.featuredSkills.skillIds.isNotEmpty)
+                //   Section(
+                //     title: localizations.skillsTitle,
+                //     child: Wrap(
+                //       spacing: Spacing.sm,
+                //       runSpacing: Spacing.sm,
+                //       children: home.featuredSkills.skillIds.map((id) {
+                //         final label = localizations.getString(id);
+                //         return SkillChip(
+                //           skill: Skill(id: id, labelKey: id),
+                //         );
+                //       }).toList(),
+                //     ),
+                //   ),
+
+                //
+                // ────────────────────────────────────────────────
+                // FEATURED PROJECTS
+                // ────────────────────────────────────────────────
+                //
+                if (home.featuredProjects.projectIds.isNotEmpty)
                   Section(
-                    title: localizations.title,
-                    description: home.hero.descriptionBlock != null
-                        ? SectionContent(blocks: home.hero.descriptionBlock!)
-                        : null,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        if (home.hero.headingBlock != null)
-                          SectionHeader(headingBlock: home.hero.headingBlock!),
-                        if (home.hero.contentBlocks.isNotEmpty)
-                          Padding(
-                            padding: EdgeInsets.only(top: Spacing.sm),
-                            child: SectionContent(
-                              blocks: home.hero.contentBlocks,
-                            ),
-                          ),
-                      ],
+                    title: localizations.projectsFeaturedTitle,
+                    child: _buildProjectsGrid(
+                      context,
+                      home.featuredProjects.projectIds,
                     ),
                   ),
-
-                  // FEATURED SKILLS
-                  if (home.featuredSkills.skills.isNotEmpty)
-                    Section(
-                      title: localizations.skillsTitle,
-                      child: Wrap(
-                        spacing: Spacing.sm,
-                        runSpacing: Spacing.sm,
-                        children: home.featuredSkills.skills
-                            .map((skill) => SkillChip(skill: skill))
-                            .toList(),
-                      ),
-                    ),
-
-                  // FEATURED PROJECTS
-                  if (home.featuredProjects.projects.isNotEmpty)
-                    Section(
-                      title: localizations.projectsFeaturedTitle,
-                      child: _buildProjectsGrid(context, home),
-                    ),
-                ],
-              ),
+              ],
             ),
-          );
-        },
-      ),
+          ),
+        );
+      },
     );
   }
 
-  Widget _buildProjectsGrid(BuildContext context, HomeContent home) {
+  //
+  // ────────────────────────────────────────────────
+  // HERO BLOCK RENDERING
+  // ────────────────────────────────────────────────
+  //
+  List<Widget> _buildHeroBlocks(
+    BuildContext context,
+    List<LocalizedTextBlock> blocks,
+  ) {
+    final widgets = <Widget>[];
+
+    for (final block in blocks) {
+      if (block.type == TextBlockType.heading) {
+        widgets.add(SectionHeader(headingBlock: block));
+        widgets.add(SizedBox(height: Spacing.sm));
+      } else {
+        widgets.add(SectionContent(blocks: [block]));
+      }
+    }
+
+    return widgets;
+  }
+
+  //
+  // ────────────────────────────────────────────────
+  // FEATURED PROJECTS GRID
+  // ────────────────────────────────────────────────
+  //
+  Widget _buildProjectsGrid(BuildContext context, List<String> projectIds) {
     final isDesktop = Responsive.isDesktop;
     final isTablet = Responsive.isTablet;
 
-    final crossAxisCount = isDesktop
+    final columns = isDesktop
         ? 3
         : isTablet
         ? 2
         : 1;
 
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        final itemWidth = constraints.maxWidth / crossAxisCount;
+    return FutureBuilder<List<Project>>(
+      future: ProjectLoader.load(),
+      builder: (context, snapshot) {
+        if (!snapshot.hasData) {
+          return const Center(child: CircularProgressIndicator());
+        }
 
-        return Wrap(
-          spacing: Spacing.md,
-          runSpacing: Spacing.md,
-          children: home.featuredProjects.projects.map((project) {
-            return SizedBox(
-              width: itemWidth - Spacing.md,
-              child: ProjectCard(
-                project: project,
-                onTap: () {
-                  // Navigate to case study page for this project
-                  // context.router.push(CaseStudyRoute(projectId: project.id));
-                },
-              ),
+        final allProjects = snapshot.data!;
+        final featured = allProjects
+            .where((p) => projectIds.contains(p.id))
+            .toList();
+
+        return LayoutBuilder(
+          builder: (context, constraints) {
+            final itemWidth = constraints.maxWidth / columns;
+
+            return Wrap(
+              spacing: Spacing.md,
+              runSpacing: Spacing.md,
+              children: featured.map((project) {
+                return SizedBox(
+                  width: itemWidth - Spacing.md,
+                  child: ProjectCard(
+                    project: project,
+                    onTap: () {
+                      // context.router.push(CaseStudyRoute(projectId: project.id));
+                    },
+                  ),
+                );
+              }).toList(),
             );
-          }).toList(),
+          },
         );
       },
     );

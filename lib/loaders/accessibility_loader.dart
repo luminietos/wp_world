@@ -10,7 +10,7 @@ import 'package:wp_world/models/global/localized_text_block.dart';
 class AccessibilityLoader {
   static Future<AccessibilityInfo> load() async {
     final jsonString = await rootBundle.loadString(
-      'lib/data/accessibility/accessibility.json',
+      'assets/data/accessibility/accessibility.json',
     );
     final Map<String, dynamic> data = json.decode(jsonString);
 

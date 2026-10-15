@@ -10,7 +10,7 @@ import 'package:wp_world/models/skills/skill_category.dart';
 class SkillsLoader {
   static Future<Map<String, dynamic>> load() async {
     final jsonString = await rootBundle.loadString(
-      'lib/data/skills/skills.json',
+      'assets/data/skills/skills.json',
     );
     final Map<String, dynamic> data = json.decode(jsonString);
 
