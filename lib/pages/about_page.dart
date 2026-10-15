@@ -2,31 +2,44 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:wp_world/data/timeline/timeline_data.dart';
 import 'package:wp_world/l10n/app_localizations.dart';
-
 import 'package:wp_world/loaders/about_content_loader.dart';
+import 'package:wp_world/loaders/skills_loader.dart';
 import 'package:wp_world/models/about/about_content.dart';
-import 'package:wp_world/models/about/about_section.dart';
-import 'package:wp_world/models/about/about_timeline_section.dart';
 import 'package:wp_world/models/global/localized_text_block.dart';
-
+import 'package:wp_world/models/skills/skill.dart';
+import 'package:wp_world/models/skills/skill_category.dart';
 import 'package:wp_world/utils/spacing.dart';
 import 'package:wp_world/widgets/section.dart';
 import 'package:wp_world/widgets/components/section_header.dart';
 import 'package:wp_world/widgets/components/section_content.dart';
+import 'package:wp_world/widgets/skills/skills_section.dart';
 import 'package:wp_world/widgets/timeline/timeline.dart';
 
 @RoutePage()
-class AboutPage extends StatelessWidget {
+class AboutPage extends StatefulWidget {
   const AboutPage({super.key});
 
-  Future<AboutContent> _load() => AboutContentLoader.load();
+  @override
+  State<AboutPage> createState() => _AboutPageState();
+}
+
+class _AboutPageState extends State<AboutPage> {
+  late final Future<AboutContent> _aboutFuture;
+  late final Future<Map<String, dynamic>> _skillsFuture;
+
+  @override
+  void initState() {
+    super.initState();
+    _aboutFuture = AboutContentLoader.load();
+    _skillsFuture = SkillsLoader.load();
+  }
 
   @override
   Widget build(BuildContext context) {
     final localizations = AppLocalizations.of(context)!;
 
     return FutureBuilder<AboutContent>(
-      future: _load(),
+      future: _aboutFuture,
       builder: (context, snapshot) {
         if (!snapshot.hasData) {
           return const Center(child: CircularProgressIndicator());
@@ -41,11 +54,7 @@ class AboutPage extends StatelessWidget {
             children: [
               SizedBox(height: Spacing.lg),
 
-              //
-              // ────────────────────────────────────────────────
               // INTRO + VALUES (from about.json)
-              // ────────────────────────────────────────────────
-              //
               ...about.sections.map((section) {
                 return Section(
                   title: null, // headings come from blocks
@@ -54,13 +63,29 @@ class AboutPage extends StatelessWidget {
                     children: _buildBlocks(context, section.blocks),
                   ),
                 );
-              }).toList(),
+              }),
 
-              //
-              // ────────────────────────────────────────────────
+              // SKILLS SECTION
+              Section(
+                title: localizations.skillsTitle,
+                child: FutureBuilder<Map<String, dynamic>>(
+                  future: _skillsFuture,
+                  builder: (context, skillsSnapshot) {
+                    if (!skillsSnapshot.hasData) {
+                      return const Center(child: CircularProgressIndicator());
+                    }
+
+                    final skillsData = skillsSnapshot.data!;
+                    return SkillsSection(
+                      categories:
+                          skillsData['categories'] as List<SkillCategory>,
+                      skills: skillsData['skills'] as List<Skill>,
+                    );
+                  },
+                ),
+              ),
+
               // TIMELINE INTRO (from about.json)
-              // ────────────────────────────────────────────────
-              //
               Section(
                 title: null,
                 child: Column(
@@ -72,11 +97,7 @@ class AboutPage extends StatelessWidget {
                 ),
               ),
 
-              //
-              // ────────────────────────────────────────────────
               // TIMELINE (existing)
-              // ────────────────────────────────────────────────
-              //
               Section(
                 title: localizations.myJourney,
                 child: SizedBox(

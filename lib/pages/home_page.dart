@@ -20,7 +20,7 @@ import 'package:wp_world/widgets/section.dart';
 import 'package:wp_world/widgets/components/section_header.dart';
 import 'package:wp_world/widgets/components/section_content.dart';
 import 'package:wp_world/widgets/project_card.dart';
-import 'package:wp_world/widgets/skill_chip.dart';
+import 'package:wp_world/widgets/skills/skill_chip.dart';
 
 @RoutePage()
 class HomePage extends StatelessWidget {
