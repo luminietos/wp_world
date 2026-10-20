@@ -49,15 +49,19 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             // Logo / Name
-            Semantics(
-              header: true,
-              label: 'Wilma Paloheimo',
-              child: Image.asset(
-                isDark
-                    ? 'assets/icons/favicon-dark.io/apple-touch-icon.png'
-                    : 'assets/icons/favicon-light.io/apple-touch-icon.png',
-                height: isMobile ? 56.h : 72.h,
-                fit: BoxFit.contain,
+            InkWell(
+              onTap: () => context.router.push(const HomeRoute()),
+              child: Semantics(
+                header: true,
+                button: true,
+                label: 'Wilma Paloheimo',
+                child: Image.asset(
+                  isDark
+                      ? 'assets/icons/favicon-dark.io/apple-touch-icon.png'
+                      : 'assets/icons/favicon-light.io/apple-touch-icon.png',
+                  height: isMobile ? 56.h : 72.h,
+                  fit: BoxFit.contain,
+                ),
               ),
             ),
 
