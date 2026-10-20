@@ -49,20 +49,10 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             // Logo / Name
-            InkWell(
+            _HeaderLogo(
+              isDark: isDark,
+              isMobile: isMobile,
               onTap: () => context.router.push(const HomeRoute()),
-              child: Semantics(
-                header: true,
-                button: true,
-                label: 'Wilma Paloheimo',
-                child: Image.asset(
-                  isDark
-                      ? 'assets/icons/favicon-dark.io/apple-touch-icon.png'
-                      : 'assets/icons/favicon-light.io/apple-touch-icon.png',
-                  height: isMobile ? 56.h : 72.h,
-                  fit: BoxFit.contain,
-                ),
-              ),
             ),
 
             // Desktop navigation
@@ -128,6 +118,58 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Size get preferredSize => Size.fromHeight(64);
+}
+
+class _HeaderLogo extends StatefulWidget {
+  final bool isDark;
+  final bool isMobile;
+  final VoidCallback onTap;
+
+  const _HeaderLogo({
+    required this.isDark,
+    required this.isMobile,
+    required this.onTap,
+  });
+
+  @override
+  State<_HeaderLogo> createState() => _HeaderLogoState();
+}
+
+class _HeaderLogoState extends State<_HeaderLogo> {
+  bool _isHovered = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return MouseRegion(
+      onEnter: (_) => setState(() => _isHovered = true),
+      onExit: (_) => setState(() => _isHovered = false),
+      child: InkWell(
+        onTap: widget.onTap,
+        child: AnimatedSlide(
+          offset: _isHovered ? const Offset(0, -0.04) : Offset.zero,
+          duration: const Duration(milliseconds: 180),
+          curve: Curves.easeOutCubic,
+          child: AnimatedScale(
+            scale: _isHovered ? 1.05 : 1,
+            duration: const Duration(milliseconds: 180),
+            curve: Curves.easeOutCubic,
+            child: Semantics(
+              header: true,
+              button: true,
+              label: 'Wilma Paloheimo',
+              child: Image.asset(
+                widget.isDark
+                    ? 'assets/icons/favicon-dark.io/apple-touch-icon.png'
+                    : 'assets/icons/favicon-light.io/apple-touch-icon.png',
+                height: widget.isMobile ? 56.h : 72.h,
+                fit: BoxFit.contain,
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 }
 
 class _NavItem extends StatelessWidget {
