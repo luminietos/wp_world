@@ -152,7 +152,7 @@
   "@homeHeroParagraph1": {
     "description": "Home page hero paragraph"
   },
-  "aboutIntroHeading": "About Me",
+  "aboutIntroHeading": "About me",
   "@aboutIntroHeading": {
     "description": "About me heading"
   },
@@ -167,6 +167,10 @@
   "myJourney": "My journey",
   "@myJourney": {
     "description": "About me timeline heading"
+  },
+  "mySkills": "My skills",
+  "@mySkills": {
+    "description": "About me skills heading"
   },
   "aboutTimelineParagraph": "Here is a timeline of my studies and professional experience.",
   "@aboutTimelineParagraph": {
@@ -364,7 +368,7 @@
   "@skillsSoftRemoteReadiness": {
     "description": "A soft skill label"
   },
-  "valuesHeading": "My Values",
+  "valuesHeading": "My values",
   "@valuesHeading": {
     "description": "My values heading"
   },

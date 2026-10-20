@@ -96,6 +96,7 @@ extension AppLocalizationsDynamic on AppLocalizations {
       'valuesAccessibility': valuesAccessibility,
       'valuesCollaboration': valuesCollaboration,
       'valuesCraftsmanship': valuesCraftsmanship,
+      'skillsHeading': mySkills,
 
       // Add more ARB keys here as needed
     };

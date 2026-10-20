@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:wp_world/data/timeline/timeline_data.dart';
-import 'package:wp_world/l10n/app_localizations.dart';
 import 'package:wp_world/loaders/about_content_loader.dart';
 import 'package:wp_world/loaders/skills_loader.dart';
 import 'package:wp_world/models/about/about_content.dart';
@@ -36,8 +35,6 @@ class _AboutPageState extends State<AboutPage> {
 
   @override
   Widget build(BuildContext context) {
-    final localizations = AppLocalizations.of(context)!;
-
     return FutureBuilder<AboutContent>(
       future: _aboutFuture,
       builder: (context, snapshot) {
@@ -55,33 +52,54 @@ class _AboutPageState extends State<AboutPage> {
               SizedBox(height: Spacing.lg),
 
               // INTRO + VALUES (from about.json)
-              ...about.sections.map((section) {
-                return Section(
-                  title: null, // headings come from blocks
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: _buildBlocks(context, section.blocks),
-                  ),
-                );
-              }),
+              ...about.sections
+                  .where((section) => section.id != 'about_skills')
+                  .map((section) {
+                    return Section(
+                      title: null, // headings come from blocks
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: _buildBlocks(context, section.blocks),
+                      ),
+                    );
+                  }),
 
               // SKILLS SECTION
               Section(
-                title: localizations.skillsTitle,
-                child: FutureBuilder<Map<String, dynamic>>(
-                  future: _skillsFuture,
-                  builder: (context, skillsSnapshot) {
-                    if (!skillsSnapshot.hasData) {
-                      return const Center(child: CircularProgressIndicator());
-                    }
+                title: null,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Semantics(
+                      child: Padding(
+                        padding: EdgeInsets.only(bottom: Spacing.sm),
+                        child: const SectionHeader(
+                          headingBlock: LocalizedTextBlock(
+                            type: TextBlockType.heading,
+                            key: 'skillsHeading',
+                            headingLevel: 2,
+                          ),
+                        ),
+                      ),
+                    ),
+                    FutureBuilder<Map<String, dynamic>>(
+                      future: _skillsFuture,
+                      builder: (context, skillsSnapshot) {
+                        if (!skillsSnapshot.hasData) {
+                          return const Center(
+                            child: CircularProgressIndicator(),
+                          );
+                        }
 
-                    final skillsData = skillsSnapshot.data!;
-                    return SkillsSection(
-                      categories:
-                          skillsData['categories'] as List<SkillCategory>,
-                      skills: skillsData['skills'] as List<Skill>,
-                    );
-                  },
+                        final skillsData = skillsSnapshot.data!;
+                        return SkillsSection(
+                          categories:
+                              skillsData['categories'] as List<SkillCategory>,
+                          skills: skillsData['skills'] as List<Skill>,
+                        );
+                      },
+                    ),
+                  ],
                 ),
               ),
 
@@ -99,7 +117,7 @@ class _AboutPageState extends State<AboutPage> {
 
               // TIMELINE (existing)
               Section(
-                title: localizations.myJourney,
+                title: null,
                 child: SizedBox(
                   height: 600,
                   child: VerticalTimeline(events: timelineEvents),

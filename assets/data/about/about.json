@@ -45,6 +45,18 @@
           "ariaDescription": null
         }
       ]
+    },
+    {
+      "id": "about_skills",
+      "blocks": [
+        {
+          "type": "heading",
+          "key": "skillsHeading",
+          "headingLevel": 2,
+          "semanticLabel": null,
+          "ariaDescription": null
+        }
+      ]
     }
   ],
 

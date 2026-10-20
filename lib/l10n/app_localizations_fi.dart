@@ -141,6 +141,9 @@ class AppLocalizationsFi extends AppLocalizations {
   String get myJourney => 'Minun matkani';
 
   @override
+  String get mySkills => 'Osaamiseni';
+
+  @override
   String get aboutTimelineParagraph =>
       'Tässä on aikajana opinnoistani ja työkokemuksestani.';
 

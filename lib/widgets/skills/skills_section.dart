@@ -81,14 +81,17 @@ class SkillsSection extends StatelessWidget {
           localizations.aboutStrengthsHeading,
           style: Theme.of(context).textTheme.headlineSmall,
         ),
-        SizedBox(height: Spacing.md),
+        SizedBox(height: Spacing.lg), // more space under the soft skills title
         Wrap(
           spacing: Spacing.sm,
           runSpacing: Spacing.sm,
-            children: softSkills
-              .map((skill) => SkillChip(skill: skill, isSoftSkill: true))
+          children: softSkills
+              .map((s) => SkillChip(skill: s, isSoftSkill: true))
               .toList(),
         ),
+        SizedBox(
+          height: Spacing.xl,
+        ), // space before right column / next section
       ],
     );
   }
@@ -101,6 +104,9 @@ class SkillsSection extends StatelessWidget {
       return skills.firstWhere((s) => s.id == id);
     }).toList();
 
+    final isMobile = Responsive.isMobile;
+    final chipLineSize = isMobile ? Spacing.sm : Spacing.xs;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -108,12 +114,16 @@ class SkillsSection extends StatelessWidget {
           localizations.getString(category.labelKey),
           style: Theme.of(context).textTheme.headlineSmall,
         ),
-        SizedBox(height: Spacing.md),
+        // Space between category title and chips
+        SizedBox(height: isMobile ? Spacing.xl : Spacing.md),
         Wrap(
-          spacing: Spacing.sm,
-          runSpacing: Spacing.sm,
+          spacing: chipLineSize, // space between chips
+          runSpacing: chipLineSize, // space between lines of chips
           children: categorySkills.map((s) => SkillChip(skill: s)).toList(),
         ),
+        SizedBox(
+          height: isMobile ? Spacing.xxl : Spacing.xs,
+        ), // extra space before next category of skills, or before the next section if this is the last category
       ],
     );
   }

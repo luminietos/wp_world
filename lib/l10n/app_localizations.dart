@@ -329,7 +329,7 @@ abstract class AppLocalizations {
   /// About me heading
   ///
   /// In en, this message translates to:
-  /// **'About Me'**
+  /// **'About me'**
   String get aboutIntroHeading;
 
   /// About me paragraph
@@ -349,6 +349,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'My journey'**
   String get myJourney;
+
+  /// About me skills heading
+  ///
+  /// In en, this message translates to:
+  /// **'My skills'**
+  String get mySkills;
 
   /// About me timeline paragraph
   ///
@@ -647,7 +653,7 @@ abstract class AppLocalizations {
   /// My values heading
   ///
   /// In en, this message translates to:
-  /// **'My Values'**
+  /// **'My values'**
   String get valuesHeading;
 
   /// Accessibility value

@@ -23,26 +23,49 @@ class Section extends StatelessWidget {
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
 
-    // Responsive spacing rules
-    final double titleSpacing = Responsive.isMobile ? Spacing.md : Spacing.lg;
-    final double descriptionSpacing = Responsive.isMobile
-        ? Spacing.sm
-        : Spacing.md;
+    final isMobile = Responsive.isMobile;
+    final isTablet = Responsive.isTablet;
+
+    // ORIGINAL DESKTOP VALUES KEPT
+    double desktopTopSpacing = Spacing.md;
+    double desktopTitleSpacing = Spacing.lg;
+    double desktopDescriptionSpacing = Spacing.lg;
+    double desktopSectionSpacing = Spacing.xxl;
+
+    // MOBILE/TABLET: ONLY THESE ARE INCREASED
+    final double topSpacing = isMobile || isTablet
+        ? Spacing
+              .lg // was Spacing.md
+        : desktopTopSpacing;
+
+    final double titleSpacing = isMobile || isTablet
+        ? Spacing
+              .xl // was Spacing.md / Spacing.lg
+        : desktopTitleSpacing;
+
+    final double descriptionSpacing = isMobile || isTablet
+        ? Spacing
+              .xl // was Spacing.md / Spacing.lg
+        : desktopDescriptionSpacing;
+
+    final double sectionSpacing = isMobile || isTablet
+        ? Spacing
+              .xxxl // was Spacing.xl
+        : desktopSectionSpacing;
 
     return Semantics(
       container: true,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(height: Spacing.md), // space below header and above title
-          // TITLE (optional)
+          SizedBox(height: topSpacing),
+
           if (title != null)
             Padding(
               padding: EdgeInsets.only(bottom: titleSpacing),
               child: Text(title!, style: textTheme.headlineMedium),
             ),
 
-          // DESCRIPTION (optional)
           if (description != null)
             Padding(
               padding: EdgeInsets.only(bottom: descriptionSpacing),
@@ -52,20 +75,15 @@ class Section extends StatelessWidget {
               ),
             ),
 
-          SizedBox(height: Spacing.md),
-
-          // MAIN CONTENT
           child,
 
-          // TRAILING (optional)
           if (trailing != null)
             Padding(
               padding: EdgeInsets.only(top: Spacing.lg),
               child: trailing!,
             ),
 
-          // SECTION SPACING (vertical rhythm)
-          SizedBox(height: Responsive.isMobile ? Spacing.xl : Spacing.xxl),
+          SizedBox(height: sectionSpacing),
         ],
       ),
     );

@@ -126,7 +126,7 @@ class AppLocalizationsEn extends AppLocalizations {
       'I build accessible digital products with Front End code, modern UI design, and thoughtful engineering.';
 
   @override
-  String get aboutIntroHeading => 'About Me';
+  String get aboutIntroHeading => 'About me';
 
   @override
   String get aboutIntroParagraph1 =>
@@ -138,6 +138,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get myJourney => 'My journey';
+
+  @override
+  String get mySkills => 'My skills';
 
   @override
   String get aboutTimelineParagraph =>
@@ -288,7 +291,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get skillsSoftRemoteReadiness => 'Remote Work Readiness';
 
   @override
-  String get valuesHeading => 'My Values';
+  String get valuesHeading => 'My values';
 
   @override
   String get valuesAccessibility => 'Accessibility-first design';

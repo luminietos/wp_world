@@ -7,4 +7,5 @@ class Spacing {
   static double get lg => 24.w;
   static double get xl => 32.w;
   static double get xxl => 48.w;
+  static double get xxxl => 64.w;
 }

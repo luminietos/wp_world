@@ -159,6 +159,10 @@
   "@myJourney": {
     "description": "Minusta-sivun lohkon otsikko"
   },
+  "mySkills": "Osaamiseni",
+  "@mySkills": {
+    "description": "Minusta-sivun taitojen otsikko"
+  },
   "aboutTimelineParagraph": "Tässä on aikajana opinnoistani ja työkokemuksestani.",
   "@aboutTimelineParagraph": {
     "description": "Minusta-sivun aikajanan kuvaus"

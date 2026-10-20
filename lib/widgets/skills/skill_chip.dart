@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:wp_world/helpers/localization_help.dart';
 import 'package:wp_world/models/skills/skill.dart';
+import 'package:wp_world/utils/responsive.dart';
 import 'package:wp_world/utils/tech_colors.dart';
 import 'package:wp_world/utils/spacing.dart';
 import 'package:wp_world/l10n/app_localizations.dart';
@@ -40,29 +41,37 @@ class SkillChip extends StatelessWidget {
       textColor = colors.onSurface;
     }
 
+    // CHIP INTERNAL PADDING LOGIC
+    final isMobile = Responsive.isMobile;
+    final sizeHorizontal = isMobile ? Spacing.lg : Spacing.md;
+    final sizeVertical = isMobile ? Spacing.md : Spacing.xs;
+
     return Semantics(
       label: label,
       button: false,
       child: Padding(
-        padding: EdgeInsets.only(right: Spacing.sm, bottom: Spacing.sm),
-        child: MouseRegion(
-          cursor: SystemMouseCursors.click,
-          child: Container(
-            padding: EdgeInsets.symmetric(
-              horizontal: Spacing.md,
-              vertical: Spacing.xs,
+        padding: EdgeInsets.only(
+          right: Spacing.sm, // space between chips
+          bottom: Spacing.sm, // space between lines of chips
+        ),
+        child: Container(
+          // chip is not clickable!
+          padding: EdgeInsets.symmetric(
+            horizontal: sizeHorizontal,
+            vertical: sizeVertical,
+          ),
+          decoration: BoxDecoration(
+            color: colors.surface,
+            borderRadius: BorderRadius.circular(
+              isMobile ? Spacing.xxl : Spacing.xl,
             ),
-            decoration: BoxDecoration(
-              color: colors.surface,
-              borderRadius: BorderRadius.circular(Spacing.xl),
-              border: Border.all(color: borderColor, width: 1.5),
-            ),
-            child: Text(
-              label,
-              style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                color: textColor,
-                fontWeight: FontWeight.w500,
-              ),
+            border: Border.all(color: borderColor, width: 1.5),
+          ),
+          child: Text(
+            label,
+            style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+              color: textColor,
+              fontWeight: FontWeight.w500,
             ),
           ),
         ),

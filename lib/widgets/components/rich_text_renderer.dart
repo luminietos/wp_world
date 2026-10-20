@@ -1,6 +1,5 @@
 // RENDERS LocalizedTextBlock WITH INLINE FORMATTING, HEADINGS & LISTS
 
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:wp_world/helpers/localization_help.dart';
 import 'package:wp_world/models/global/localized_text_block.dart';
@@ -82,10 +81,6 @@ class RichTextRenderer extends StatelessWidget {
             style: textTheme.bodyLarge!.copyWith(
               color: Theme.of(context).colorScheme.onBackground,
             ),
-            recognizer: TapGestureRecognizer()
-              ..onTap = () {
-                // Optional: handle inline links if you add them later.
-              },
           ),
         ),
       ),
