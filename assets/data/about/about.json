@@ -29,7 +29,7 @@
       "blocks": [
         {
           "type": "heading",
-          "key": "aboutValuesHeading",
+          "key": "valuesHeading",
           "headingLevel": 2,
           "semanticLabel": null,
           "ariaDescription": null
@@ -52,7 +52,7 @@
     "introBlocks": [
       {
         "type": "heading",
-        "key": "aboutTimelineHeading",
+        "key": "myJourney",
         "headingLevel": 2,
         "semanticLabel": null,
         "ariaDescription": null

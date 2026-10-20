@@ -84,6 +84,19 @@ extension AppLocalizationsDynamic on AppLocalizations {
       'featuredProjectsTitle': projectsFeaturedTitle,
       'skillsTitle': skillsTitle,
 
+      // ABOUT PAGE
+      'aboutIntroHeading': aboutIntroHeading,
+      'aboutIntroParagraph1': aboutIntroParagraph1,
+      'aboutIntroParagraph2': aboutIntroParagraph2,
+      'myJourney': myJourney,
+      'aboutTimelineParagraph': aboutTimelineParagraph,
+      'aboutStrengthsHeading': aboutStrengthsHeading,
+      'aboutLookingForHeading': aboutLookingForHeading,
+      'valuesHeading': valuesHeading,
+      'valuesAccessibility': valuesAccessibility,
+      'valuesCollaboration': valuesCollaboration,
+      'valuesCraftsmanship': valuesCraftsmanship,
+
       // Add more ARB keys here as needed
     };
 
