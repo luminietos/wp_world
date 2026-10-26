@@ -38,6 +38,7 @@
     { "id": "mysql", "labelKey": "skillsBackendMySQL" },
 
     { "id": "git", "labelKey": "skillsToolsGit" },
+    { "id": "github", "labelKey": "skillsToolsGitHub" },
     { "id": "cypress", "labelKey": "skillsToolsCypress" },
     { "id": "androidStudio", "labelKey": "skillsToolsAndroidStudio" },
     { "id": "vscode", "labelKey": "skillsToolsVSCode" },

@@ -183,6 +183,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get skillsToolsGit => 'Git';
 
   @override
+  String get skillsToolsGitHub => 'GitHub';
+
+  @override
   String get skillsToolsCypress => 'Cypress';
 
   @override
@@ -529,9 +532,34 @@ class AppLocalizationsEn extends AppLocalizations {
   String get month12 => 'December';
 
   @override
+  String get contactFormLabel => 'Contact form';
+
+  @override
   String get contactTitle => 'Let\'s connect!';
 
   @override
   String get contactDescription =>
       'Interested in my work, or just want to chat?\nReach out, or find me online.';
+
+  @override
+  String get contactFormSuccess =>
+      'Thanks for your message! I’ll get back to you soon.';
+
+  @override
+  String get contactFormError => 'Something went wrong. Please try again.';
+
+  @override
+  String get contactEmail => 'Email';
+
+  @override
+  String get contactFormNameLabel => 'Your name';
+
+  @override
+  String get contactFormEmailLabel => 'Your email';
+
+  @override
+  String get contactFormMessageLabel => 'Your message';
+
+  @override
+  String get sendLabel => 'Send';
 }

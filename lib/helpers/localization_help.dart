@@ -10,7 +10,7 @@ import 'package:wp_world/l10n/app_localizations.dart';
 
 //
 // ─────────────────────────────────────────────────────────────
-//   1. GLOBAL DYNAMIC ARB KEY LOOKUP
+//   GLOBAL DYNAMIC ARB KEY LOOKUP
 // ─────────────────────────────────────────────────────────────
 //
 
@@ -56,6 +56,7 @@ extension AppLocalizationsDynamic on AppLocalizations {
 
       // TOOLS
       'skillsToolsGit': skillsToolsGit,
+      'skillsToolsGitHub': skillsToolsGitHub,
       'skillsToolsCypress': skillsToolsCypress,
       'skillsToolsAndroidStudio': skillsToolsAndroidStudio,
       'skillsToolsVSCode': skillsToolsVSCode,
@@ -111,7 +112,7 @@ extension AppLocalizationsDynamic on AppLocalizations {
 
 //
 // ─────────────────────────────────────────────────────────────
-//   2. PROJECT-SPECIFIC LOOKUP (OPTIONAL)
+//   PROJECT-SPECIFIC LOOKUP (OPTIONAL)
 // ─────────────────────────────────────────────────────────────
 //
 
@@ -151,7 +152,7 @@ String localized(BuildContext context, String key) {
 
 //
 // ─────────────────────────────────────────────────────────────
-//   3. PROJECT FILTER LABEL LOOKUP
+//   PROJECT FILTER LABEL LOOKUP
 // ─────────────────────────────────────────────────────────────
 //
 
@@ -196,7 +197,7 @@ String localizeFilterLabel(BuildContext context, String raw) {
 
 //
 // ─────────────────────────────────────────────────────────────
-//   4. TIMELINE HELPERS
+//   TIMELINE HELPERS
 // ─────────────────────────────────────────────────────────────
 //
 

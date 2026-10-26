@@ -437,6 +437,12 @@ abstract class AppLocalizations {
   /// A tools skill label
   ///
   /// In en, this message translates to:
+  /// **'GitHub'**
+  String get skillsToolsGitHub;
+
+  /// A tools skill label
+  ///
+  /// In en, this message translates to:
   /// **'Cypress'**
   String get skillsToolsCypress;
 
@@ -1082,6 +1088,12 @@ abstract class AppLocalizations {
   /// **'December'**
   String get month12;
 
+  /// Semantic label for the contact form
+  ///
+  /// In en, this message translates to:
+  /// **'Contact form'**
+  String get contactFormLabel;
+
   /// Contact page's title
   ///
   /// In en, this message translates to:
@@ -1093,6 +1105,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Interested in my work, or just want to chat?\nReach out, or find me online.'**
   String get contactDescription;
+
+  /// If the user successfully sent a message via the Contact Form
+  ///
+  /// In en, this message translates to:
+  /// **'Thanks for your message! I’ll get back to you soon.'**
+  String get contactFormSuccess;
+
+  /// Error message: the user's Contact Form entry did not succeed
+  ///
+  /// In en, this message translates to:
+  /// **'Something went wrong. Please try again.'**
+  String get contactFormError;
+
+  /// Email label
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get contactEmail;
+
+  /// Contact form's name field title
+  ///
+  /// In en, this message translates to:
+  /// **'Your name'**
+  String get contactFormNameLabel;
+
+  /// Contact form's email field title
+  ///
+  /// In en, this message translates to:
+  /// **'Your email'**
+  String get contactFormEmailLabel;
+
+  /// Contact form's message field title
+  ///
+  /// In en, this message translates to:
+  /// **'Your message'**
+  String get contactFormMessageLabel;
+
+  /// Send button's label for ContactForm
+  ///
+  /// In en, this message translates to:
+  /// **'Send'**
+  String get sendLabel;
 }
 
 class _AppLocalizationsDelegate

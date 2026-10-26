@@ -215,6 +215,10 @@
   "@skillsToolsGit": {
     "description": "Työkalu taito"
   },
+  "skillsToolsGitHub": "GitHub",
+  "@skillsToolsGitHub": {
+    "description": "Työkalu taito"
+  },
   "skillsToolsCypress": "Cypress",
   "@skillsToolsCypress": {
     "description": "Työkalu taito"
@@ -665,6 +669,10 @@
   "@month12": {
     "description": "Kuukauden nimi"
   },
+  "contactFormLabel": "Yhteydenottolomake",
+  "@contactFormLabel": {
+    "description": "Semanttinen teksti yhteydenottolomakkeelle"
+  },
   "contactTitle": "Ota yhteyttä!",
   "@contactTitle": {
     "description": "Kontakti-sivun otsikko"
@@ -672,5 +680,33 @@
   "contactDescription": "Kiinnostaako työni, tai haluatko jutella?\nJätä viesti, tai löydä minut netistä.",
   "@contactDescription": {
     "description": "Kontakti-sivun kuvaus"
+  },
+  "contactFormSuccess": "Kiitos viestistäsi! Otan pian yhteyttä.",
+  "@contactFormSuccess": {
+    "description": "Jos viestin lähetys onnistui yhteydenottolomakkeella"
+  },
+  "contactFormError": "Something went wrong. Please try again.",
+  "@contactFormError": {
+    "description": "Virheviesti: lähetys yhteydenottolomakkeella epäonnistui"
+  },
+  "contactEmail": "Email",
+  "@contactEmail": {
+    "description": "Email teksti"
+  },
+  "contactFormNameLabel": "Nimesi",
+  "@contactFormNameLabel": {
+    "description": "Yhteydenottolomakkeen nimi kenttä"
+  },
+  "contactFormEmailLabel": "Sähköpostisi",
+  "@contactFormEmailLabel": {
+    "description": "Yhteydenottolomakkeen email kenttä"
+  },
+  "contactFormMessageLabel": "Viestisi",
+  "@contactFormMessageLabel": {
+    "description": "Yhteydenottolomakkeen viesti kenttä"
+  },
+  "sendLabel": "Lähetä",
+  "@sendLabel": {
+    "description": "Lähetä-napin teksti"
   }
 }

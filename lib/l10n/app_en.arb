@@ -224,6 +224,10 @@
   "@skillsToolsGit": {
     "description": "A tools skill label"
   },
+  "skillsToolsGitHub": "GitHub",
+  "@skillsToolsGitHub": {
+    "description": "A tools skill label"
+  },
   "skillsToolsCypress": "Cypress",
   "@skillsToolsCypress": {
     "description": "A tools skill label"
@@ -674,6 +678,10 @@
   "@month12": {
     "description": "Month name"
   },
+  "contactFormLabel": "Contact form",
+  "@contactFormLabel": {
+    "description": "Semantic label for the contact form"
+  },
   "contactTitle": "Let's connect!",
   "@contactTitle": {
     "description": "Contact page's title"
@@ -681,5 +689,33 @@
   "contactDescription": "Interested in my work, or just want to chat?\nReach out, or find me online.",
   "@contactDescription": {
     "description": "Contact page's description"
+  },
+  "contactFormSuccess": "Thanks for your message! I’ll get back to you soon.",
+  "@contactFormSuccess": {
+    "description": "If the user successfully sent a message via the Contact Form"
+  },
+  "contactFormError": "Something went wrong. Please try again.",
+  "@contactFormError": {
+    "description": "Error message: the user's Contact Form entry did not succeed"
+  },
+  "contactEmail": "Email",
+  "@contactEmail": {
+    "description": "Email label"
+  },
+  "contactFormNameLabel": "Your name",
+  "@contactFormNameLabel": {
+    "description": "Contact form's name field title"
+  },
+  "contactFormEmailLabel": "Your email",
+  "@contactFormEmailLabel": {
+    "description": "Contact form's email field title"
+  },
+  "contactFormMessageLabel": "Your message",
+  "@contactFormMessageLabel": {
+    "description": "Contact form's message field title"
+  },
+  "sendLabel": "Send",
+  "@sendLabel": {
+    "description": "Send button's label for ContactForm"
   }
 }
