@@ -50,6 +50,8 @@ dependencies:
   flutter_country_flags: ^0.0.1
 
   auto_route_generator: ^7.3.2
+  url_launcher: ^6.3.2
+  http: ^1.6.0
 
 dev_dependencies:
   flutter_test:

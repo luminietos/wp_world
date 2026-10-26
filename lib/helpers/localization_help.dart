@@ -102,7 +102,7 @@ extension AppLocalizationsDynamic on AppLocalizations {
       // CONTACT PAGE
       'contactIntroHeading': contactTitle,
       'contactIntroParagraph': contactDescription,
-      'contactEmail': contactEmail,
+      'contactMethodEmail': contactEmail,
       'contactLinkGitHub': skillsToolsGitHub,
       'contactMethodLinkedIn': contactLinkedIn,
       'contactFormNameLabel': contactFormNameLabel,

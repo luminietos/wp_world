@@ -18,7 +18,7 @@
   "methods": [
     {
       "id": "email",
-      "labelKey": "contactEmail",
+      "labelKey": "contactMethodEmail",
       "url": "mailto:helenapaloheimo@gmail.com",
       "semanticLabel": "Email to Wilma"
     }
