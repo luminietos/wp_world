@@ -664,5 +664,13 @@
   "month12": "Joulukuu",
   "@month12": {
     "description": "Kuukauden nimi"
+  },
+  "contactTitle": "Ota yhteyttä!",
+  "@contactTitle": {
+    "description": "Kontakti-sivun otsikko"
+  },
+  "contactDescription": "Kiinnostaako työni, tai haluatko jutella?\nJätä viesti, tai löydä minut netistä.",
+  "@contactDescription": {
+    "description": "Kontakti-sivun kuvaus"
   }
 }

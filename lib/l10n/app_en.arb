@@ -673,5 +673,13 @@
   "month12": "December",
   "@month12": {
     "description": "Month name"
+  },
+  "contactTitle": "Let's connect!",
+  "@contactTitle": {
+    "description": "Contact page's title"
+  },
+  "contactDescription": "Interested in my work, or just want to chat?\nReach out, or find me online.",
+  "@contactDescription": {
+    "description": "Contact page's description"
   }
 }

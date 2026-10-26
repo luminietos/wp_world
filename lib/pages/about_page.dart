@@ -82,6 +82,9 @@ class _AboutPageState extends State<AboutPage> {
                         ),
                       ),
                     ),
+                    SizedBox(
+                      height: Spacing.lg,
+                    ), // Space btwn skills header & its content
                     FutureBuilder<Map<String, dynamic>>(
                       future: _skillsFuture,
                       builder: (context, skillsSnapshot) {
@@ -130,11 +133,8 @@ class _AboutPageState extends State<AboutPage> {
     );
   }
 
-  //
-  // ────────────────────────────────────────────────
+
   // BLOCK RENDERING (headings, paragraphs, lists)
-  // ────────────────────────────────────────────────
-  //
   List<Widget> _buildBlocks(
     BuildContext context,
     List<LocalizedTextBlock> blocks,
@@ -144,7 +144,9 @@ class _AboutPageState extends State<AboutPage> {
     for (final block in blocks) {
       if (block.type == TextBlockType.heading) {
         widgets.add(SectionHeader(headingBlock: block));
-        widgets.add(SizedBox(height: Spacing.sm));
+        widgets.add(
+          SizedBox(height: Spacing.lg),
+        ); // Space btwn header & its content
       } else {
         widgets.add(SectionContent(blocks: [block]));
       }

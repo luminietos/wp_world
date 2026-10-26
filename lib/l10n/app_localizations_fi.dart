@@ -532,4 +532,11 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get month12 => 'Joulukuu';
+
+  @override
+  String get contactTitle => 'Ota yhteyttä!';
+
+  @override
+  String get contactDescription =>
+      'Kiinnostaako työni, tai haluatko jutella?\nJätä viesti, tai löydä minut netistä.';
 }

@@ -1081,6 +1081,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'December'**
   String get month12;
+
+  /// Contact page's title
+  ///
+  /// In en, this message translates to:
+  /// **'Let\'s connect!'**
+  String get contactTitle;
+
+  /// Contact page's description
+  ///
+  /// In en, this message translates to:
+  /// **'Interested in my work, or just want to chat?\nReach out, or find me online.'**
+  String get contactDescription;
 }
 
 class _AppLocalizationsDelegate

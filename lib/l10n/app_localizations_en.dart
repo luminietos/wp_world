@@ -527,4 +527,11 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get month12 => 'December';
+
+  @override
+  String get contactTitle => 'Let\'s connect!';
+
+  @override
+  String get contactDescription =>
+      'Interested in my work, or just want to chat?\nReach out, or find me online.';
 }

@@ -98,6 +98,10 @@ extension AppLocalizationsDynamic on AppLocalizations {
       'valuesCraftsmanship': valuesCraftsmanship,
       'skillsHeading': mySkills,
 
+      // CONTACT PAGE
+      'contactIntroHeading': contactTitle,
+      'contactIntroParagraph': contactDescription,
+
       // Add more ARB keys here as needed
     };
 
