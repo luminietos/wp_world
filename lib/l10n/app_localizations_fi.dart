@@ -556,6 +556,9 @@ class AppLocalizationsFi extends AppLocalizations {
   String get contactEmail => 'Email';
 
   @override
+  String get contactLinkedIn => 'LinkedIn';
+
+  @override
   String get contactFormNameLabel => 'Nimesi';
 
   @override

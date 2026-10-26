@@ -693,6 +693,10 @@
   "@contactEmail": {
     "description": "Email teksti"
   },
+  "contactLinkedIn": "LinkedIn",
+  "@contactLinkedIn": {
+    "description": "LinkedIn teksti"
+  },
   "contactFormNameLabel": "Nimesi",
   "@contactFormNameLabel": {
     "description": "Yhteydenottolomakkeen nimi kenttä"

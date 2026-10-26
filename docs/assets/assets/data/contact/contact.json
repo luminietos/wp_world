@@ -18,15 +18,9 @@
   "methods": [
     {
       "id": "email",
-      "labelKey": "contactMethodEmail",
+      "labelKey": "contactEmail",
       "url": "mailto:helenapaloheimo@gmail.com",
       "semanticLabel": "Email to Wilma"
-    },
-    {
-      "id": "linkedin",
-      "labelKey": "contactMethodLinkedIn",
-      "url": "https://linkedin.com/in/wilmapaloheimo",
-      "semanticLabel": "Wilma's LinkedIn profile"
     }
   ],
 
@@ -36,6 +30,12 @@
       "labelKey": "contactLinkGitHub",
       "url": "https://github.com/luminietos",
       "semanticLabel": "Wilma's GitHub"
+    },
+    {
+      "id": "linkedin",
+      "labelKey": "contactMethodLinkedIn",
+      "url": "https://linkedin.com/in/wilmapaloheimo",
+      "semanticLabel": "Wilma's LinkedIn profile"
     }
   ]
 }

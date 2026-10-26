@@ -1124,6 +1124,12 @@ abstract class AppLocalizations {
   /// **'Email'**
   String get contactEmail;
 
+  /// LinkedIn label
+  ///
+  /// In en, this message translates to:
+  /// **'LinkedIn'**
+  String get contactLinkedIn;
+
   /// Contact form's name field title
   ///
   /// In en, this message translates to:

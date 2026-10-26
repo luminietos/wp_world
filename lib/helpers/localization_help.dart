@@ -102,8 +102,17 @@ extension AppLocalizationsDynamic on AppLocalizations {
       // CONTACT PAGE
       'contactIntroHeading': contactTitle,
       'contactIntroParagraph': contactDescription,
+      'contactEmail': contactEmail,
+      'contactLinkGitHub': skillsToolsGitHub,
+      'contactMethodLinkedIn': contactLinkedIn,
+      'contactFormNameLabel': contactFormNameLabel,
+      'contactFormEmailLabel': contactFormEmailLabel,
+      'contactFormMessageLabel': contactFormMessageLabel,
+      'sendLabel': sendLabel,
+      'contactFormSuccess': contactFormSuccess,
+      'contactFormError': contactFormError,
 
-      // Add more ARB keys here as needed
+      // Add more ARB keys here as needed <3
     };
 
     return map[key] ?? '**$key missing**';

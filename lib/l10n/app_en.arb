@@ -702,6 +702,10 @@
   "@contactEmail": {
     "description": "Email label"
   },
+  "contactLinkedIn": "LinkedIn",
+  "@contactLinkedIn": {
+    "description": "LinkedIn label"
+  },
   "contactFormNameLabel": "Your name",
   "@contactFormNameLabel": {
     "description": "Contact form's name field title"
