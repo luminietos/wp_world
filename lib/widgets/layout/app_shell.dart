@@ -11,8 +11,6 @@ class AppShellPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colors = Theme.of(context).colorScheme;
-
     return Scaffold(
       appBar: const Header(), // stays mounted
       endDrawer: const MobileDrawer(), // stays mounted, opens from the right
@@ -22,7 +20,7 @@ class AppShellPage extends StatelessWidget {
             child: const AutoRouter(), // child routes render here
           ),
 
-          // divider + footer
+          // stuck to the bottom of the screen
           const Footer(),
         ],
       ),

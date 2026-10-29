@@ -19,6 +19,7 @@ Color techColor(BuildContext context, String name) {
     case 'figma':
       return isDark ? AppColors.techFigmaDark : AppColors.techFigmaLight;
     case 'github':
+      return isDark ? AppColors.techGitHubDark : AppColors.techGitHubLight;
     case 'github pages':
       return isDark ? AppColors.techGitHubDark : AppColors.techGitHubLight;
     case 'aws':

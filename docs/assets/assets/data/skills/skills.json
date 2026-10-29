@@ -38,6 +38,7 @@
     { "id": "mysql", "labelKey": "skillsBackendMySQL" },
 
     { "id": "git", "labelKey": "skillsToolsGit" },
+    { "id": "github", "labelKey": "skillsToolsGitHub" },
     { "id": "cypress", "labelKey": "skillsToolsCypress" },
     { "id": "androidStudio", "labelKey": "skillsToolsAndroidStudio" },
     { "id": "vscode", "labelKey": "skillsToolsVSCode" },
@@ -97,7 +98,14 @@
     {
       "id": "tools",
       "labelKey": "skillCategoryTools",
-      "skillIds": ["git", "cypress", "androidStudio", "vscode", "figma"]
+      "skillIds": [
+        "git",
+        "github",
+        "cypress",
+        "androidStudio",
+        "vscode",
+        "figma"
+      ]
     },
     {
       "id": "softSkills",
