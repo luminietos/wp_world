@@ -8,6 +8,10 @@
   "@wpWorld": {
     "description": "WP's world title"
   },
+  "wpFooter": "© 2026 Wilma Paloheimo. All rights reserved.",
+  "@wpFooter": {
+    "description": "Footer text"
+  },
   "description": "This is my portfolio.",
   "@description": {
     "description": "The description"

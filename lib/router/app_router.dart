@@ -7,7 +7,7 @@ import 'package:wp_world/pages/about_page.dart';
 import 'package:wp_world/pages/projects_page.dart';
 import 'package:wp_world/pages/case_study_page.dart';
 import 'package:wp_world/pages/contact_page.dart';
-import 'package:wp_world/widgets/app_shell.dart';
+import 'package:wp_world/widgets/layout/app_shell.dart';
 import 'package:wp_world/router/transitions.dart'; // custom transition
 
 part 'app_router.gr.dart';

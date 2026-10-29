@@ -15,6 +15,9 @@ class AppLocalizationsFi extends AppLocalizations {
   String get wpWorld => 'Mun Maailma';
 
   @override
+  String get wpFooter => '© 2026 Wilma Paloheimo. Kaikki oikeudet pidätetään.';
+
+  @override
   String get description => 'Tämä on portfolioni.';
 
   @override

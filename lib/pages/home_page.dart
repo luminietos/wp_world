@@ -168,9 +168,8 @@ class HomePage extends StatelessWidget {
                   width: itemWidth - Spacing.md,
                   child: ProjectCard(
                     project: project,
-                    onTap: () {
-                      // context.router.push(CaseStudyRoute(projectId: project.id));
-                    },
+                    onTap: () =>
+                        context.router.pushNamed('/projects/${project.slug}'),
                   ),
                 );
               }).toList(),

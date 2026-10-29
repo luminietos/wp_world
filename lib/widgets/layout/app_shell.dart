@@ -1,8 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:wp_world/widgets/header.dart';
+import 'package:wp_world/widgets/layout/footer.dart';
+import 'package:wp_world/widgets/layout/header.dart';
 import 'package:wp_world/widgets/mobile_drawer.dart';
-import 'package:wp_world/widgets/page_wrapper.dart';
+import 'package:wp_world/widgets/layout/page_wrapper.dart';
 
 @RoutePage()
 class AppShellPage extends StatelessWidget {
@@ -10,11 +11,20 @@ class AppShellPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
+
     return Scaffold(
       appBar: const Header(), // stays mounted
       endDrawer: const MobileDrawer(), // stays mounted, opens from the right
-      body: PageWrapper(
-        child: const AutoRouter(), // child routes render here
+      body: ListView(
+        children: [
+          PageWrapper(
+            child: const AutoRouter(), // child routes render here
+          ),
+
+          // divider + footer
+          const Footer(),
+        ],
       ),
     );
   }

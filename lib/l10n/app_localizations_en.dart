@@ -15,6 +15,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get wpWorld => 'Wil\'s World';
 
   @override
+  String get wpFooter => '© 2026 Wilma Paloheimo. All rights reserved.';
+
+  @override
   String get description => 'This is my portfolio.';
 
   @override

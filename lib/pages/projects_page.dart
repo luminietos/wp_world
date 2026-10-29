@@ -257,7 +257,7 @@ Widget _buildSummaryChip(
   return Container(
     padding: EdgeInsets.symmetric(horizontal: Spacing.lg, vertical: Spacing.sm),
     decoration: BoxDecoration(
-      color: colors.primary.withOpacity(0.15),
+      color: colors.primary.withValues(alpha: 0.15),
       borderRadius: BorderRadius.circular(999),
     ),
     child: Row(

@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:wp_world/l10n/app_localizations.dart';
-import '../utils/responsive.dart';
+import '../../utils/responsive.dart';
 
 class PageWrapper extends StatelessWidget {
   final Widget child;
@@ -42,5 +42,6 @@ class PageWrapper extends StatelessWidget {
         ),
       ),
     );
+    
   }
 }

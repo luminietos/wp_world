@@ -7,8 +7,8 @@ import 'package:wp_world/utils/responsive.dart';
 import 'package:wp_world/utils/icon_sizes.dart';
 import 'package:wp_world/utils/nav_item.dart';
 
-import 'language_toggle.dart';
-import 'theme_toggle.dart';
+import '../language_toggle.dart';
+import '../theme_toggle.dart';
 
 class Header extends StatelessWidget implements PreferredSizeWidget {
   const Header({super.key});
@@ -200,6 +200,7 @@ class _NavItem extends StatelessWidget {
               break;
           }
         },
+        // THE TAB TITLES
         child: Padding(
           padding: EdgeInsets.symmetric(vertical: 8.h),
           child: Text(

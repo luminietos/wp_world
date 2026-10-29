@@ -110,6 +110,12 @@ abstract class AppLocalizations {
   /// **'Wil\'s World'**
   String get wpWorld;
 
+  /// Footer text
+  ///
+  /// In en, this message translates to:
+  /// **'© 2026 Wilma Paloheimo. All rights reserved.'**
+  String get wpFooter;
+
   /// The description
   ///
   /// In en, this message translates to:

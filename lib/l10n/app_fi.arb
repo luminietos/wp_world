@@ -8,6 +8,10 @@
   "@wpWorld": {
     "description": "Otsikko WP:n maailmalle"
   },
+  "wpFooter": "© 2026 Wilma Paloheimo. Kaikki oikeudet pidätetään.",
+  "@wpFooter": {
+    "description": "Alatunnisteen teksti"
+  },
   "description": "Tämä on portfolioni.",
   "@description": {
     "description": "Kuvaus"
