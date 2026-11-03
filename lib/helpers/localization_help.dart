@@ -85,6 +85,9 @@ extension AppLocalizationsDynamic on AppLocalizations {
       'featuredProjectsTitle': projectsFeaturedTitle,
       'skillsTitle': skillsTitle,
 
+      // PROJECTS PAGE
+      'projectsHeading': pagesProjects,
+
       // ABOUT PAGE
       'aboutIntroHeading': aboutIntroHeading,
       'aboutIntroParagraph1': aboutIntroParagraph1,

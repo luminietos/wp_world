@@ -77,7 +77,7 @@ class _AboutPageState extends State<AboutPage> {
                           headingBlock: LocalizedTextBlock(
                             type: TextBlockType.heading,
                             key: 'skillsHeading',
-                            headingLevel: 2,
+                            headingLevel: 1,
                           ),
                         ),
                       ),
@@ -85,6 +85,7 @@ class _AboutPageState extends State<AboutPage> {
                     SizedBox(
                       height: Spacing.lg,
                     ), // Space btwn skills header & its content
+
                     FutureBuilder<Map<String, dynamic>>(
                       future: _skillsFuture,
                       builder: (context, skillsSnapshot) {
@@ -132,7 +133,6 @@ class _AboutPageState extends State<AboutPage> {
       },
     );
   }
-
 
   // BLOCK RENDERING (headings, paragraphs, lists)
   List<Widget> _buildBlocks(

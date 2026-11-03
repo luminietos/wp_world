@@ -6,6 +6,7 @@ import 'package:wp_world/router/app_router.dart';
 import 'package:wp_world/utils/responsive.dart';
 import 'package:wp_world/utils/icon_sizes.dart';
 import 'package:wp_world/utils/nav_item.dart';
+import 'package:wp_world/utils/spacing.dart';
 
 import '../language_toggle.dart';
 import '../theme_toggle.dart';
@@ -202,7 +203,7 @@ class _NavItem extends StatelessWidget {
         },
         // THE TAB TITLES
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 8.h),
+          padding: EdgeInsets.symmetric(vertical: Spacing.md),
           child: Text(
             label,
             style: TextStyle(

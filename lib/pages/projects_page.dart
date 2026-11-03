@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:wp_world/loaders/project_loader.dart';
 import 'package:wp_world/helpers/localization_help.dart';
 import 'package:wp_world/l10n/app_localizations.dart';
+import 'package:wp_world/models/global/localized_text_block.dart';
 import 'package:wp_world/models/projects/project.dart';
 import 'package:wp_world/state/projects_filter_state.dart';
 import 'package:wp_world/theme/app_colors.dart';
+import 'package:wp_world/widgets/components/section_header.dart';
 import 'package:wp_world/widgets/projects_filter_button.dart';
 import 'package:wp_world/widgets/projects_filter_modal.dart';
 import 'package:wp_world/widgets/project_card.dart';
@@ -87,15 +89,33 @@ class _ProjectsPageState extends State<ProjectsPage> {
             filter.selectedRoles.isNotEmpty;
 
         return SingleChildScrollView(
+          padding: const EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SizedBox(height: Spacing.lg),
+
               Section(
-                title: localizations.pagesProjects,
+                title: null,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    // SizedBox(height: Spacing.md),
+                    Semantics(
+                      child: Padding(
+                        padding: EdgeInsets.only(bottom: Spacing.sm),
+                        child: const SectionHeader(
+                          headingBlock: LocalizedTextBlock(
+                            type: TextBlockType.heading,
+                            key: 'projectsHeading',
+                            headingLevel: 1,
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: Spacing.lg,
+                    ), // Space btwn skills header & its content
+
                     ProjectsFilterButton(onPressed: _openFilterModal),
 
                     SizedBox(height: Spacing.xxl),

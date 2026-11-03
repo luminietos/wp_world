@@ -30,8 +30,6 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colors = Theme.of(context).colorScheme;
-
     return FutureBuilder<HomeContent>(
       future: _load(),
       builder: (context, snapshot) {
@@ -52,13 +50,11 @@ class HomePage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                //
-                // ────────────────────────────────────────────────
+                SizedBox(height: Spacing.lg),
+
                 // HERO SECTION
-                // ────────────────────────────────────────────────
-                //
                 Section(
-                  title: localizations.title,
+                  title: null,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: _buildHeroBlocks(context, home.hero.blocks),
