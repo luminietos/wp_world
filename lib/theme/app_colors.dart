@@ -14,14 +14,14 @@ class AppColors {
 
   // NEUTRALS (LIGHT MODE)
   static const Color lightBackground = Color(0xFFF7F7F7);
-  static const Color lightSurface = Color(0xFFFFFFFF);
+  static const Color lightSurface = Color(0xFFFCFCFC);
   static const Color lightText = Color(0xFF1A1A1A);
   static const Color lightSubtleText = Color(0xFF4A4A4A);
 
   // NEUTRALS (DARK MODE)
   static const Color darkBackground = Color(0xFF121212);
   static const Color darkSurface = Color(0xFF1E1E1E);
-  static const Color darkText = Color(0xFFEAEAEA);
+  static const Color darkText = Color(0xFFFCFCFC);
   static const Color darkSubtleText = Color(0xFFBEBEBE);
 
   // FEEDBACK

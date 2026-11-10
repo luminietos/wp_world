@@ -28,7 +28,6 @@ class ContactLinksPanel extends StatelessWidget {
       decoration: BoxDecoration(
         color: colors.surface,
         borderRadius: BorderRadius.circular(16),
-        // border: Border.all(color: colors.outline),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -43,17 +42,27 @@ class ContactLinksPanel extends StatelessWidget {
               color: colors.surfaceContainer,
             ),
             child: Center(
-              child: Text(
-                'Lottie Placeholder',
-                style: Theme.of(context).textTheme.bodySmall,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(
+                    Icons.animation,
+                    size: IconSizes.xl,
+                    color: colors.primary,
+                  ),
+                  SizedBox(height: Spacing.sm),
+                  Text(
+                    'Lottie Placeholder',
+                    style: Theme.of(context).textTheme.bodySmall,
+                  ),
+                ],
               ),
             ),
           ),
 
           SizedBox(height: Spacing.xl),
 
-          _pill(
-            context,
+          ContactLinkPill(
             label: loc.getString(emailMethod.labelKey),
             url: emailMethod.url,
           ),
@@ -63,8 +72,7 @@ class ContactLinksPanel extends StatelessWidget {
           ...links.map(
             (link) => Padding(
               padding: EdgeInsets.only(bottom: Spacing.md),
-              child: _pill(
-                context,
+              child: ContactLinkPill(
                 label: loc.getString(link.labelKey),
                 url: link.url,
               ),
@@ -74,6 +82,21 @@ class ContactLinksPanel extends StatelessWidget {
       ),
     );
   }
+}
+
+class ContactLinkPill extends StatefulWidget {
+  final String label;
+  final String url;
+
+  const ContactLinkPill({super.key, required this.label, required this.url});
+
+  @override
+  State<ContactLinkPill> createState() => _ContactLinkPillState();
+}
+
+class _ContactLinkPillState extends State<ContactLinkPill> {
+  bool _hovered = false;
+  bool _focused = false;
 
   IconData _getIcon(String label) {
     switch (label.toLowerCase()) {
@@ -91,55 +114,78 @@ class ContactLinksPanel extends StatelessWidget {
     }
   }
 
-  Widget _pill(
-    BuildContext context, {
-    required String label,
-    required String url,
-  }) {
+  Future<void> _launch() async {
+    await launchUrl(
+      Uri.parse(widget.url),
+      mode: LaunchMode.externalApplication,
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final colors = Theme.of(context).colorScheme;
 
     return Semantics(
       button: true,
-      label: label,
-      child: InkWell(
-        borderRadius: BorderRadius.circular(Spacing.xl),
-        onTap: () =>
-            launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication),
-        child: Container(
-          padding: EdgeInsets.symmetric(
-            horizontal: Spacing.lg,
-            vertical: Spacing.md,
-          ),
-          decoration: BoxDecoration(
-            color: colors.surface,
+      label: widget.label,
+      child: Focus(
+        onFocusChange: (focused) {
+          setState(() {
+            _focused = focused;
+          });
+        },
+        child: MouseRegion(
+          cursor: SystemMouseCursors.click,
+          onEnter: (_) => setState(() => _hovered = true),
+          onExit: (_) => setState(() => _hovered = false),
+          child: InkWell(
             borderRadius: BorderRadius.circular(Spacing.xl),
-            border: Border.all(
-              color: colors.primary,
-              width: AppInteractions.borderWidth,
-            ),
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(
-                _getIcon(label),
-                size: IconSizes.inline,
-                color: colors.primary,
+            onTap: _launch,
+            child: AnimatedContainer(
+              duration: const Duration(milliseconds: 250),
+              curve: Curves.easeOutCubic,
+              padding: EdgeInsets.symmetric(
+                horizontal: Spacing.lg,
+                vertical: Spacing.md,
               ),
-
-              SizedBox(width: Spacing.sm),
-
-              Flexible(
-                child: Text(
-                  label,
-                  overflow: TextOverflow.ellipsis,
-                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                    color: colors.primary,
-                    fontWeight: FontWeight.w600,
-                  ),
+              decoration: BoxDecoration(
+                color: _hovered ? AppInteractions.hoverOverlay : colors.surface,
+                borderRadius: BorderRadius.circular(Spacing.xl),
+                border: Border.all(
+                  color: _focused
+                      ? AppInteractions.focusBorder.borderSide.color
+                      : colors.primary,
+                  width: _focused
+                      ? AppInteractions.focusBorderWidth
+                      : _hovered
+                      ? AppInteractions.hoverBorderWidth
+                      : AppInteractions.borderWidth,
                 ),
               ),
-            ],
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    _getIcon(widget.label),
+                    size: IconSizes.inline,
+                    color: colors.primary,
+                  ),
+
+                  SizedBox(width: Spacing.sm),
+
+                  Flexible(
+                    child: Text(
+                      widget.label,
+                      overflow: TextOverflow.ellipsis,
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                        color: colors.primary,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ),
         ),
       ),
