@@ -8,6 +8,10 @@ class AppColors {
   static const Color accentLavender = Color(0xFFB8A8C9); // muted lavender
   static const Color accentTertiary = Color(0xFFBF965C);
 
+  // OUTLINES
+  static const Color lightOutline = Color(0xFFD1D5DB);
+  static const Color darkOutline = Color(0xFF4B5563);
+
   // NEUTRALS (LIGHT MODE)
   static const Color lightBackground = Color(0xFFF7F7F7);
   static const Color lightSurface = Color(0xFFFFFFFF);

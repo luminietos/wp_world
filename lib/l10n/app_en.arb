@@ -104,6 +104,10 @@
   "@menuDescription": {
     "description": "Menu description"
   },
+  "okLabel": "OK",
+  "@okLabel": {
+    "description": "OK button label"
+  },
   "filter": "Filter",
   "@filter": {
     "description": "Filter modal title"
@@ -127,6 +131,10 @@
   "errorNoResults": "No results",
   "@errorNoResults": {
     "description": "No results error state"
+  },
+  "errorInvalidEmail": "Invalid email address",
+  "@errorInvalidEmail": {
+    "description": "Error message for invalid email address"
   },
   "responsiveGridLayout": "Responsive grid layout",
   "@responsiveGridLayout": {
@@ -686,6 +694,10 @@
   "@contactFormLabel": {
     "description": "Semantic label for the contact form"
   },
+  "formFieldRequired": "This field is required.",
+  "@formFieldRequired": {
+    "description": "Form field validation error message"
+  },
   "contactTitle": "Let's connect!",
   "@contactTitle": {
     "description": "Contact page's title"
@@ -725,5 +737,9 @@
   "sendLabel": "Send",
   "@sendLabel": {
     "description": "Send button's label for ContactForm"
+  },
+  "contactResponseTime": "I usually respond within 1–3 business days.",
+  "@contactResponseTime": {
+    "description": "Contact page's response time info"
   }
 }

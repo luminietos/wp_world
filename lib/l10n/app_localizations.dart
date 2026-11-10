@@ -254,6 +254,12 @@ abstract class AppLocalizations {
   /// **'Where to next?'**
   String get menuDescription;
 
+  /// OK button label
+  ///
+  /// In en, this message translates to:
+  /// **'OK'**
+  String get okLabel;
+
   /// Filter modal title
   ///
   /// In en, this message translates to:
@@ -289,6 +295,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No results'**
   String get errorNoResults;
+
+  /// Error message for invalid email address
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid email address'**
+  String get errorInvalidEmail;
 
   /// Label for the responsive grid layout
   ///
@@ -1100,6 +1112,12 @@ abstract class AppLocalizations {
   /// **'Contact form'**
   String get contactFormLabel;
 
+  /// Form field validation error message
+  ///
+  /// In en, this message translates to:
+  /// **'This field is required.'**
+  String get formFieldRequired;
+
   /// Contact page's title
   ///
   /// In en, this message translates to:
@@ -1159,6 +1177,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Send'**
   String get sendLabel;
+
+  /// Contact page's response time info
+  ///
+  /// In en, this message translates to:
+  /// **'I usually respond within 1–3 business days.'**
+  String get contactResponseTime;
 }
 
 class _AppLocalizationsDelegate

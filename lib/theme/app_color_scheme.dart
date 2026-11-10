@@ -13,6 +13,10 @@ class AppColorScheme {
     tertiary: AppColors.accentTertiary,
     onTertiary: Colors.white,
 
+    // OUTLINES
+    outline: AppColors.lightOutline,
+    outlineVariant: AppColors.lightOutline,
+
     // SURFACES (Material 3)
     surface: AppColors.lightSurface,
     onSurface: AppColors.lightText,
@@ -40,6 +44,10 @@ class AppColorScheme {
     onSecondary: Colors.white,
     tertiary: AppColors.accentTertiary,
     onTertiary: Colors.white,
+
+    // OUTLINES
+    outline: AppColors.darkOutline,
+    outlineVariant: AppColors.darkOutline,
 
     // SURFACES
     surface: AppColors.darkSurface,

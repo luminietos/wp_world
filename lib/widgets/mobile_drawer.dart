@@ -167,7 +167,10 @@ class _DrawerItemState extends State<_DrawerItem> {
                     ? AppInteractions.hoverOverlay
                     : Colors.transparent,
                 border: _focused
-                    ? Border.all(color: colors.primary, width: 2)
+                    ? Border.all(
+                        color: colors.primary,
+                        width: AppInteractions.borderWidth,
+                      )
                     : null,
               ),
               child: Row(

@@ -12,6 +12,7 @@ class AppButton extends StatefulWidget {
   final AppButtonVariant variant;
   final IconData? icon;
   final bool fullWidth;
+  final bool isLoading;
 
   const AppButton({
     super.key,
@@ -20,6 +21,7 @@ class AppButton extends StatefulWidget {
     this.variant = AppButtonVariant.primary,
     this.icon,
     this.fullWidth = false,
+    this.isLoading = false, // if true, shows a loading spinner instead of label
   });
 
   @override
@@ -91,7 +93,9 @@ class _AppButtonState extends State<AppButton> {
                   color: _focused
                       ? AppInteractions.focusBorder.borderSide.color
                       : borderColor,
-                  width: _focused ? 2 : 1,
+                  width: _focused
+                      ? AppInteractions.focusBorderWidth
+                      : AppInteractions.borderWidth,
                 ),
               ),
               child: Row(
@@ -106,13 +110,25 @@ class _AppButtonState extends State<AppButton> {
                     Icon(widget.icon, size: IconSizes.inline, color: fgColor),
                     SizedBox(width: Spacing.sm),
                   ],
-                  Text(
-                    widget.label,
-                    style: textTheme.bodyLarge?.copyWith(
-                      color: fgColor,
-                      fontWeight: FontWeight.w600,
+                  // SHOW LOADING SPINNER WHEN isLoading IS TRUE
+                  if (widget.isLoading)
+                    SizedBox(
+                      width: 20,
+                      height: 20,
+                      child: CircularProgressIndicator(
+                        strokeWidth: 2,
+                        color: fgColor,
+                      ),
+                    )
+                  else
+                    // SHOW LABEL TEXT WHEN NOT LOADING
+                    Text(
+                      widget.label,
+                      style: textTheme.bodyLarge?.copyWith(
+                        color: fgColor,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
-                  ),
                 ],
               ),
             ),

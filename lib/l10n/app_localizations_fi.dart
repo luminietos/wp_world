@@ -87,6 +87,9 @@ class AppLocalizationsFi extends AppLocalizations {
   String get menuDescription => 'Minne seuraavaksi?';
 
   @override
+  String get okLabel => 'OK';
+
+  @override
   String get filter => 'Filtteri';
 
   @override
@@ -104,6 +107,9 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get errorNoResults => 'Ei tuloksia';
+
+  @override
+  String get errorInvalidEmail => 'Virheellinen sähköpostiosoite';
 
   @override
   String get responsiveGridLayout => 'Responsiivinen ruudukkoasettelu';
@@ -543,6 +549,9 @@ class AppLocalizationsFi extends AppLocalizations {
   String get contactFormLabel => 'Yhteydenottolomake';
 
   @override
+  String get formFieldRequired => 'Pakollinen kenttä';
+
+  @override
   String get contactTitle => 'Ota yhteyttä!';
 
   @override
@@ -572,4 +581,7 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get sendLabel => 'Lähetä';
+
+  @override
+  String get contactResponseTime => 'Vastaan yleensä 1–3 arkipäivän kuluessa.';
 }

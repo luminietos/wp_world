@@ -83,7 +83,9 @@ class _AppIconButtonState extends State<AppIconButton> {
                   color: _focused
                       ? AppInteractions.focusBorder.borderSide.color
                       : borderColor,
-                  width: _focused ? 2 : 1,
+                  width: _focused
+                      ? AppInteractions.focusBorderWidth
+                      : AppInteractions.borderWidth,
                 ),
               ),
               child: Icon(widget.icon, size: widget.size, color: fgColor),

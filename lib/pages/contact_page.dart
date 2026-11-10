@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:wp_world/l10n/app_localizations.dart';
 import 'package:wp_world/loaders/contact_info_loader.dart';
 import 'package:wp_world/models/contact/contact_info.dart';
 import 'package:wp_world/models/global/localized_text_block.dart';
@@ -87,12 +88,17 @@ class _ContactPageState extends State<ContactPage> {
     final emailMethod = contactInfo.methods.firstWhere((m) => m.id == 'email');
 
     final isMobile = Responsive.isMobile;
+    final localizations = AppLocalizations.of(context)!;
 
     if (isMobile) {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ContactForm(),
+          Text(
+            localizations.contactResponseTime,
+            style: Theme.of(context).textTheme.bodySmall,
+          ),
           SizedBox(height: Spacing.xl),
           ContactLinksPanel(emailMethod: emailMethod, links: contactInfo.links),
         ],

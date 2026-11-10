@@ -37,19 +37,31 @@ class _AppCardState extends State<AppCard> {
 
   Border _buildBorder(ColorScheme colors) {
     if (_focused) {
-      return Border.all(color: AppColors.focusRing, width: 8);
+      return Border.all(
+        color: AppColors.focusRing,
+        width: AppInteractions.focusBorderWidth,
+      );
     }
 
     if (_hovering && widget.hoverable) {
       return Border(
-        left: BorderSide(color: colors.primary, width: 8),
-        bottom: BorderSide(color: colors.primary, width: 8),
+        left: BorderSide(
+          color: colors.primary,
+          width: AppInteractions.hoverBorderWidth,
+        ),
+        bottom: BorderSide(
+          color: colors.primary,
+          width: AppInteractions.hoverBorderWidth,
+        ),
         top: BorderSide(color: colors.primary, width: 0),
         right: BorderSide(color: colors.primary, width: 0),
       );
     }
 
-    return Border.all(color: colors.primary, width: 1);
+    return Border.all(
+      color: colors.primary,
+      width: AppInteractions.borderWidth,
+    );
   }
 
   @override

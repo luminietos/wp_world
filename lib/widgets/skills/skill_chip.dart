@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:wp_world/helpers/localization_help.dart';
 import 'package:wp_world/models/skills/skill.dart';
+import 'package:wp_world/theme/app_interactions.dart';
 import 'package:wp_world/utils/responsive.dart';
 import 'package:wp_world/utils/tech_colors.dart';
 import 'package:wp_world/utils/spacing.dart';
@@ -65,7 +66,10 @@ class SkillChip extends StatelessWidget {
             borderRadius: BorderRadius.circular(
               isMobile ? Spacing.xxl : Spacing.xl,
             ),
-            border: Border.all(color: borderColor, width: 1.5),
+            border: Border.all(
+              color: borderColor,
+              width: AppInteractions.borderWidth,
+            ),
           ),
           child: Text(
             label,

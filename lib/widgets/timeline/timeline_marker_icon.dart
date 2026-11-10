@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:wp_world/models/timeline/timeline_event.dart';
+import 'package:wp_world/theme/app_interactions.dart';
 import 'package:wp_world/utils/icon_sizes.dart';
 
 class TimelineMarkerIcon extends StatelessWidget {
@@ -32,7 +33,7 @@ class TimelineMarkerIcon extends StatelessWidget {
       decoration: BoxDecoration(
         color: color.withOpacity(0.15),
         shape: BoxShape.circle,
-        border: Border.all(color: color, width: 1.5),
+        border: Border.all(color: color, width: AppInteractions.borderWidth),
       ),
       child: Icon(_resolveIcon(), size: iconSize * 0.6, color: color),
     );

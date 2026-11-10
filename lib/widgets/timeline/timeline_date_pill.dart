@@ -1,6 +1,7 @@
 // PILL BASE FOR THE TIMELINE WIDGET IN ABOUT PAGE
 
 import 'package:flutter/material.dart';
+import 'package:wp_world/theme/app_interactions.dart';
 import 'package:wp_world/utils/spacing.dart';
 
 class TimelineDatePill extends StatelessWidget {
@@ -34,7 +35,9 @@ class TimelineDatePill extends StatelessWidget {
       decoration: BoxDecoration(
         color: bg,
         borderRadius: BorderRadius.circular(Spacing.xl),
-        border: withBorder ? Border.all(color: color, width: 1.5) : null,
+        border: withBorder
+            ? Border.all(color: color, width: AppInteractions.borderWidth)
+            : null,
       ),
       child: Text(
         text,

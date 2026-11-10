@@ -87,6 +87,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get menuDescription => 'Where to next?';
 
   @override
+  String get okLabel => 'OK';
+
+  @override
   String get filter => 'Filter';
 
   @override
@@ -103,6 +106,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get errorNoResults => 'No results';
+
+  @override
+  String get errorInvalidEmail => 'Invalid email address';
 
   @override
   String get responsiveGridLayout => 'Responsive grid layout';
@@ -538,6 +544,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get contactFormLabel => 'Contact form';
 
   @override
+  String get formFieldRequired => 'This field is required.';
+
+  @override
   String get contactTitle => 'Let\'s connect!';
 
   @override
@@ -568,4 +577,8 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get sendLabel => 'Send';
+
+  @override
+  String get contactResponseTime =>
+      'I usually respond within 1–3 business days.';
 }
